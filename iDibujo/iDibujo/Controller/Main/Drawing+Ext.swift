@@ -17,8 +17,15 @@ extension MainController {
         }
     }
     
-    //MARK: Drawing a line function
-    func drawnLine(from: CGPoint, to: CGPoint){
+    /* MARK: - Draw function
+     1.- UIGraphicImageContext covers the imageView container/surface where draws.
+     2.- Context from UIGraphicCurrentContext assign two points, to - from and addLine assing a value for those points.
+     3.- Context setLineStroke takes a CGFloat value as a line.
+     4.- Context setStrokeColor takes UIColor.cgColor.
+     5.- Context set the path.
+     6.- Then ends with image context.
+     */
+    func drawnLine(from: CGPoint, to: CGPoint) {
         UIGraphicsBeginImageContext(self.view.frame.size)
         container.image?.draw(in: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
         

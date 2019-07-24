@@ -25,6 +25,7 @@ class MainController: UIViewController {
     
     var isDrawing = true
     
+    // MARK: - Top bar buttons block.
     let resetButton: UIButton = {
         let btn = UIButton(type: .system)
         btn.setTitle("RESET", for: .normal)
@@ -61,6 +62,7 @@ class MainController: UIViewController {
         return btn
     }()
     
+    // MARK: - Bottom bar buttons color selection.
     let redColorButton: UIButton = {
         let btn = UIButton(type: .system)
         btn.colorButton(color: .red, buttonTag: 0)

@@ -7,7 +7,10 @@
 //
 
 import UIKit
-
+/*
+ MARK: - Handles MainController delegation
+ - Handles the delegation of SettingController to the MainController, passing the values that the user changed using slider values.
+ */
 extension MainController: SettingsDelagate {
     
     func settingsDidFinish(_ settings: SettingsController) {
