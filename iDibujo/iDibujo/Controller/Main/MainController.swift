@@ -185,8 +185,7 @@ class MainController: UIViewController {
         print("foo")
     }
     
-    @objc func handleDraw(_ sender: Any){
-        let sender = sender as AnyObject
+    @objc func handleDraw(_ sender: UISlider){
         if sender.tag == 0 {
             (red, green, blue) = (1, 0, 0)
         } else if sender.tag == 1 {
