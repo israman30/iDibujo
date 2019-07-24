@@ -49,7 +49,7 @@ extension SettingsController {
             bottom: nil,
             right: nil,
             padding: .init(top: 10, left: 5, bottom: 0, right: 0),
-            size: .init(width: 100, height: 20)
+            size: .init(width: 80, height: 20)
         )
         
         imageView.centerInSuperview(size: .init(width: 150, height: 150))

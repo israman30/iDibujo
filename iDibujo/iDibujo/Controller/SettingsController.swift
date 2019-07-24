@@ -26,7 +26,8 @@ class SettingsController: UIViewController {
     
     let dismissButton: UIButton = {
         let btn = UIButton(type: .system)
-        btn.setTitle("Back", for: .normal)
+        btn.setTitle("BACK", for: .normal)
+        btn.setTitleColor(.black, for: .normal)
         btn.addTarget(self, action: #selector(back), for: .touchUpInside)
         return btn
     }()
@@ -47,37 +48,45 @@ class SettingsController: UIViewController {
     
     let brushLabel: UILabel = {
         let label = UILabel()
-        label.text = "Brush Label Size"
+        label.text = "Brush Size"
+        label.font = UIFont.boldSystemFont(ofSize: 15)
         return label
     }()
     
     let opacityLabel: UILabel = {
         let label = UILabel()
         label.text = "Opacity"
+        label.font = UIFont.boldSystemFont(ofSize: 15)
         return label
     }()
     
     let rgbLabel: UILabel = {
         let label = UILabel()
         label.text = "RGB Colors"
+        label.textAlignment = .center
+        label.textColor = .lightGray
+        label.font = UIFont.boldSystemFont(ofSize: 20)
         return label
     }()
     
     let redLabel: UILabel = {
         let label = UILabel()
         label.text = "Red Label"
+        label.font = UIFont.boldSystemFont(ofSize: 20)
         return label
     }()
     
     let greenLabel: UILabel = {
         let label = UILabel()
         label.text = "Green Label"
+        label.font = UIFont.boldSystemFont(ofSize: 20)
         return label
     }()
     
     let blueLabel: UILabel = {
         let label = UILabel()
         label.text = "Blue Label"
+        label.font = UIFont.boldSystemFont(ofSize: 20)
         return label
     }()
     
@@ -113,6 +122,7 @@ class SettingsController: UIViewController {
     let redSlider: UISlider = {
         let slider = UISlider()
         slider.minimumTrackTintColor = .red
+        slider.thumbTintColor = .red
         slider.addTarget(self, action: #selector(handleRedColor), for: .valueChanged)
         return slider
     }()
@@ -127,6 +137,7 @@ class SettingsController: UIViewController {
     let greenSlider: UISlider = {
         let slider = UISlider()
         slider.minimumTrackTintColor = .green
+        slider.thumbTintColor = .green
         slider.addTarget(self, action: #selector(handleGreenColor), for: .valueChanged)
         return slider
     }()
@@ -141,6 +152,7 @@ class SettingsController: UIViewController {
     let blueSlider: UISlider = {
         let slider = UISlider()
         slider.minimumTrackTintColor = .blue
+        slider.thumbTintColor = .blue
         slider.addTarget(self, action: #selector(handleBlueColor), for: .valueChanged)
         return slider
     }()
