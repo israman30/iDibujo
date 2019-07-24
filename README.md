@@ -1,5 +1,5 @@
 # iDibujo
-Create simple or amazing art with this drawing application.
+Create simple or amazing art with the drawing application. :iphone:
 
 > Draw something on the main view, customizing brush with size using sliders, opacity and rgb colors.  Reset the draw and start over. Save the your art once are you done, or cancel it. 
 
