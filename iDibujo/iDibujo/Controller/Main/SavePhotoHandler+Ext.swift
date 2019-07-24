@@ -23,5 +23,13 @@ extension MainController {
         present(actionSheet, animated: true, completion: nil)
     }
     
+    @objc func image(_ image: UIImage, didFinishWithError error: Error?, contextInfo: UnsafeRawPointer){
+        if let error = error {
+            AlertController.alert(self, title: "Error", message: error.localizedDescription)
+        } else {
+            AlertController.alert(self, title: "Saved", message: "You photo has been saved!")
+        }
+    }
+    
 }
 
