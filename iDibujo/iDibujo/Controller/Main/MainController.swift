@@ -221,8 +221,6 @@ class MainController: UIViewController {
         let context = UIGraphicsGetCurrentContext()
         context?.move(to: CGPoint(x: from.x, y: from.y))
         context?.addLine(to: CGPoint(x: to.x, y: to.y))
-        // Brush image
-//        tool.center = to
         
         context?.setBlendMode(.normal)
         context?.setLineCap(CGLineCap.round)

@@ -90,8 +90,7 @@ class SettingsController: UIViewController {
         return label
     }()
     
-    // SLIDERS
-    
+    // MARK: - SLIDERS BLOCK
     let changeBrushSizeSlider: UISlider = {
         let slider = UISlider()
         slider.value = 10
@@ -101,9 +100,8 @@ class SettingsController: UIViewController {
         return slider
     }()
     
-    @objc func handleChangeBrushSize(_ sender: Any){
-        let slider = sender as! UISlider
-        brushSize1 = CGFloat(slider.value)
+    @objc func handleChangeBrushSize(_ sender: UISlider){
+        brushSize1 = CGFloat(sender.value)
         previewDraw(red: red, green: green, blue: blue)
     }
     
@@ -113,9 +111,8 @@ class SettingsController: UIViewController {
         return slider
     }()
     
-    @objc func handleChangeOpacitySize(_ sender: Any) {
-        let slider = sender as! UISlider
-        opacity = CGFloat(slider.value)
+    @objc func handleChangeOpacitySize(_ sender: UISlider) {
+        opacity = CGFloat(sender.value)
         previewDraw(red: red, green: green, blue: blue)
     }
     
@@ -127,11 +124,10 @@ class SettingsController: UIViewController {
         return slider
     }()
     
-    @objc func handleRedColor(_ sender: Any){
-        let slider = sender as! UISlider
-        red = CGFloat(slider.value)
+    @objc func handleRedColor(_ sender: UISlider){
+        red = CGFloat(sender.value)
         previewDraw(red: red, green: green, blue: blue)
-        redLabel.text = "\(Int(slider.value * 255))"
+        redLabel.text = "\(Int(sender.value * 255))"
     }
     
     let greenSlider: UISlider = {
@@ -142,11 +138,10 @@ class SettingsController: UIViewController {
         return slider
     }()
     
-    @objc func handleGreenColor(_ sender: Any) {
-        let slider = sender as! UISlider
-        green = CGFloat(slider.value)
+    @objc func handleGreenColor(_ sender: UISlider) {
+        green = CGFloat(sender.value)
         previewDraw(red: red, green: green, blue: blue)
-        greenLabel.text = "\(Int(slider.value * 255))"
+        greenLabel.text = "\(Int(sender.value * 255))"
     }
     
     let blueSlider: UISlider = {
@@ -157,11 +152,10 @@ class SettingsController: UIViewController {
         return slider
     }()
     
-    @objc func handleBlueColor(_ sender: Any) {
-        let slider = sender as! UISlider
-        blue = CGFloat(slider.value)
+    @objc func handleBlueColor(_ sender: UISlider) {
+        blue = CGFloat(sender.value)
         previewDraw(red: red, green: green, blue: blue)
-        blueLabel.text = "\(Int(slider.value * 255))"
+        blueLabel.text = "\(Int(sender.value * 255))"
     }
     
     override func viewDidLoad() {
