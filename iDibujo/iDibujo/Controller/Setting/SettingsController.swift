@@ -8,10 +8,6 @@
 
 import UIKit
 
-protocol SettingsDelagate {
-    func settingsDidFinish(_ settings: SettingsController )
-}
-
 class SettingsController: UIViewController {
     
     var red: CGFloat = 0.0
@@ -38,13 +34,6 @@ class SettingsController: UIViewController {
         brush.autoresizesSubviews = true
         return brush
     }()
-    
-    @objc func back(){
-        if delegate != nil {
-            delegate?.settingsDidFinish(self)
-        }
-        dismiss(animated: true, completion: nil)
-    }
     
     let brushLabel: UILabel = {
         let label = UILabel()
@@ -100,21 +89,11 @@ class SettingsController: UIViewController {
         return slider
     }()
     
-    @objc func handleChangeBrushSize(_ sender: UISlider){
-        brushSize1 = CGFloat(sender.value)
-        previewDraw(red: red, green: green, blue: blue)
-    }
-    
     let opacitySlider: UISlider = {
         let slider = UISlider()
         slider.addTarget(self, action: #selector(handleChangeOpacitySize), for: .valueChanged)
         return slider
     }()
-    
-    @objc func handleChangeOpacitySize(_ sender: UISlider) {
-        opacity = CGFloat(sender.value)
-        previewDraw(red: red, green: green, blue: blue)
-    }
     
     let redSlider: UISlider = {
         let slider = UISlider()
@@ -124,12 +103,6 @@ class SettingsController: UIViewController {
         return slider
     }()
     
-    @objc func handleRedColor(_ sender: UISlider){
-        red = CGFloat(sender.value)
-        previewDraw(red: red, green: green, blue: blue)
-        redLabel.text = "\(Int(sender.value * 255))"
-    }
-    
     let greenSlider: UISlider = {
         let slider = UISlider()
         slider.minimumTrackTintColor = .green
@@ -138,12 +111,6 @@ class SettingsController: UIViewController {
         return slider
     }()
     
-    @objc func handleGreenColor(_ sender: UISlider) {
-        green = CGFloat(sender.value)
-        previewDraw(red: red, green: green, blue: blue)
-        greenLabel.text = "\(Int(sender.value * 255))"
-    }
-    
     let blueSlider: UISlider = {
         let slider = UISlider()
         slider.minimumTrackTintColor = .blue
@@ -151,12 +118,6 @@ class SettingsController: UIViewController {
         slider.addTarget(self, action: #selector(handleBlueColor), for: .valueChanged)
         return slider
     }()
-    
-    @objc func handleBlueColor(_ sender: UISlider) {
-        blue = CGFloat(sender.value)
-        previewDraw(red: red, green: green, blue: blue)
-        blueLabel.text = "\(Int(sender.value * 255))"
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -176,20 +137,7 @@ class SettingsController: UIViewController {
         setSliders()
     }
     
-    // MARK: Preview drawing function
-    func previewDraw(red: CGFloat, green: CGFloat, blue: CGFloat){
-        UIGraphicsBeginImageContext(imageView.frame.size)
-        
-        let context = UIGraphicsGetCurrentContext()
-        context?.setStrokeColor(UIColor(red: red, green: green, blue: blue, alpha: opacity).cgColor)
-        context?.setLineWidth(brushSize1)
-        context?.setLineCap(CGLineCap.round)
-        context?.move(to: CGPoint(x: 70, y: 70))
-        context?.addLine(to: CGPoint(x: 70, y: 70))
-        context?.strokePath()
-        
-        imageView.image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-    }
+    
 }
+
 

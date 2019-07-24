@@ -20,6 +20,9 @@
 		4DD83CAD22E8CB60002933DE /* MainHandlers+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD83CAC22E8CB60002933DE /* MainHandlers+Ext.swift */; };
 		4DD83CAF22E8CB89002933DE /* SavePhotoHandler+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD83CAE22E8CB89002933DE /* SavePhotoHandler+Ext.swift */; };
 		4DD83CB122E8CBD4002933DE /* MainDelegate+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD83CB022E8CBD4002933DE /* MainDelegate+Ext.swift */; };
+		4DD83CB322E8FE2F002933DE /* SettingsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD83CB222E8FE2F002933DE /* SettingsProtocol.swift */; };
+		4DD83CB522E8FE87002933DE /* PreviewDraw+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD83CB422E8FE87002933DE /* PreviewDraw+Ext.swift */; };
+		4DD83CB722E8FEF9002933DE /* SettingsHandlers+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD83CB622E8FEF9002933DE /* SettingsHandlers+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		4DD83CAC22E8CB60002933DE /* MainHandlers+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainHandlers+Ext.swift"; sourceTree = "<group>"; };
 		4DD83CAE22E8CB89002933DE /* SavePhotoHandler+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SavePhotoHandler+Ext.swift"; sourceTree = "<group>"; };
 		4DD83CB022E8CBD4002933DE /* MainDelegate+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainDelegate+Ext.swift"; sourceTree = "<group>"; };
+		4DD83CB222E8FE2F002933DE /* SettingsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsProtocol.swift; sourceTree = "<group>"; };
+		4DD83CB422E8FE87002933DE /* PreviewDraw+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PreviewDraw+Ext.swift"; sourceTree = "<group>"; };
+		4DD83CB622E8FEF9002933DE /* SettingsHandlers+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsHandlers+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,11 +76,9 @@
 		4DA07C0F22E748250029882D /* iDibujo */ = {
 			isa = PBXGroup;
 			children = (
+				4DD83C9F22E77CD2002933DE /* Model */,
 				4DD83CA122E77CE1002933DE /* View */,
 				4DD83CA022E77CDA002933DE /* Controller */,
-				4DD83C9F22E77CD2002933DE /* Model */,
-				4DA07C1722E748260029882D /* Assets.xcassets */,
-				4DA07C1922E748260029882D /* LaunchScreen.storyboard */,
 				4DA07C1C22E748260029882D /* Info.plist */,
 			);
 			path = iDibujo;
@@ -83,6 +87,9 @@
 		4DD83C9F22E77CD2002933DE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4DD83CAA22E8CA81002933DE /* Drawing+Ext.swift */,
+				4DD83CB422E8FE87002933DE /* PreviewDraw+Ext.swift */,
+				4DD83CA622E7F064002933DE /* AlertController.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -103,6 +110,8 @@
 				4DD83C9B22E74C58002933DE /* Anchors+Ext.swift */,
 				4DD83CA222E77D19002933DE /* MainView.swift */,
 				4DD83CA422E7EE25002933DE /* SettingsView.swift */,
+				4DA07C1722E748260029882D /* Assets.xcassets */,
+				4DA07C1922E748260029882D /* LaunchScreen.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -111,11 +120,9 @@
 			isa = PBXGroup;
 			children = (
 				4DA07C1222E748250029882D /* MainController.swift */,
-				4DD83CAA22E8CA81002933DE /* Drawing+Ext.swift */,
 				4DD83CAC22E8CB60002933DE /* MainHandlers+Ext.swift */,
 				4DD83CAE22E8CB89002933DE /* SavePhotoHandler+Ext.swift */,
 				4DD83CB022E8CBD4002933DE /* MainDelegate+Ext.swift */,
-				4DD83CA622E7F064002933DE /* AlertController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -124,6 +131,8 @@
 			isa = PBXGroup;
 			children = (
 				4DD83C9D22E77953002933DE /* SettingsController.swift */,
+				4DD83CB222E8FE2F002933DE /* SettingsProtocol.swift */,
+				4DD83CB622E8FEF9002933DE /* SettingsHandlers+Ext.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -198,9 +207,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DD83CB322E8FE2F002933DE /* SettingsProtocol.swift in Sources */,
 				4DD83C9E22E77953002933DE /* SettingsController.swift in Sources */,
 				4DD83CAD22E8CB60002933DE /* MainHandlers+Ext.swift in Sources */,
+				4DD83CB522E8FE87002933DE /* PreviewDraw+Ext.swift in Sources */,
 				4DA07C1322E748250029882D /* MainController.swift in Sources */,
+				4DD83CB722E8FEF9002933DE /* SettingsHandlers+Ext.swift in Sources */,
 				4DA07C1122E748250029882D /* AppDelegate.swift in Sources */,
 				4DD83CB122E8CBD4002933DE /* MainDelegate+Ext.swift in Sources */,
 				4DD83CA522E7EE25002933DE /* SettingsView.swift in Sources */,
