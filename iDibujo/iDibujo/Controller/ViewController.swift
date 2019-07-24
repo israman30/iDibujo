@@ -55,7 +55,7 @@ class ViewController: UIViewController {
     
     let importButton: UIButton = {
         let btn = UIButton(type: .system)
-        btn.setTitle("IMPORT", for: .normal)
+        btn.setTitle("SAVE", for: .normal)
         btn.setTitleColor(.white, for: .normal)
         btn.backgroundColor = .importColor
         btn.addTarget(self, action: #selector(handleImport), for: .touchUpInside)
@@ -63,29 +63,30 @@ class ViewController: UIViewController {
     }()
     
     @objc func handleImport(){
-        print(123)
+        savePhotoToLibrary()
+    }
+    
+    @objc func image(_ image: UIImage, didFinishWithError error: Error?, contextInfo: UnsafeRawPointer){
+        if let error = error {
+            AlertController.alert(self, title: "Error", message: error.localizedDescription)
+        } else {
+            AlertController.alert(self, title: "Saved", message: "You photo has been saved!")
+        }
+    }
+    
+    func savePhotoToLibrary(){
         let actionSheet = UIAlertController(title: "Hello", message: "What are you going to do?", preferredStyle: .actionSheet)
-        actionSheet.addAction(UIAlertAction(title: "Pick an image 🌅", style: .default, handler: { (UIAlertAction) in
-            
-            let imagePicker = UIImagePickerController()
-            imagePicker.sourceType = .photoLibrary
-            imagePicker.allowsEditing = false
-//            imagePicker.delegate = self
-            
-            self.present(imagePicker, animated: true, completion: nil)
-        }))
-        
         actionSheet.addAction(UIAlertAction(title: "Save your Art 🎨", style: .default, handler: { (UIAlertAction) in
             
-//            if let image = self.imagePhoto.image {
-//                UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
-//            }
+            guard let image = self.container.image else { return }
+            UIImageWriteToSavedPhotosAlbum(image, self, #selector(self.image(_:didFinishWithError:contextInfo:)), nil)
         }))
         
         actionSheet.addAction(UIAlertAction(title: "Cancel ❌", style: .default, handler: nil))
         
         present(actionSheet, animated: true, completion: nil)
     }
+    
     
     let eraserButton: UIButton = {
         let btn = UIButton(type: .system)
