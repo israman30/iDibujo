@@ -22,11 +22,6 @@ extension ViewController {
         buttonContainerView.axis = .horizontal
         buttonContainerView.spacing = 10
         
-        resetButton.backgroundColor = .yellow
-        importButton.backgroundColor = .cyan
-        eraserButton.backgroundColor = .blue
-        moreButton.backgroundColor = .red
-        
         container.addSubview(buttonContainerView)
         buttonContainerView.anchor(top: container.safeAreaLayoutGuide.topAnchor, left: container.leftAnchor, bottom: nil, right: container.rightAnchor, padding: .init(top: 5, left: 20, bottom: 0, right: 20), size: .init(width: 0, height: 40))
         setColorButtons()

@@ -42,7 +42,9 @@ class ViewController: UIViewController {
     
     let resetButton: UIButton = {
         let btn = UIButton(type: .system)
-        btn.setTitle("reset", for: .normal)
+        btn.setTitle("RESET", for: .normal)
+        btn.setTitleColor(.white, for: .normal)
+        btn.backgroundColor = .resetColor
         btn.addTarget(self, action: #selector(reset), for: .touchUpInside)
         return btn
     }()
@@ -53,7 +55,9 @@ class ViewController: UIViewController {
     
     let importButton: UIButton = {
         let btn = UIButton(type: .system)
-        btn.setTitle("import", for: .normal)
+        btn.setTitle("IMPORT", for: .normal)
+        btn.setTitleColor(.white, for: .normal)
+        btn.backgroundColor = .importColor
         btn.addTarget(self, action: #selector(handleImport), for: .touchUpInside)
         return btn
     }()
@@ -85,9 +89,9 @@ class ViewController: UIViewController {
     
     let eraserButton: UIButton = {
         let btn = UIButton(type: .system)
-        btn.setTitle("eraser", for: .normal)
-        let icon = #imageLiteral(resourceName: "eraser")
-        btn.setBackgroundImage(icon, for: .normal)
+        btn.setTitle("ERASE", for: .normal)
+        btn.setTitleColor(.white, for: .normal)
+        btn.backgroundColor = .eraseColor
         btn.addTarget(self, action: #selector(erase), for: .touchUpInside)
         return btn
     }()
@@ -95,15 +99,19 @@ class ViewController: UIViewController {
     @objc func erase(){
         if isDrawing {
             (red, green, blue) = (1, 1, 1)
+            eraserButton.setTitle("DRAW", for: .normal)
         } else {
             (red, green, blue) = (0, 0, 0)
+            eraserButton.setTitle("ERASE", for: .normal)
         }
         isDrawing = !isDrawing
     }
     
     let moreButton: UIButton = {
         let btn = UIButton(type: .system)
-        btn.setTitle("more", for: .normal)
+        btn.setTitle("MORE", for: .normal)
+        btn.setTitleColor(.white, for: .normal)
+        btn.backgroundColor = .moreColor
         btn.addTarget(self, action: #selector(setting), for: .touchUpInside)
         return btn
     }()

@@ -13,12 +13,17 @@ extension UIButton {
         backgroundColor = color
         tag = buttonTag
     }
+    
 }
 
 
 extension UIColor {
     // Method returns a custom color
     static var pink = UIColor(red: 255/255, green: 105/255, blue: 180, alpha: 1)
+    static var resetColor = UIColor(red: 51/255, green: 51/255, blue: 51/255, alpha: 1)
+    static var importColor = UIColor(red: 77/255, green: 77/255, blue: 77/255, alpha: 1)
+    static var eraseColor = UIColor(red: 102/255, green: 102/255, blue: 102/255, alpha: 1)
+    static var moreColor = UIColor(red: 128/255, green: 128/255, blue: 128/255, alpha: 1)
 }
 
 extension UIView {
