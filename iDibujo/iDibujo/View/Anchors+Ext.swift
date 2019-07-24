@@ -8,6 +8,19 @@
 
 import UIKit
 
+extension UIButton {
+    func colorButton(color: UIColor, buttonTag: Int){
+        backgroundColor = color
+        tag = buttonTag
+    }
+}
+
+
+extension UIColor {
+    // Method returns a custom color
+    static var pink = UIColor(red: 255/255, green: 105/255, blue: 180, alpha: 1)
+}
+
 extension UIView {
     func addSubViews(_ views: UIView...) {
         views.forEach { addSubview($0) }

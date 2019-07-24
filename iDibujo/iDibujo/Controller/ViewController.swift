@@ -8,17 +8,16 @@
 
 import UIKit
 
-extension UIButton {
-    func colorButton(color: UIColor, buttonTag: Int){
-        backgroundColor = color
-        tag = buttonTag
+extension ViewController: SettingsDelagate {
+    
+    func settingsDidFinish(_ settings: SettingsController) {
+        self.red = settings.red
+        self.blue = settings.blue
+        self.green = settings.green
+        self.brushSize = settings.brushSize1
+        self.opacity = settings.opacity
     }
-}
-
-
-extension UIColor {
-    // Method returns a custom color
-    static var pink = UIColor(red: 255/255, green: 105/255, blue: 180, alpha: 1)
+    
 }
 
 class ViewController: UIViewController {
@@ -111,6 +110,12 @@ class ViewController: UIViewController {
     
     @objc func setting(){
         let settingsController = SettingsController()
+        settingsController.delegate = self
+        settingsController.red = red
+        settingsController.blue = blue
+        settingsController.green = green
+        settingsController.brushSize1 = brushSize
+        settingsController.opacity = opacity
         present(settingsController, animated: true, completion: nil)
     }
     
