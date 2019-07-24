@@ -89,7 +89,6 @@
 			children = (
 				4DD83CAA22E8CA81002933DE /* Drawing+Ext.swift */,
 				4DD83CB422E8FE87002933DE /* PreviewDraw+Ext.swift */,
-				4DD83CA622E7F064002933DE /* AlertController.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -123,6 +122,7 @@
 				4DD83CAC22E8CB60002933DE /* MainHandlers+Ext.swift */,
 				4DD83CAE22E8CB89002933DE /* SavePhotoHandler+Ext.swift */,
 				4DD83CB022E8CBD4002933DE /* MainDelegate+Ext.swift */,
+				4DD83CA622E7F064002933DE /* AlertController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
