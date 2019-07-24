@@ -11,11 +11,17 @@ import UIKit
 extension MainController {
     
     func savePhotoToLibrary() {
+        
         let actionSheet = UIAlertController(title: "Hello", message: "What are you going to do?", preferredStyle: .actionSheet)
         actionSheet.addAction(UIAlertAction(title: "Save your Art 🎨", style: .default, handler: { (UIAlertAction) in
             
             guard let image = self.container.image else { return }
-            UIImageWriteToSavedPhotosAlbum(image, self, #selector(self.image(_:didFinishWithError:contextInfo:)), nil)
+            UIImageWriteToSavedPhotosAlbum(
+                image,
+                self,
+                #selector(self.image(_:didFinishWithError:contextInfo:)),
+                nil
+            )
         }))
         
         actionSheet.addAction(UIAlertAction(title: "Cancel ❌", style: .default, handler: nil))
