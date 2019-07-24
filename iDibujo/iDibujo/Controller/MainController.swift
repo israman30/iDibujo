@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainController.swift
 //  iDibujo
 //
 //  Created by Israel Manzo on 7/23/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension ViewController: SettingsDelagate {
+extension MainController: SettingsDelagate {
     
     func settingsDidFinish(_ settings: SettingsController) {
         self.red = settings.red
@@ -20,7 +20,7 @@ extension ViewController: SettingsDelagate {
     
 }
 
-class ViewController: UIViewController {
+class MainController: UIViewController {
     
     let container = UIImageView()
     

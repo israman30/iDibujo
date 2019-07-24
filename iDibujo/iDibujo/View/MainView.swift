@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension ViewController {
+extension MainController {
     
     func setContainerView(){
         view.addSubview(container)
