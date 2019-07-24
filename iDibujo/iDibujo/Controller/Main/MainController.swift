@@ -8,18 +8,6 @@
 
 import UIKit
 
-extension MainController: SettingsDelagate {
-    
-    func settingsDidFinish(_ settings: SettingsController) {
-        self.red = settings.red
-        self.blue = settings.blue
-        self.green = settings.green
-        self.brushSize = settings.brushSize1
-        self.opacity = settings.opacity
-    }
-    
-}
-
 class MainController: UIViewController {
     
     let container = UIImageView()
@@ -46,10 +34,6 @@ class MainController: UIViewController {
         return btn
     }()
     
-    @objc func reset() {
-        container.image = nil
-    }
-    
     let importButton: UIButton = {
         let btn = UIButton(type: .system)
         btn.setTitle("SAVE", for: .normal)
@@ -58,32 +42,6 @@ class MainController: UIViewController {
         btn.addTarget(self, action: #selector(handleImport), for: .touchUpInside)
         return btn
     }()
-    
-    @objc func handleImport(){
-        savePhotoToLibrary()
-    }
-    
-    @objc func image(_ image: UIImage, didFinishWithError error: Error?, contextInfo: UnsafeRawPointer){
-        if let error = error {
-            AlertController.alert(self, title: "Error", message: error.localizedDescription)
-        } else {
-            AlertController.alert(self, title: "Saved", message: "You photo has been saved!")
-        }
-    }
-    
-    func savePhotoToLibrary(){
-        let actionSheet = UIAlertController(title: "Hello", message: "What are you going to do?", preferredStyle: .actionSheet)
-        actionSheet.addAction(UIAlertAction(title: "Save your Art 🎨", style: .default, handler: { (UIAlertAction) in
-            
-            guard let image = self.container.image else { return }
-            UIImageWriteToSavedPhotosAlbum(image, self, #selector(self.image(_:didFinishWithError:contextInfo:)), nil)
-        }))
-        
-        actionSheet.addAction(UIAlertAction(title: "Cancel ❌", style: .default, handler: nil))
-        
-        present(actionSheet, animated: true, completion: nil)
-    }
-    
     
     let eraserButton: UIButton = {
         let btn = UIButton(type: .system)
@@ -94,17 +52,6 @@ class MainController: UIViewController {
         return btn
     }()
     
-    @objc func erase(){
-        if isDrawing {
-            (red, green, blue) = (1, 1, 1)
-            eraserButton.setTitle("DRAW", for: .normal)
-        } else {
-            (red, green, blue) = (0, 0, 0)
-            eraserButton.setTitle("ERASE", for: .normal)
-        }
-        isDrawing = !isDrawing
-    }
-    
     let moreButton: UIButton = {
         let btn = UIButton(type: .system)
         btn.setTitle("MORE", for: .normal)
@@ -113,17 +60,6 @@ class MainController: UIViewController {
         btn.addTarget(self, action: #selector(setting), for: .touchUpInside)
         return btn
     }()
-    
-    @objc func setting(){
-        let settingsController = SettingsController()
-        settingsController.delegate = self
-        settingsController.red = red
-        settingsController.blue = blue
-        settingsController.green = green
-        settingsController.brushSize1 = brushSize
-        settingsController.opacity = opacity
-        present(settingsController, animated: true, completion: nil)
-    }
     
     let redColorButton: UIButton = {
         let btn = UIButton(type: .system)
@@ -181,74 +117,6 @@ class MainController: UIViewController {
         return btn
     }()
     
-    @objc func foo(){
-        print("foo")
-    }
-    
-    @objc func handleDraw(_ sender: UISlider){
-        if sender.tag == 0 {
-            (red, green, blue) = (1, 0, 0)
-        } else if sender.tag == 1 {
-            (red, green, blue) = (0, 1, 0)
-        } else if sender .tag == 2 {
-            (red, green, blue) = (0, 0, 1)
-        } else if sender.tag == 3 {
-            (red, green, blue) = (1, 0, 1)
-        } else if  sender.tag == 4 {
-            (red, green, blue) = (1, 1, 0)
-        } else if sender.tag == 5 {
-            (red, green, blue) = (0, 1, 1)
-        } else if sender.tag == 6 {
-            (red, green, blue) = (1, 1, 1)
-        } else if sender.tag == 7 {
-            (red, green, blue) = (0, 0, 0)
-        }
-        
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        swipe = false
-        if let touch = touches.first {
-            lastPoint = touch.location(in: self.view)
-        }
-    }
-    
-    //MARK: Drawing a line function
-    func drawnLine(from: CGPoint, to: CGPoint){
-        UIGraphicsBeginImageContext(self.view.frame.size)
-        container.image?.draw(in: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
-        
-        let context = UIGraphicsGetCurrentContext()
-        context?.move(to: CGPoint(x: from.x, y: from.y))
-        context?.addLine(to: CGPoint(x: to.x, y: to.y))
-        
-        context?.setBlendMode(.normal)
-        context?.setLineCap(CGLineCap.round)
-        context?.setLineWidth(brushSize) // Brush size variable value
-        context?.setStrokeColor(UIColor(red: red, green: green, blue: blue, alpha: opacity).cgColor)
-        context?.strokePath()
-        
-        container.image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-    }
-    
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
-        swipe = true
-        if let touch = touches.first {
-            let currentPoint = touch.location(in: self.view)
-            drawnLine(from: lastPoint , to: currentPoint)
-            
-            lastPoint = currentPoint
-        }
-    }
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if !swipe {
-            drawnLine(from: lastPoint, to: lastPoint)
-        }
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -256,6 +124,9 @@ class MainController: UIViewController {
     }
     
 }
+
+
+
 
 
 
