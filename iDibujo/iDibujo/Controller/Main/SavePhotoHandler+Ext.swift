@@ -10,7 +10,7 @@ import UIKit
 
 extension MainController {
     
-    func savePhotoToLibrary(){
+    func savePhotoToLibrary() {
         let actionSheet = UIAlertController(title: "Hello", message: "What are you going to do?", preferredStyle: .actionSheet)
         actionSheet.addAction(UIAlertAction(title: "Save your Art 🎨", style: .default, handler: { (UIAlertAction) in
             
@@ -23,7 +23,7 @@ extension MainController {
         present(actionSheet, animated: true, completion: nil)
     }
     
-    @objc func image(_ image: UIImage, didFinishWithError error: Error?, contextInfo: UnsafeRawPointer){
+    @objc func image(_ image: UIImage, didFinishWithError error: Error?, contextInfo: UnsafeRawPointer) {
         if let error = error {
             AlertController.alert(self, title: "Error", message: error.localizedDescription)
         } else {

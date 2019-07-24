@@ -40,11 +40,7 @@ extension MainController {
         isDrawing = !isDrawing
     }
     
-    @objc func foo(){
-        print("foo")
-    }
-    
-    @objc func handleDraw(_ sender: UISlider){
+    @objc func pickColorHandler(_ sender: UISlider){
         if sender.tag == 0 {
             (red, green, blue) = (1, 0, 0)
         } else if sender.tag == 1 {

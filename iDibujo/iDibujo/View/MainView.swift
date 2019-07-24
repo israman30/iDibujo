@@ -28,7 +28,14 @@ extension MainController {
         moreButton.layer.cornerRadius = 2
         
         container.addSubview(buttonContainerView)
-        buttonContainerView.anchor(top: container.safeAreaLayoutGuide.topAnchor, left: container.leftAnchor, bottom: nil, right: container.rightAnchor, padding: .init(top: 5, left: 20, bottom: 0, right: 20), size: .init(width: 0, height: 40))
+        buttonContainerView.anchor(
+            top: container.safeAreaLayoutGuide.topAnchor,
+            left: container.leftAnchor,
+            bottom: nil,
+            right: container.rightAnchor,
+            padding: .init(top: 5, left: 20, bottom: 0, right: 20),
+            size: .init(width: 0, height: 40)
+        )
         setColorButtons()
         
     }

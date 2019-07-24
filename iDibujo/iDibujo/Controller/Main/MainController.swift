@@ -64,56 +64,56 @@ class MainController: UIViewController {
     let redColorButton: UIButton = {
         let btn = UIButton(type: .system)
         btn.colorButton(color: .red, buttonTag: 0)
-        btn.addTarget(self, action: #selector(handleDraw), for: .touchUpInside)
+        btn.addTarget(self, action: #selector(pickColorHandler), for: .touchUpInside)
         return btn
     }()
     
     let greenColorButton: UIButton = {
         let btn = UIButton(type: .system)
         btn.colorButton(color: .green, buttonTag: 1)
-        btn.addTarget(self, action: #selector(handleDraw), for: .touchUpInside)
+        btn.addTarget(self, action: #selector(pickColorHandler), for: .touchUpInside)
         return btn
     }()
     
     let blueColorButton: UIButton = {
         let btn = UIButton(type: .system)
         btn.colorButton(color: .blue, buttonTag: 2)
-        btn.addTarget(self, action: #selector(handleDraw), for: .touchUpInside)
+        btn.addTarget(self, action: #selector(pickColorHandler), for: .touchUpInside)
         return btn
     }()
     
     let pinkColorButton: UIButton = {
         let btn = UIButton(type: .system)
         btn.colorButton(color: .pink, buttonTag: 3)
-        btn.addTarget(self, action: #selector(handleDraw), for: .touchUpInside)
+        btn.addTarget(self, action: #selector(pickColorHandler), for: .touchUpInside)
         return btn
     }()
     
     let yellowColorButton: UIButton = {
         let btn = UIButton(type: .system)
         btn.colorButton(color: .yellow, buttonTag: 4)
-        btn.addTarget(self, action: #selector(handleDraw), for: .touchUpInside)
+        btn.addTarget(self, action: #selector(pickColorHandler), for: .touchUpInside)
         return btn
     }()
     
     let cyanColorButton: UIButton = {
         let btn = UIButton(type: .system)
         btn.colorButton(color: .cyan, buttonTag: 5)
-        btn.addTarget(self, action: #selector(handleDraw), for: .touchUpInside)
+        btn.addTarget(self, action: #selector(pickColorHandler), for: .touchUpInside)
         return btn
     }()
     
     let whiteColorButton: UIButton = {
         let btn = UIButton(type: .system)
         btn.colorButton(color: .white, buttonTag: 6)
-        btn.addTarget(self, action: #selector(handleDraw), for: .touchUpInside)
+        btn.addTarget(self, action: #selector(pickColorHandler), for: .touchUpInside)
         return btn
     }()
     
     let blackColorButton: UIButton = {
         let btn = UIButton(type: .system)
         btn.colorButton(color: .black, buttonTag: 7)
-        btn.addTarget(self, action: #selector(handleDraw), for: .touchUpInside)
+        btn.addTarget(self, action: #selector(pickColorHandler), for: .touchUpInside)
         return btn
     }()
     
