@@ -35,10 +35,7 @@ class MainController: UIViewController {
     
     var opacity: CGFloat = 1.0
     
-    var tool:UIImageView!
     var isDrawing = true
-    
-    var selectedImage: UIImage!
     
     let resetButton: UIButton = {
         let btn = UIButton(type: .system)
@@ -189,25 +186,22 @@ class MainController: UIViewController {
     }
     
     @objc func handleDraw(_ sender: Any){
-        if (sender as AnyObject).tag == 0 {
+        let sender = sender as AnyObject
+        if sender.tag == 0 {
             (red, green, blue) = (1, 0, 0)
-            print("red")
-        } else if (sender as AnyObject).tag == 1 {
+        } else if sender.tag == 1 {
             (red, green, blue) = (0, 1, 0)
-            print("green")
-        } else if (sender as AnyObject).tag == 2 {
+        } else if sender .tag == 2 {
             (red, green, blue) = (0, 0, 1)
-            print("blue")
-        } else if (sender as AnyObject).tag == 3 {
+        } else if sender.tag == 3 {
             (red, green, blue) = (1, 0, 1)
-            print("yellow")
-        } else if  (sender as AnyObject).tag == 4 {
+        } else if  sender.tag == 4 {
             (red, green, blue) = (1, 1, 0)
-        } else if (sender as AnyObject).tag == 5 {
+        } else if sender.tag == 5 {
             (red, green, blue) = (0, 1, 1)
-        } else if (sender as AnyObject).tag == 6 {
+        } else if sender.tag == 6 {
             (red, green, blue) = (1, 1, 1)
-        } else if (sender as AnyObject).tag == 7 {
+        } else if sender.tag == 7 {
             (red, green, blue) = (0, 0, 0)
         }
         

@@ -83,9 +83,8 @@
 			isa = PBXGroup;
 			children = (
 				4DA07C1022E748250029882D /* AppDelegate.swift */,
-				4DA07C1222E748250029882D /* MainController.swift */,
-				4DD83C9D22E77953002933DE /* SettingsController.swift */,
-				4DD83CA622E7F064002933DE /* AlertController.swift */,
+				4DD83CA822E8AA08002933DE /* Main */,
+				4DD83CA922E8AA16002933DE /* Setting */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -98,6 +97,23 @@
 				4DD83CA422E7EE25002933DE /* SettingsView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		4DD83CA822E8AA08002933DE /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				4DA07C1222E748250029882D /* MainController.swift */,
+				4DD83CA622E7F064002933DE /* AlertController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		4DD83CA922E8AA16002933DE /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				4DD83C9D22E77953002933DE /* SettingsController.swift */,
+			);
+			path = Setting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
