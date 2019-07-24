@@ -94,7 +94,6 @@ class ViewController: UIViewController {
     }()
     
     @objc func erase(){
-        print(123)
         if isDrawing {
             (red, green, blue) = (1, 1, 1)
         } else {

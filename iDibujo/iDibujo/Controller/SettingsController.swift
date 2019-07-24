@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol SettingsDelagate {
+    func settingsDidFinish(_ settings: SettingsController )
+}
+
 class SettingsController: UIViewController {
     
     var red: CGFloat = 0.0
@@ -17,6 +21,8 @@ class SettingsController: UIViewController {
     var brushSize1: CGFloat = 5.0
     
     var opacity: CGFloat = 1.0
+    
+    var delegate: SettingsDelagate?
     
     let dismissButton: UIButton = {
         let btn = UIButton(type: .system)
@@ -33,6 +39,9 @@ class SettingsController: UIViewController {
     }()
     
     @objc func back(){
+        if delegate != nil {
+            delegate?.settingsDidFinish(self)
+        }
         dismiss(animated: true, completion: nil)
     }
     
