@@ -11,16 +11,12 @@ Create simple or amazing art with this drawing application.
 
 - UIKit
 
-- URL 
-
-- Side Menu framework - Obj C
-
 ### Launch :rocket:
 First release on early 2017
 
 Second release on later 2019
 
-[My New News](https://itunes.apple.com/us/app/my-new-news/id1210234219?mt=8).
+[My New News](https://apps.apple.com/us/app/idibujo/id1237783038).
 
 ## Author
 -  [Israel Manzo ®](http://israelmanzo.com)
