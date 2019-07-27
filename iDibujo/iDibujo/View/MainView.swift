@@ -11,6 +11,7 @@ import UIKit
 extension MainController {
     
     func setContainerView(){
+        view.backgroundColor = .white
         view.addSubview(container)
         container.fillSuperview()
         container.isUserInteractionEnabled = true
