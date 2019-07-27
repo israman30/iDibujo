@@ -8,6 +8,15 @@
 
 import UIKit
 
+class MainCustomButton: UIButton {
+    convenience init(for title: String, titleColor: UIColor, background: UIColor){
+        self.init()
+        setTitle(title, for: .normal)
+        setTitleColor(titleColor, for: .normal)
+        backgroundColor = background
+    }
+}
+
 class MainController: UIViewController {
     
     let container = UIImageView()
@@ -25,39 +34,27 @@ class MainController: UIViewController {
     
     var isDrawing = true
     
-    // MARK: - Top bar buttons block.
     let resetButton: UIButton = {
-        let btn = UIButton(type: .system)
-        btn.setTitle("RESET", for: .normal)
-        btn.setTitleColor(.white, for: .normal)
-        btn.backgroundColor = .resetColor
+        let btn = MainCustomButton(for: "RESET", titleColor: .white, background: .resetColor)
         btn.addTarget(self, action: #selector(reset), for: .touchUpInside)
         return btn
     }()
     
+    
     let importButton: UIButton = {
-        let btn = UIButton(type: .system)
-        btn.setTitle("SAVE", for: .normal)
-        btn.setTitleColor(.white, for: .normal)
-        btn.backgroundColor = .importColor
+        let btn = MainCustomButton(for: "SAVE", titleColor: .white, background: .importColor)
         btn.addTarget(self, action: #selector(handleImport), for: .touchUpInside)
         return btn
     }()
     
     let eraserButton: UIButton = {
-        let btn = UIButton(type: .system)
-        btn.setTitle("ERASER", for: .normal)
-        btn.setTitleColor(.white, for: .normal)
-        btn.backgroundColor = .eraseColor
+        let btn = MainCustomButton(for: "ERASER", titleColor: .white, background: .eraseColor)
         btn.addTarget(self, action: #selector(erase), for: .touchUpInside)
         return btn
     }()
     
     let moreButton: UIButton = {
-        let btn = UIButton(type: .system)
-        btn.setTitle("MORE", for: .normal)
-        btn.setTitleColor(.white, for: .normal)
-        btn.backgroundColor = .moreColor
+        let btn = MainCustomButton(for: "MORE", titleColor: .white, background: .moreColor)
         btn.addTarget(self, action: #selector(setting), for: .touchUpInside)
         return btn
     }()
