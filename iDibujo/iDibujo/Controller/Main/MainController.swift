@@ -46,7 +46,7 @@ class MainController: UIViewController {
     
     let eraserButton: UIButton = {
         let btn = UIButton(type: .system)
-        btn.setTitle("ERASE", for: .normal)
+        btn.setTitle("ERASER", for: .normal)
         btn.setTitleColor(.white, for: .normal)
         btn.backgroundColor = .eraseColor
         btn.addTarget(self, action: #selector(erase), for: .touchUpInside)

@@ -11,12 +11,13 @@ import UIKit
 extension MainController {
     
     // MARK: - Reset Main draw view.
+    // AlerController class check if user wants to reset the draw.
     @objc func reset() {
         AlertController.resetDraw(self, imageView: container)
     }
     
     // MARK: - Handles when user saves a draw in the local photo gallery library.
-    @objc func handleImport(){
+    @objc func handleImport() {
         savePhotoToLibrary()
     }
     
@@ -42,14 +43,13 @@ extension MainController {
             eraserButton.setTitle("DRAW", for: .normal)
         } else {
             (red, green, blue) = (0, 0, 0)
-            eraserButton.setTitle("ERASE", for: .normal)
+            eraserButton.setTitle("ERASER", for: .normal)
         }
         isDrawing = !isDrawing
     }
     
     // MARK: - Handlers when user tap on a color button, selected by tag number and re assigning values to the pointer/brush.
-    @objc func pickColorHandler(_ sender: UISlider){
-        
+    @objc func pickColorHandler(_ sender: UISlider) {
         switch sender.tag {
             case 0:
                 (red, green, blue) = (1, 0, 0)
