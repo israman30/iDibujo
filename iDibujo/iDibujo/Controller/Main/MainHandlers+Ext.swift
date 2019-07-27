@@ -12,7 +12,25 @@ extension MainController {
     
     // MARK: - Reset Main draw view.
     @objc func reset() {
-        container.image = nil
+        
+        let alert = UIAlertController(title: "♻️", message: "Are yo sure you want to delete your art???", preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "YES", style: .default) { (alert) in
+            self.container.image = nil
+        }
+        let cancel = UIAlertAction(title: "NO", style: .destructive, handler: nil)
+        alert.addAction(action)
+        alert.addAction(cancel)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func resetDraw(){
+        var delete: Bool?
+        if delete == true {
+            delete = true
+        } else {
+            delete = false
+        }
     }
     
     // MARK: - Handles when user saves a draw in the local photo gallery library.
@@ -51,24 +69,24 @@ extension MainController {
     @objc func pickColorHandler(_ sender: UISlider){
         
         switch sender.tag {
-        case 0:
-            (red, green, blue) = (1, 0, 0)
-        case 1:
-            (red, green, blue) = (0, 1, 0)
-        case 2:
-            (red, green, blue) = (0, 0, 1)
-        case 3:
-            (red, green, blue) = (1, 0, 1)
-        case 4:
-            (red, green, blue) = (1, 1, 0)
-        case 5:
-            (red, green, blue) = (0, 1, 1)
-        case 6:
-            (red, green, blue) = (1, 1, 1)
-        case 7:
-            (red, green, blue) = (0, 0, 0)
-        default:
-            break
+            case 0:
+                (red, green, blue) = (1, 0, 0)
+            case 1:
+                (red, green, blue) = (0, 1, 0)
+            case 2:
+                (red, green, blue) = (0, 0, 1)
+            case 3:
+                (red, green, blue) = (1, 0, 1)
+            case 4:
+                (red, green, blue) = (1, 1, 0)
+            case 5:
+                (red, green, blue) = (0, 1, 1)
+            case 6:
+                (red, green, blue) = (1, 1, 1)
+            case 7:
+                (red, green, blue) = (0, 0, 0)
+            default:
+                break
         }
         
     }
