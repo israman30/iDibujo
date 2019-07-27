@@ -10,6 +10,18 @@ import UIKit
 
 struct AlertController {
     
+    static func resetDraw(_ vc: UIViewController, imageView: UIImageView) {
+        let alert = UIAlertController(title: "♻️", message: "Are yo sure you want to reset your art???", preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "YES", style: .default) { (alert) in
+            imageView.image = nil
+        }
+        let cancel = UIAlertAction(title: "NO", style: .destructive, handler: nil)
+        alert.addAction(action)
+        alert.addAction(cancel)
+        vc.present(alert, animated: true, completion: nil)
+    }
+    
     static func alert(_ viewController: UIViewController, title: String, message: String){
         
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)

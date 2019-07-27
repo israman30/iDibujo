@@ -12,25 +12,7 @@ extension MainController {
     
     // MARK: - Reset Main draw view.
     @objc func reset() {
-        
-        let alert = UIAlertController(title: "♻️", message: "Are yo sure you want to delete your art???", preferredStyle: .alert)
-        
-        let action = UIAlertAction(title: "YES", style: .default) { (alert) in
-            self.container.image = nil
-        }
-        let cancel = UIAlertAction(title: "NO", style: .destructive, handler: nil)
-        alert.addAction(action)
-        alert.addAction(cancel)
-        present(alert, animated: true, completion: nil)
-    }
-    
-    func resetDraw(){
-        var delete: Bool?
-        if delete == true {
-            delete = true
-        } else {
-            delete = false
-        }
+        AlertController.resetDraw(self, imageView: container)
     }
     
     // MARK: - Handles when user saves a draw in the local photo gallery library.
