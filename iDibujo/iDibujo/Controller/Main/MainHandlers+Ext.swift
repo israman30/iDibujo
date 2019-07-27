@@ -49,6 +49,7 @@ extension MainController {
     
     // MARK: - Handlers when user tap on a color button, selected by tag number and re assigning values to the pointer/brush.
     @objc func pickColorHandler(_ sender: UISlider){
+        
         if sender.tag == 0 {
             (red, green, blue) = (1, 0, 0)
         } else if sender.tag == 1 {
