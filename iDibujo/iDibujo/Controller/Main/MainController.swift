@@ -8,8 +8,8 @@
 
 import UIKit
 
-class MainCustomButton: UIButton {
-    convenience init(for title: String, titleColor: UIColor, background: UIColor){
+class CustomButton: UIButton {
+    convenience init(for title: String, titleColor: UIColor, background: UIColor) {
         self.init()
         setTitle(title, for: .normal)
         setTitleColor(titleColor, for: .normal)
@@ -35,26 +35,26 @@ class MainController: UIViewController {
     var isDrawing = true
     
     let resetButton: UIButton = {
-        let btn = MainCustomButton(for: "RESET", titleColor: .white, background: .resetColor)
+        let btn = CustomButton(for: "RESET", titleColor: .white, background: .resetColor)
         btn.addTarget(self, action: #selector(reset), for: .touchUpInside)
         return btn
     }()
     
     
     let importButton: UIButton = {
-        let btn = MainCustomButton(for: "SAVE", titleColor: .white, background: .importColor)
+        let btn = CustomButton(for: "SAVE", titleColor: .white, background: .importColor)
         btn.addTarget(self, action: #selector(handleImport), for: .touchUpInside)
         return btn
     }()
     
     let eraserButton: UIButton = {
-        let btn = MainCustomButton(for: "ERASER", titleColor: .white, background: .eraseColor)
+        let btn = CustomButton(for: "ERASER", titleColor: .white, background: .eraseColor)
         btn.addTarget(self, action: #selector(erase), for: .touchUpInside)
         return btn
     }()
     
     let moreButton: UIButton = {
-        let btn = MainCustomButton(for: "MORE", titleColor: .white, background: .moreColor)
+        let btn = CustomButton(for: "MORE", titleColor: .white, background: .moreColor)
         btn.addTarget(self, action: #selector(setting), for: .touchUpInside)
         return btn
     }()
