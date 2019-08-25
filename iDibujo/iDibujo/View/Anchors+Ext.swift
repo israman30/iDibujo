@@ -13,10 +13,7 @@ extension UIButton {
         backgroundColor = color
         tag = buttonTag
     }
-    
-    
 }
-
 
 extension UIColor {
     // Method returns a custom color
