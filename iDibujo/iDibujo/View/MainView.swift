@@ -10,7 +10,8 @@ import UIKit
 
 extension MainController {
     
-    func setContainerView(){
+    func setContainerView() {
+        
         view.backgroundColor = .white
         view.addSubview(container)
         container.fillSuperview()
