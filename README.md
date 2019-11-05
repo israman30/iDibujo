@@ -13,7 +13,7 @@ Create simple or amazing art with the drawing application. :iphone:
 
 - UIKit
 
-- UIEvent with CGPoint
+- UIEvent/moving event mehotds and CGPoint
 
 - UIGraphicContext
 
