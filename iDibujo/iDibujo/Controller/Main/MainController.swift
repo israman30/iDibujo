@@ -123,6 +123,27 @@ class MainController: UIViewController {
     
 }
 
+import SwiftUI
+
+@available(iOS 13.0.0, *)
+struct MainPreview: PreviewProvider {
+    
+    static var previews: some View {
+        ContainerView()
+    }
+    
+    struct ContainerView: UIViewControllerRepresentable {
+        
+        func makeUIViewController(context: UIViewControllerRepresentableContext<MainPreview.ContainerView>) -> UIViewController {
+            return MainController()
+        }
+        
+        func updateUIViewController(_ uiViewController: MainPreview.ContainerView.UIViewControllerType, context: UIViewControllerRepresentableContext<MainPreview.ContainerView>) {
+            // NOTHING HERE
+        }
+    }
+}
+
 
 
 
