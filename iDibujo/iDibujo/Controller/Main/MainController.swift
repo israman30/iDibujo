@@ -8,15 +8,6 @@
 
 import UIKit
 
-class CustomButton: UIButton {
-    convenience init(for title: String, titleColor: UIColor, background: UIColor) {
-        self.init()
-        setTitle(title, for: .normal)
-        setTitleColor(titleColor, for: .normal)
-        backgroundColor = background
-    }
-}
-
 class MainController: UIViewController {
     
     let container = UIImageView()
