@@ -8,7 +8,9 @@
 
 import UIKit
 
+// MARK: - Custom button for each BUTTON color
 class CustomButton: UIButton {
+    
     convenience init(for title: String, titleColor: UIColor, background: UIColor) {
         self.init()
         setTitle(title, for: .normal)
@@ -17,13 +19,25 @@ class CustomButton: UIButton {
     }
 }
 
+// MARK: - Button extension with picker color background color + shadow for apply changes for settings controller
 extension UIButton {
+    
     func colorButton(color: UIColor, buttonTag: Int){
         backgroundColor = color
         tag = buttonTag
     }
+    
+    func shadow() {
+        layer.shadowColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.25).cgColor
+        layer.shadowOffset = CGSize(width: 0, height: 3.0)
+        layer.shadowOpacity = 5
+        layer.shadowRadius = 1.5
+        clipsToBounds = false
+        layer.cornerRadius = 5
+    }
 }
 
+// MARK: - Color extension for each picker color on main controller
 extension UIColor {
     // Method returns a custom color
     static var pink = UIColor(red: 255/255, green: 105/255, blue: 180, alpha: 1)
@@ -33,12 +47,14 @@ extension UIColor {
     static var moreColor = UIColor(red: 128/255, green: 128/255, blue: 128/255, alpha: 1)
 }
 
+// MARK: - Add a collection of subviews for a parent view
 extension UIView {
     func addSubViews(_ views: UIView...) {
         views.forEach { addSubview($0) }
     }
 }
 
+// MARK: -  ANCHOR CONSTRAINT EXTENSION VIEW FOR AUTOLAYOUT
 struct AnchoredConstraints {
     var top, left, bottom, right, width, height: NSLayoutConstraint?
 }

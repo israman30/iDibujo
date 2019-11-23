@@ -10,6 +10,7 @@ import UIKit
 
 extension MainController {
     
+    // MARK: - SET MAIN PARENT VIEW FOR MAIN CONTROLLER WITH COLOR PICKER + BUTTONS CONTAINER
     func setContainerView() {
         
         view.backgroundColor = .white
@@ -42,6 +43,7 @@ extension MainController {
         
     }
     
+    // MARK: - SET BUTTONS CONTAINER
     func setColorButtons(){
         
         let stackView = UIStackView(arrangedSubviews: [

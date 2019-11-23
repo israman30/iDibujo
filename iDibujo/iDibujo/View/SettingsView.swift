@@ -10,6 +10,7 @@ import UIKit
 
 extension SettingsController {
     
+    // MARK: - SETTING SLIDER FOR SETTINGS CONTROLLER
     func setSliders() {
         let stackSliderView = UIStackView(arrangedSubviews: [
             brushLabel,
@@ -37,6 +38,7 @@ extension SettingsController {
         )
     }
     
+    // MARK: - SETTINGS VIEW FOR SETTING CONTROLLER
     func setSettingsView(){
         
         view.backgroundColor = .white
@@ -49,8 +51,10 @@ extension SettingsController {
             bottom: nil,
             right: nil,
             padding: .init(top: 10, left: 5, bottom: 0, right: 0),
-            size: .init(width: 80, height: 20)
+            size: .init(width: 180, height: 40)
         )
+        dismissButton.backgroundColor = .yellow
+        dismissButton.shadow()
         
         imageView.centerInSuperview(size: .init(width: 150, height: 150))
         imageView.layer.cornerRadius = 150 / 2
