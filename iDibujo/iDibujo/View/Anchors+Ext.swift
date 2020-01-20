@@ -11,11 +11,12 @@ import UIKit
 // MARK: - Custom button for each BUTTON color
 class CustomButton: UIButton {
     
-    convenience init(for title: String, titleColor: UIColor, background: UIColor) {
+    convenience init(for title: String, titleColor: UIColor, background: UIColor, fontSize: CGFloat) {
         self.init()
         setTitle(title, for: .normal)
         setTitleColor(titleColor, for: .normal)
         backgroundColor = background
+        titleLabel?.font = .boldSystemFont(ofSize: fontSize)
     }
 }
 
