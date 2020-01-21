@@ -25,10 +25,10 @@ extension MainController {
         buttonContainerView.axis = .horizontal
         buttonContainerView.spacing = 10
         
-        resetButton.layer.cornerRadius = 2
-        importButton.layer.cornerRadius = 2
-        eraserButton.layer.cornerRadius = 2
-        moreButton.layer.cornerRadius = 2
+        resetButton.layer.cornerRadius = 5
+        importButton.layer.cornerRadius = 5
+        eraserButton.layer.cornerRadius = 5
+        moreButton.layer.cornerRadius = 5
         
         container.addSubview(buttonContainerView)
         buttonContainerView.anchor(
@@ -59,29 +59,37 @@ extension MainController {
         stackView.distribution = .fillEqually
         stackView.spacing = 5
         
-        redColorButton.layer.borderColor = UIColor.gray.cgColor
-        redColorButton.layer.borderWidth = 1
+        redColorButton.layer.borderColor = UIColor.black.cgColor
+        redColorButton.layer.borderWidth = 2
+        redColorButton.layer.cornerRadius = 8
         
-        greenColorButton.layer.borderColor = UIColor.gray.cgColor
-        greenColorButton.layer.borderWidth = 1
+        greenColorButton.layer.borderColor = UIColor.black.cgColor
+        greenColorButton.layer.borderWidth = 2
+        greenColorButton.layer.cornerRadius = 8
         
-        blueColorButton.layer.borderColor = UIColor.gray.cgColor
-        blueColorButton.layer.borderWidth = 1
+        blueColorButton.layer.borderColor = UIColor.black.cgColor
+        blueColorButton.layer.borderWidth = 2
+        blueColorButton.layer.cornerRadius = 8
         
-        pinkColorButton.layer.borderColor = UIColor.gray.cgColor
-        pinkColorButton.layer.borderWidth = 1
+        pinkColorButton.layer.borderColor = UIColor.black.cgColor
+        pinkColorButton.layer.borderWidth = 2
+        pinkColorButton.layer.cornerRadius = 8
         
-        yellowColorButton.layer.borderColor = UIColor.gray.cgColor
-        yellowColorButton.layer.borderWidth = 1
+        yellowColorButton.layer.borderColor = UIColor.black.cgColor
+        yellowColorButton.layer.borderWidth = 2
+        yellowColorButton.layer.cornerRadius = 8
         
-        cyanColorButton.layer.borderColor = UIColor.gray.cgColor
-        cyanColorButton.layer.borderWidth = 1
+        cyanColorButton.layer.borderColor = UIColor.black.cgColor
+        cyanColorButton.layer.borderWidth = 2
+        cyanColorButton.layer.cornerRadius = 10
         
-        whiteColorButton.layer.borderColor = UIColor.gray.cgColor
-        whiteColorButton.layer.borderWidth = 1
+        whiteColorButton.layer.borderColor = UIColor.black.cgColor
+        whiteColorButton.layer.borderWidth = 2
+        whiteColorButton.layer.cornerRadius = 8
         
-        blackColorButton.layer.borderColor = UIColor.gray.cgColor
-        blackColorButton.layer.borderWidth = 1
+        blackColorButton.layer.borderColor = UIColor.black.cgColor
+        blackColorButton.layer.borderWidth = 2
+        blackColorButton.layer.cornerRadius = 8
         
         container.addSubview(stackView)
         stackView.anchor(
@@ -90,7 +98,7 @@ extension MainController {
             bottom: container.bottomAnchor,
             right: container.rightAnchor,
             padding: .init(top: 0, left: 20, bottom: 20, right: 20),
-            size: .init(width: 0, height: 40)
+            size: .init(width: 0, height: 45)
         )
     }
 }

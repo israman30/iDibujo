@@ -54,6 +54,7 @@ class MainController: UIViewController {
         let btn = UIButton(type: .system)
         btn.colorButton(color: .red, buttonTag: 0)
         btn.addTarget(self, action: #selector(pickColorHandler), for: .touchUpInside)
+        
         return btn
     }()
     
