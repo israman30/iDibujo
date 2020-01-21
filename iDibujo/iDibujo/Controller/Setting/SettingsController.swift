@@ -22,9 +22,9 @@ class SettingsController: UIViewController {
     
     let dismissButton: UIButton = {
         let btn = UIButton(type: .system)
-        btn.setTitle("APPLY CHANGES", for: .normal)
+        btn.setTitle("APPLY", for: .normal)
         btn.setTitleColor(.black, for: .normal)
-        btn.titleLabel?.font = .boldSystemFont(ofSize: 15)
+        btn.titleLabel?.font = .boldSystemFont(ofSize: 20)
         btn.addTarget(self, action: #selector(back), for: .touchUpInside)
         return btn
     }()
