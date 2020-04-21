@@ -43,7 +43,7 @@ extension MainController {
             eraserButton.setTitle("DRAW", for: .normal)
         } else {
             (red, green, blue) = (0, 0, 0)
-            eraserButton.setTitle("ERASER", for: .normal)
+            eraserButton.setTitle("DELT", for: .normal)
         }
         isDrawing = !isDrawing
     }

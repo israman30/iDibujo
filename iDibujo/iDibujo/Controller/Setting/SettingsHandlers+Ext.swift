@@ -10,7 +10,7 @@ import UIKit
 
 extension SettingsController {
     
-    @objc func back(){
+    @objc func back() {
         if delegate != nil {
             delegate?.settingsDidFinish(self)
         }
