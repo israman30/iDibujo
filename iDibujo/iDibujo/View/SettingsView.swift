@@ -39,7 +39,7 @@ extension SettingsController {
     }
     
     // MARK: - SETTINGS VIEW FOR SETTING CONTROLLER
-    func setSettingsView(){
+    func setSettingsView() {
         
         view.backgroundColor = .white
         
@@ -56,10 +56,17 @@ extension SettingsController {
         dismissButton.backgroundColor = .yellow
         dismissButton.shadow()
         
-        imageView.centerInSuperview(size: .init(width: 150, height: 150))
+        setImageViewColor(with: imageView)
+    }
+    
+    // MARK: - ImageView for brush size
+    fileprivate func setImageViewColor(with imageView: UIImageView) {
         imageView.layer.cornerRadius = 150 / 2
         imageView.layer.masksToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        imageView.widthAnchor.constraint(equalToConstant: 150).isActive = true
+        imageView.heightAnchor.constraint(equalToConstant: 150).isActive = true
         imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -200).isActive = true
     }
     

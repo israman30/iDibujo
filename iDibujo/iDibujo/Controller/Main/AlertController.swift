@@ -9,7 +9,7 @@
 import UIKit
 
 struct AlertController {
-    
+    // MARK: - Reset canvas container with alert controller
     static func resetDraw(_ vc: UIViewController, imageView: UIImageView) {
         let alert = UIAlertController(title: "♻️", message: "Are yo sure you want to reset your art???", preferredStyle: .alert)
         
@@ -22,7 +22,7 @@ struct AlertController {
         vc.present(alert, animated: true, completion: nil)
     }
     
-    static func alert(_ viewController: UIViewController, title: String, message: String){
+    static func alert(_ viewController: UIViewController, title: String, message: String) {
         
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
@@ -31,7 +31,7 @@ struct AlertController {
         viewController.present(alertController, animated: true, completion: nil)
     }
     
-    static func actionSheet(_ viewController: UIViewController, title: String, message: String){
+    static func actionSheet(_ viewController: UIViewController, title: String, message: String) {
         let actionSheet = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
         
         let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
