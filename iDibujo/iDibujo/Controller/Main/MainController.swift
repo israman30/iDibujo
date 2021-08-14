@@ -10,21 +10,6 @@ import UIKit
 
 class MainController: UIViewController {
     
-    let container = UIImageView()
-    
-    var red: CGFloat = 0.0
-    var green: CGFloat = 0.0
-    var blue: CGFloat = 0.0
-    
-    var lastPoint = CGPoint.zero
-    var swipe = false
-    
-    var brushSize: CGFloat = 9.0
-    
-    var opacity: CGFloat = 1.0
-    
-    var isDrawing = true
-    
     let resetButton: UIButton = {
         let btn = CustomButton(for: "RESET", titleColor: .white, background: .resetColor, fontSize: 23)
         btn.addTarget(self, action: #selector(reset), for: .touchUpInside)
@@ -106,6 +91,8 @@ class MainController: UIViewController {
         btn.addTarget(self, action: #selector(pickColorHandler), for: .touchUpInside)
         return btn
     }()
+    
+    let canvasViewModel = CanvasViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()

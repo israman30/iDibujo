@@ -14,9 +14,9 @@ extension MainController {
     func setContainerView() {
         
         view.backgroundColor = .white
-        view.addSubview(container)
-        container.fillSuperview()
-        container.isUserInteractionEnabled = true
+        view.addSubview(canvasViewModel.container)
+        canvasViewModel.container.fillSuperview()
+        canvasViewModel.container.isUserInteractionEnabled = true
         
         let buttonContainerView = UIStackView(arrangedSubviews: [
             resetButton, importButton, eraserButton, moreButton
@@ -30,12 +30,12 @@ extension MainController {
         eraserButton.layer.cornerRadius = 5
         moreButton.layer.cornerRadius = 5
         
-        container.addSubview(buttonContainerView)
+        canvasViewModel.container.addSubview(buttonContainerView)
         buttonContainerView.anchor(
-            top: container.safeAreaLayoutGuide.topAnchor,
-            left: container.leftAnchor,
+            top: canvasViewModel.container.safeAreaLayoutGuide.topAnchor,
+            left: canvasViewModel.container.leftAnchor,
             bottom: nil,
-            right: container.rightAnchor,
+            right: canvasViewModel.container.rightAnchor,
             padding: .init(top: 5, left: 20, bottom: 0, right: 20),
             size: .init(width: 0, height: 40)
         )
@@ -91,12 +91,12 @@ extension MainController {
         blackColorButton.layer.borderWidth = 2
         blackColorButton.layer.cornerRadius = 8
         
-        container.addSubview(stackView)
+        canvasViewModel.container.addSubview(stackView)
         stackView.anchor(
             top: nil,
-            left: container.leftAnchor,
-            bottom: container.bottomAnchor,
-            right: container.rightAnchor,
+            left: canvasViewModel.container.leftAnchor,
+            bottom: canvasViewModel.container.bottomAnchor,
+            right: canvasViewModel.container.rightAnchor,
             padding: .init(top: 0, left: 20, bottom: 20, right: 20),
             size: .init(width: 0, height: 45)
         )

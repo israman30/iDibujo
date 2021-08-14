@@ -23,6 +23,7 @@
 		4DD83CB322E8FE2F002933DE /* SettingsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD83CB222E8FE2F002933DE /* SettingsProtocol.swift */; };
 		4DD83CB522E8FE87002933DE /* PreviewDraw+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD83CB422E8FE87002933DE /* PreviewDraw+Ext.swift */; };
 		4DD83CB722E8FEF9002933DE /* SettingsHandlers+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD83CB622E8FEF9002933DE /* SettingsHandlers+Ext.swift */; };
+		8DA6815726C750460091DBD0 /* CanvasViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA6815626C750460091DBD0 /* CanvasViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		4DD83CB222E8FE2F002933DE /* SettingsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsProtocol.swift; sourceTree = "<group>"; };
 		4DD83CB422E8FE87002933DE /* PreviewDraw+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PreviewDraw+Ext.swift"; sourceTree = "<group>"; };
 		4DD83CB622E8FEF9002933DE /* SettingsHandlers+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsHandlers+Ext.swift"; sourceTree = "<group>"; };
+		8DA6815626C750460091DBD0 /* CanvasViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 		4DA07C0F22E748250029882D /* iDibujo */ = {
 			isa = PBXGroup;
 			children = (
+				8DA6815526C750330091DBD0 /* ViewModel */,
 				4DD83C9F22E77CD2002933DE /* Model */,
 				4DD83CA122E77CE1002933DE /* View */,
 				4DD83CA022E77CDA002933DE /* Controller */,
@@ -135,6 +138,14 @@
 				4DD83CB622E8FEF9002933DE /* SettingsHandlers+Ext.swift */,
 			);
 			path = Setting;
+			sourceTree = "<group>";
+		};
+		8DA6815526C750330091DBD0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8DA6815626C750460091DBD0 /* CanvasViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,6 +223,7 @@
 				4DD83CAD22E8CB60002933DE /* MainHandlers+Ext.swift in Sources */,
 				4DD83CB522E8FE87002933DE /* PreviewDraw+Ext.swift in Sources */,
 				4DA07C1322E748250029882D /* MainController.swift in Sources */,
+				8DA6815726C750460091DBD0 /* CanvasViewModel.swift in Sources */,
 				4DD83CB722E8FEF9002933DE /* SettingsHandlers+Ext.swift in Sources */,
 				4DA07C1122E748250029882D /* AppDelegate.swift in Sources */,
 				4DD83CB122E8CBD4002933DE /* MainDelegate+Ext.swift in Sources */,
