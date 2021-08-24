@@ -39,14 +39,14 @@ class SettingsController: UIViewController {
     let brushLabel: UILabel = {
         let label = UILabel()
         label.text = "Brush Size"
-        label.font = UIFont.boldSystemFont(ofSize: 15)
+        label.font = .boldSystemFont(ofSize: 15)
         return label
     }()
     
     let opacityLabel: UILabel = {
         let label = UILabel()
         label.text = "Opacity"
-        label.font = UIFont.boldSystemFont(ofSize: 15)
+        label.font = .boldSystemFont(ofSize: 15)
         return label
     }()
     
@@ -55,28 +55,28 @@ class SettingsController: UIViewController {
         label.text = "RGB Colors"
         label.textAlignment = .center
         label.textColor = .lightGray
-        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.font = .boldSystemFont(ofSize: 20)
         return label
     }()
     
     let redLabel: UILabel = {
         let label = UILabel()
         label.text = "Red Label"
-        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.font = .boldSystemFont(ofSize: 20)
         return label
     }()
     
     let greenLabel: UILabel = {
         let label = UILabel()
         label.text = "Green Label"
-        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.font = .boldSystemFont(ofSize: 20)
         return label
     }()
     
     let blueLabel: UILabel = {
         let label = UILabel()
         label.text = "Blue Label"
-        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.font = .boldSystemFont(ofSize: 20)
         return label
     }()
     

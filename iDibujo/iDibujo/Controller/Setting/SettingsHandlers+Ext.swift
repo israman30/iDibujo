@@ -46,4 +46,33 @@ extension SettingsController {
     }
     
 }
-
+// TODO: Comple the viewmodel
+class SettingsViewModel {
+    var red: CGFloat = 0.0
+    var blue: CGFloat = 0.0
+    var green: CGFloat = 0.0
+    
+    var brushSize1: CGFloat = 5.0
+    
+    var opacity: CGFloat = 1.0
+    
+    func preview(with imageView: UIImageView) {
+        // Get context
+        let context = UIGraphicsGetCurrentContext()
+        // Set stroke color for context
+        context?.setStrokeColor(UIColor(red: red, green: green, blue: blue, alpha: opacity).cgColor)
+        context?.setLineWidth(brushSize1) // Line width context
+        context?.setLineCap(CGLineCap.round) // Round line context
+        context?.move(to: CGPoint(x: 70, y: 70)) // Move points x to y
+        context?.addLine(to: CGPoint(x: 70, y: 70)) // Add line to x and y
+        context?.strokePath() // Set stroke line
+        
+        imageView.image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext() // End context
+    }
+    
+    func blueColor(_ sender: UISlider, blueLabel: UILabel) {
+        blue = CGFloat(sender.value)
+        blueLabel.text = "\(Int(sender.value * 255))"
+    }
+}
