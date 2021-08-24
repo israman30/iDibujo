@@ -24,7 +24,7 @@ class SettingsController: UIViewController {
         let btn = UIButton(type: .system)
         btn.setTitle("APPLY", for: .normal)
         btn.setTitleColor(.black, for: .normal)
-        btn.titleLabel?.font = .preferredFont(forTextStyle: .title1)
+        btn.titleLabel?.font = .preferredFont(forTextStyle: .title2)
         btn.titleLabel?.adjustsFontForContentSizeCategory = true
         btn.addTarget(self, action: #selector(back), for: .touchUpInside)
         return btn

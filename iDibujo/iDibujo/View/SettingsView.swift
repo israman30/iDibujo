@@ -34,7 +34,7 @@ extension SettingsController {
             left: view.leftAnchor,
             bottom: view.safeAreaLayoutGuide.bottomAnchor,
             right: view.rightAnchor,
-            padding: .init(top: 10, left: 30, bottom: 30, right: 30)
+            padding: .init(top: 10, left: 30, bottom: 20, right: 30)
         )
     }
     
