@@ -44,7 +44,7 @@ extension MainController {
     }
     
     // MARK: - SET BUTTONS CONTAINER
-    func setColorButtons(){
+    func setColorButtons() {
         
         let stackView = UIStackView(arrangedSubviews: [
             redColorButton,
@@ -57,39 +57,47 @@ extension MainController {
             blackColorButton
             ])
         stackView.distribution = .fillEqually
-        stackView.spacing = 5
+        stackView.spacing = 2
         
         redColorButton.layer.borderColor = UIColor.black.cgColor
         redColorButton.layer.borderWidth = 2
         redColorButton.layer.cornerRadius = 8
+        redColorButton.accessibilityLabel = "RED COLOR"
         
         greenColorButton.layer.borderColor = UIColor.black.cgColor
         greenColorButton.layer.borderWidth = 2
         greenColorButton.layer.cornerRadius = 8
+        greenColorButton.accessibilityLabel = "GREEN COLOR"
         
         blueColorButton.layer.borderColor = UIColor.black.cgColor
         blueColorButton.layer.borderWidth = 2
         blueColorButton.layer.cornerRadius = 8
+        blueColorButton.accessibilityLabel = "BLUE COLOR"
         
         pinkColorButton.layer.borderColor = UIColor.black.cgColor
         pinkColorButton.layer.borderWidth = 2
         pinkColorButton.layer.cornerRadius = 8
+        pinkColorButton.accessibilityLabel = "PINK COLOR"
         
         yellowColorButton.layer.borderColor = UIColor.black.cgColor
         yellowColorButton.layer.borderWidth = 2
         yellowColorButton.layer.cornerRadius = 8
+        yellowColorButton.accessibilityLabel = "YELLOW COLOR"
         
         cyanColorButton.layer.borderColor = UIColor.black.cgColor
         cyanColorButton.layer.borderWidth = 2
         cyanColorButton.layer.cornerRadius = 10
+        cyanColorButton.accessibilityLabel = "CYAN COLOR"
         
         whiteColorButton.layer.borderColor = UIColor.black.cgColor
         whiteColorButton.layer.borderWidth = 2
         whiteColorButton.layer.cornerRadius = 8
+        whiteColorButton.accessibilityLabel = "WHITE COLOR"
         
         blackColorButton.layer.borderColor = UIColor.black.cgColor
         blackColorButton.layer.borderWidth = 2
         blackColorButton.layer.cornerRadius = 8
+        blackColorButton.accessibilityLabel = "BLACK COLOR"
         
         canvasViewModel.container.addSubview(stackView)
         stackView.anchor(
@@ -98,7 +106,7 @@ extension MainController {
             bottom: canvasViewModel.container.bottomAnchor,
             right: canvasViewModel.container.rightAnchor,
             padding: .init(top: 0, left: 20, bottom: 20, right: 20),
-            size: .init(width: 0, height: 45)
+            size: .init(width: 0, height: 44)
         )
     }
 }
