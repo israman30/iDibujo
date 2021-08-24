@@ -11,8 +11,10 @@ import UIKit
 class MainController: UIViewController {
     
     let resetButton: UIButton = {
-        let btn = CustomButton(for: "RESET", titleColor: .white, background: .resetColor, fontSize: 23)
+        let btn = CustomButton(for: "RESET", titleColor: .white, background: .resetColor, fontSize: 0)
         btn.addTarget(self, action: #selector(reset), for: .touchUpInside)
+        btn.setTitle("RESET", for: .normal)
+        
         return btn
     }()
     

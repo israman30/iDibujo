@@ -23,7 +23,7 @@ extension MainController {
             ])
         buttonContainerView.distribution = .fillEqually
         buttonContainerView.axis = .horizontal
-        buttonContainerView.spacing = 10
+        buttonContainerView.spacing = 5
         
         resetButton.layer.cornerRadius = 5
         importButton.layer.cornerRadius = 5
@@ -37,7 +37,7 @@ extension MainController {
             bottom: nil,
             right: canvasViewModel.container.rightAnchor,
             padding: .init(top: 5, left: 20, bottom: 0, right: 20),
-            size: .init(width: 0, height: 40)
+            size: .init(width: 0, height: 45)
         )
         setColorButtons()
         
