@@ -19,6 +19,7 @@ class CustomButton: UIButton {
         titleLabel?.font = .preferredFont(forTextStyle: .title3)
         titleLabel?.adjustsFontSizeToFitWidth = true
         titleLabel?.adjustsFontForContentSizeCategory = true
+        titleLabel?.isAccessibilityElement = true
         layer.borderWidth = 3
         layer.borderColor = UIColor.black.cgColor
     }

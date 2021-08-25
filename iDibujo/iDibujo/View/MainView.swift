@@ -26,9 +26,16 @@ extension MainController {
         buttonContainerView.spacing = 5
         
         resetButton.layer.cornerRadius = 5
+        resetButton.accessibilityHint = "reset button for canvas"
+        
         importButton.layer.cornerRadius = 5
+        importButton.accessibilityHint = "import from library photo button"
+        
         eraserButton.layer.cornerRadius = 5
+        eraserButton.accessibilityHint = "erase canvas button"
+        
         moreButton.layer.cornerRadius = 5
+        moreButton.accessibilityHint = "more settings button"
         
         canvasViewModel.container.addSubview(buttonContainerView)
         buttonContainerView.anchor(
