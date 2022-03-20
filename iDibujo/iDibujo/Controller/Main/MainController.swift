@@ -12,25 +12,21 @@ class MainController: UIViewController {
     
     let resetButton: UIButton = {
         let btn = CustomButton(for: "RESET", titleColor: .white, background: .resetColor, fontSize: 23)
-        btn.addTarget(self, action: #selector(reset), for: .touchUpInside)
         return btn
     }()
     
     let importButton: UIButton = {
         let btn = CustomButton(for: "SAVE", titleColor: .white, background: .importColor, fontSize: 23)
-        btn.addTarget(self, action: #selector(handleImport), for: .touchUpInside)
         return btn
     }()
     
     let eraserButton: UIButton = {
         let btn = CustomButton(for: "DELT", titleColor: .white, background: .eraseColor, fontSize: 23)
-        btn.addTarget(self, action: #selector(erase), for: .touchUpInside)
         return btn
     }()
     
     let moreButton: UIButton = {
         let btn = CustomButton(for: "MORE", titleColor: .white, background: .moreColor, fontSize:23)
-        btn.addTarget(self, action: #selector(setting), for: .touchUpInside)
         return btn
     }()
     
@@ -38,57 +34,48 @@ class MainController: UIViewController {
     let redColorButton: UIButton = {
         let btn = UIButton(type: .system)
         btn.colorButton(color: .red, buttonTag: 0)
-        btn.addTarget(self, action: #selector(pickColorHandler), for: .touchUpInside)
-        
         return btn
     }()
     
     let greenColorButton: UIButton = {
         let btn = UIButton(type: .system)
         btn.colorButton(color: .green, buttonTag: 1)
-        btn.addTarget(self, action: #selector(pickColorHandler), for: .touchUpInside)
         return btn
     }()
     
     let blueColorButton: UIButton = {
         let btn = UIButton(type: .system)
         btn.colorButton(color: .blue, buttonTag: 2)
-        btn.addTarget(self, action: #selector(pickColorHandler), for: .touchUpInside)
         return btn
     }()
     
     let pinkColorButton: UIButton = {
         let btn = UIButton(type: .system)
         btn.colorButton(color: .pink, buttonTag: 3)
-        btn.addTarget(self, action: #selector(pickColorHandler), for: .touchUpInside)
         return btn
     }()
     
     let yellowColorButton: UIButton = {
         let btn = UIButton(type: .system)
         btn.colorButton(color: .yellow, buttonTag: 4)
-        btn.addTarget(self, action: #selector(pickColorHandler), for: .touchUpInside)
         return btn
     }()
     
     let cyanColorButton: UIButton = {
         let btn = UIButton(type: .system)
         btn.colorButton(color: .cyan, buttonTag: 5)
-        btn.addTarget(self, action: #selector(pickColorHandler), for: .touchUpInside)
         return btn
     }()
     
     let whiteColorButton: UIButton = {
         let btn = UIButton(type: .system)
         btn.colorButton(color: .white, buttonTag: 6)
-        btn.addTarget(self, action: #selector(pickColorHandler), for: .touchUpInside)
         return btn
     }()
     
     let blackColorButton: UIButton = {
         let btn = UIButton(type: .system)
         btn.colorButton(color: .black, buttonTag: 7)
-        btn.addTarget(self, action: #selector(pickColorHandler), for: .touchUpInside)
         return btn
     }()
     
@@ -96,6 +83,19 @@ class MainController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        resetButton.addTarget(self, action: #selector(reset), for: .touchUpInside)
+        importButton.addTarget(self, action: #selector(handleImport), for: .touchUpInside)
+        eraserButton.addTarget(self, action: #selector(erase), for: .touchUpInside)
+        moreButton.addTarget(self, action: #selector(setting), for: .touchUpInside)
+        
+        redColorButton.addTarget(self, action: #selector(pickColorHandler), for: .touchUpInside)
+        greenColorButton.addTarget(self, action: #selector(pickColorHandler), for: .touchUpInside)
+        blueColorButton.addTarget(self, action: #selector(pickColorHandler), for: .touchUpInside)
+        pinkColorButton.addTarget(self, action: #selector(pickColorHandler), for: .touchUpInside)
+        yellowColorButton.addTarget(self, action: #selector(pickColorHandler), for: .touchUpInside)
+        cyanColorButton.addTarget(self, action: #selector(pickColorHandler), for: .touchUpInside)
+        whiteColorButton.addTarget(self, action: #selector(pickColorHandler), for: .touchUpInside)
+        blackColorButton.addTarget(self, action: #selector(pickColorHandler), for: .touchUpInside)
         setContainerView()
     }
     
