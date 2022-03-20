@@ -24,9 +24,7 @@ class SettingsController: UIViewController {
         let btn = UIButton(type: .system)
         btn.setTitle("APPLY", for: .normal)
         btn.setTitleColor(.black, for: .normal)
-        btn.titleLabel?.font = .preferredFont(forTextStyle: .title2)
-        btn.titleLabel?.adjustsFontForContentSizeCategory = true
-        btn.addTarget(self, action: #selector(back), for: .touchUpInside)
+        btn.titleLabel?.font = .boldSystemFont(ofSize: 20)
         return btn
     }()
     
@@ -93,13 +91,11 @@ class SettingsController: UIViewController {
         slider.value = 10
         slider.minimumValue = 1
         slider.maximumValue = 90
-        slider.addTarget(self, action: #selector(handleChangeBrushSize), for: .valueChanged)
         return slider
     }()
     
     let opacitySlider: UISlider = {
         let slider = UISlider()
-        slider.addTarget(self, action: #selector(handleChangeOpacitySize), for: .valueChanged)
         return slider
     }()
     
@@ -107,7 +103,6 @@ class SettingsController: UIViewController {
         let slider = UISlider()
         slider.minimumTrackTintColor = .red
         slider.thumbTintColor = .red
-        slider.addTarget(self, action: #selector(handleRedColor), for: .valueChanged)
         return slider
     }()
     
@@ -115,7 +110,6 @@ class SettingsController: UIViewController {
         let slider = UISlider()
         slider.minimumTrackTintColor = .green
         slider.thumbTintColor = .green
-        slider.addTarget(self, action: #selector(handleGreenColor), for: .valueChanged)
         return slider
     }()
     
@@ -123,12 +117,17 @@ class SettingsController: UIViewController {
         let slider = UISlider()
         slider.minimumTrackTintColor = .blue
         slider.thumbTintColor = .blue
-        slider.addTarget(self, action: #selector(handleBlueColor), for: .valueChanged)
         return slider
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        blueSlider.addTarget(self, action: #selector(handleBlueColor), for: .valueChanged)
+        greenSlider.addTarget(self, action: #selector(handleGreenColor), for: .valueChanged)
+        redSlider.addTarget(self, action: #selector(handleRedColor), for: .valueChanged)
+        opacitySlider.addTarget(self, action: #selector(handleChangeOpacitySize), for: .valueChanged)
+        changeBrushSizeSlider.addTarget(self, action: #selector(handleChangeBrushSize), for: .valueChanged)
+        dismissButton.addTarget(self, action: #selector(back), for: .touchUpInside)
         
         previewDraw(red: red, green: green, blue: blue)
         
