@@ -38,14 +38,16 @@ class SettingsController: UIViewController {
     let brushLabel: UILabel = {
         let label = UILabel()
         label.text = "Brush Size"
-        label.font = .boldSystemFont(ofSize: 15)
+        label.font = .preferredFont(forTextStyle: .title2)
+        label.adjustsFontForContentSizeCategory = true
         return label
     }()
     
     let opacityLabel: UILabel = {
         let label = UILabel()
         label.text = "Opacity"
-        label.font = .boldSystemFont(ofSize: 15)
+        label.font = .preferredFont(forTextStyle: .title2)
+        label.adjustsFontForContentSizeCategory = true
         return label
     }()
     
@@ -53,29 +55,33 @@ class SettingsController: UIViewController {
         let label = UILabel()
         label.text = "RGB Colors"
         label.textAlignment = .center
-        label.textColor = .lightGray
-        label.font = .boldSystemFont(ofSize: 20)
+        label.textColor = .init(red: 141/255, green: 141/255, blue: 145/255, alpha: 1)
+        label.font = .preferredFont(forTextStyle: .title1)
+        label.adjustsFontForContentSizeCategory = true
         return label
     }()
     
     let redLabel: UILabel = {
         let label = UILabel()
         label.text = "Red Label"
-        label.font = .boldSystemFont(ofSize: 20)
+        label.font = .preferredFont(forTextStyle: .title2)
+        label.adjustsFontForContentSizeCategory = true
         return label
     }()
     
     let greenLabel: UILabel = {
         let label = UILabel()
         label.text = "Green Label"
-        label.font = .boldSystemFont(ofSize: 20)
+        label.font = .preferredFont(forTextStyle: .title2)
+        label.adjustsFontForContentSizeCategory = true
         return label
     }()
     
     let blueLabel: UILabel = {
         let label = UILabel()
         label.text = "Blue Label"
-        label.font = .boldSystemFont(ofSize: 20)
+        label.font = .preferredFont(forTextStyle: .title2)
+        label.adjustsFontForContentSizeCategory = true
         return label
     }()
     

@@ -12,6 +12,7 @@ class MainController: UIViewController {
     
     let resetButton: UIButton = {
         let btn = CustomButton(for: "RESET", titleColor: .white, background: .resetColor, fontSize: 23)
+        btn.setTitle("RESET", for: .normal)
         return btn
     }()
     

@@ -16,7 +16,10 @@ class CustomButton: UIButton {
         setTitle(title, for: .normal)
         setTitleColor(titleColor, for: .normal)
         backgroundColor = background
-        titleLabel?.font = .boldSystemFont(ofSize: fontSize)
+        titleLabel?.font = .preferredFont(forTextStyle: .title3)
+        titleLabel?.adjustsFontSizeToFitWidth = true
+        titleLabel?.adjustsFontForContentSizeCategory = true
+        titleLabel?.isAccessibilityElement = true
         layer.borderWidth = 3
         layer.borderColor = UIColor.black.cgColor
     }
@@ -25,7 +28,7 @@ class CustomButton: UIButton {
 // MARK: - Button extension with picker color background color + shadow for apply changes for settings controller
 extension UIButton {
     
-    func colorButton(color: UIColor, buttonTag: Int){
+    func colorButton(color: UIColor, buttonTag: Int) {
         backgroundColor = color
         tag = buttonTag
     }

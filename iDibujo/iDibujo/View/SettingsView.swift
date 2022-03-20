@@ -34,16 +34,16 @@ extension SettingsController {
             left: view.leftAnchor,
             bottom: view.safeAreaLayoutGuide.bottomAnchor,
             right: view.rightAnchor,
-            padding: .init(top: 30, left: 30, bottom: 30, right: 30)
+            padding: .init(top: 10, left: 30, bottom: 20, right: 30)
         )
     }
     
     // MARK: - SETTINGS VIEW FOR SETTING CONTROLLER
-    func setSettingsView(){
+    func setSettingsView() {
         
         view.backgroundColor = .white
         
-        view.addSubViews(dismissButton,imageView)
+        view.addSubViews(dismissButton, imageView)
         
         dismissButton.anchor(
             top: view.safeAreaLayoutGuide.topAnchor,
@@ -51,7 +51,7 @@ extension SettingsController {
             bottom: nil,
             right: nil,
             padding: .init(top: 10, left: 5, bottom: 0, right: 0),
-            size: .init(width: 180, height: 40)
+            size: .init(width: 180, height: 44)
         )
         dismissButton.backgroundColor = .yellow
         dismissButton.shadow()
