@@ -92,8 +92,6 @@
 		4DD83C9F22E77CD2002933DE /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				4DD83CAA22E8CA81002933DE /* Drawing+Ext.swift */,
-				4DD83CB422E8FE87002933DE /* PreviewDraw+Ext.swift */,
 				4D0943A429A930D700C40E27 /* Draw.swift */,
 			);
 			path = Model;
@@ -124,9 +122,11 @@
 		4DD83CA822E8AA08002933DE /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				4DD83CAA22E8CA81002933DE /* Drawing+Ext.swift */,
 				4DA07C1222E748250029882D /* MainController.swift */,
 				4DD83CAC22E8CB60002933DE /* MainHandlers+Ext.swift */,
 				4DD83CAE22E8CB89002933DE /* SavePhotoHandler+Ext.swift */,
+				4DD83CB422E8FE87002933DE /* PreviewDraw+Ext.swift */,
 				4DD83CB022E8CBD4002933DE /* MainDelegate+Ext.swift */,
 				4DD83CA622E7F064002933DE /* AlertController.swift */,
 			);
