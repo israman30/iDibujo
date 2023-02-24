@@ -14,9 +14,9 @@ extension MainController {
     func setContainerView() {
         
         view.backgroundColor = .white
-        view.addSubview(canvasViewModel.container)
-        canvasViewModel.container.fillSuperview()
-        canvasViewModel.container.isUserInteractionEnabled = true
+        view.addSubview(canvasViewModel.draw.container)
+        canvasViewModel.draw.container.fillSuperview()
+        canvasViewModel.draw.container.isUserInteractionEnabled = true
         
         let buttonContainerView = UIStackView(arrangedSubviews: [
             resetButton, importButton, eraserButton, moreButton
@@ -37,12 +37,12 @@ extension MainController {
         moreButton.layer.cornerRadius = 5
         moreButton.accessibilityHint = "more settings button"
         
-        canvasViewModel.container.addSubview(buttonContainerView)
+        canvasViewModel.draw.container.addSubview(buttonContainerView)
         buttonContainerView.anchor(
-            top: canvasViewModel.container.safeAreaLayoutGuide.topAnchor,
-            left: canvasViewModel.container.leftAnchor,
+            top: canvasViewModel.draw.container.safeAreaLayoutGuide.topAnchor,
+            left: canvasViewModel.draw.container.leftAnchor,
             bottom: nil,
-            right: canvasViewModel.container.rightAnchor,
+            right: canvasViewModel.draw.container.rightAnchor,
             padding: .init(top: 5, left: 20, bottom: 0, right: 20),
             size: .init(width: 0, height: 45)
         )
@@ -106,12 +106,12 @@ extension MainController {
         blackColorButton.layer.cornerRadius = 8
         blackColorButton.accessibilityLabel = "BLACK COLOR"
         
-        canvasViewModel.container.addSubview(stackView)
+        canvasViewModel.draw.container.addSubview(stackView)
         stackView.anchor(
             top: nil,
-            left: canvasViewModel.container.leftAnchor,
-            bottom: canvasViewModel.container.bottomAnchor,
-            right: canvasViewModel.container.rightAnchor,
+            left: canvasViewModel.draw.container.leftAnchor,
+            bottom: canvasViewModel.draw.container.bottomAnchor,
+            right: canvasViewModel.draw.container.rightAnchor,
             padding: .init(top: 0, left: 20, bottom: 20, right: 20),
             size: .init(width: 0, height: 44)
         )

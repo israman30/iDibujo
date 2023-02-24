@@ -14,11 +14,11 @@ import UIKit
 extension MainController: SettingsDelagate {
     
     func settingsDidFinish(_ settings: SettingsController) {
-        canvasViewModel.red = settings.red
-        canvasViewModel.blue = settings.blue
-        canvasViewModel.green = settings.green
-        canvasViewModel.brushSize = settings.brushSize1
-        canvasViewModel.opacity = settings.opacity
+        canvasViewModel.draw.red = settings.red
+        canvasViewModel.draw.blue = settings.blue
+        canvasViewModel.draw.green = settings.green
+        canvasViewModel.draw.brushSize = settings.brushSize1
+        canvasViewModel.draw.opacity = settings.opacity
     }
     
 }

@@ -13,9 +13,9 @@ extension MainController {
     
     // MARK: - TOUCHES BEGAN ON VIEW METHOD, get first touch and assigned to the last location in the view.
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        canvasViewModel.swipe = false
+        canvasViewModel.draw.swipe = false
         if let touch = touches.first {
-            canvasViewModel.lastPoint = touch.location(in: self.view)
+            canvasViewModel.draw.lastPoint = touch.location(in: self.view)
         }
     }
     
@@ -30,7 +30,7 @@ extension MainController {
     func drawnLine(from: CGPoint, to: CGPoint) {
         UIGraphicsBeginImageContext(self.view.frame.size)
         // Get container and assign it as canvas
-        canvasViewModel.container.image?.draw(in: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
+        canvasViewModel.draw.container.image?.draw(in: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
         
         // Get current graphic context
         canvasViewModel.draw(from: from, to: to)
@@ -38,18 +38,18 @@ extension MainController {
     
     // MARK: - TOUCHES MOVES, check if the first otuch exist then draw a line from the last point to the current position. Then assign it to the last point.
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        canvasViewModel.swipe = true
+        canvasViewModel.draw.swipe = true
         if let touch = touches.first {
             let currentPoint = touch.location(in: self.view)
-            drawnLine(from: canvasViewModel.lastPoint , to: currentPoint)
-            canvasViewModel.lastPoint = currentPoint
+            drawnLine(from: canvasViewModel.draw.lastPoint , to: currentPoint)
+            canvasViewModel.draw.lastPoint = currentPoint
         }
     }
     
     // MARK: - TOUCHES END, joins the first with last point.
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if !canvasViewModel.swipe {
-            drawnLine(from: canvasViewModel.lastPoint, to: canvasViewModel.lastPoint)
+        if !canvasViewModel.draw.swipe {
+            drawnLine(from: canvasViewModel.draw.lastPoint, to: canvasViewModel.draw.lastPoint)
         }
     }
 }

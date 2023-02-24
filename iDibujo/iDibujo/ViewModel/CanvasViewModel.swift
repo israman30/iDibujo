@@ -10,54 +10,41 @@ import UIKit
 
 class CanvasViewModel {
     
-    let container = UIImageView()
-    
-    var red: CGFloat = 0.0
-    var green: CGFloat = 0.0
-    var blue: CGFloat = 0.0
-    
-    var lastPoint = CGPoint.zero
-    var swipe = false
-    
-    var brushSize: CGFloat = 9.0
-    
-    var opacity: CGFloat = 1.0
-    
-    var isDrawing = true
+    var draw = Draw()
     
     // MARK: - Erase button re assigning values to delete stroke + switch title.
     func eraseCanvas(eraserButton: UIButton) {
-        if isDrawing {
-            (red, green, blue) = (1, 1, 1)
+        if draw.isDrawing {
+            (draw.red, draw.green, draw.blue) = (1, 1, 1)
             eraserButton.setTitle("DRAW", for: .normal)
         } else {
-            (red, green, blue) = (0, 0, 0)
+            (draw.red, draw.green, draw.blue) = (0, 0, 0)
             eraserButton.setTitle("DELT", for: .normal)
         }
-        isDrawing = !isDrawing
+        draw.isDrawing = !draw.isDrawing
     }
     
     // MARK: - Selected by tag number and re assigning values to the pointer/brush.
     func colorPicker(_ sender: UISlider) {
         switch sender.tag {
-            case 0:
-                (red, green, blue) = (1, 0, 0)
-            case 1:
-                (red, green, blue) = (0, 1, 0)
-            case 2:
-                (red, green, blue) = (0, 0, 1)
-            case 3:
-                (red, green, blue) = (1, 0, 1)
-            case 4:
-                (red, green, blue) = (1, 1, 0)
-            case 5:
-                (red, green, blue) = (0, 1, 1)
-            case 6:
-                (red, green, blue) = (1, 1, 1)
-            case 7:
-                (red, green, blue) = (0, 0, 0)
-            default:
-                break
+        case 0:
+            (draw.red, draw.green, draw.blue) = (1, 0, 0)
+        case 1:
+            (draw.red, draw.green, draw.blue) = (0, 1, 0)
+        case 2:
+            (draw.red, draw.green, draw.blue) = (0, 0, 1)
+        case 3:
+            (draw.red, draw.green, draw.blue) = (1, 0, 1)
+        case 4:
+            (draw.red, draw.green, draw.blue) = (1, 1, 0)
+        case 5:
+            (draw.red, draw.green, draw.blue) = (0, 1, 1)
+        case 6:
+            (draw.red, draw.green, draw.blue) = (1, 1, 1)
+        case 7:
+            (draw.red, draw.green, draw.blue) = (0, 0, 0)
+        default:
+            break
         }
     }
     
@@ -79,11 +66,11 @@ class CanvasViewModel {
         
         context?.setBlendMode(.normal)
         context?.setLineCap(CGLineCap.round) // give round to the line
-        context?.setLineWidth(brushSize) // Brush size variable value
-        context?.setStrokeColor(UIColor(red: red, green: green, blue: blue, alpha: opacity).cgColor) // set stroke to the context pointer
+        context?.setLineWidth(draw.brushSize) // Brush size variable value
+        context?.setStrokeColor(UIColor(red: draw.red, green: draw.green, blue: draw.blue, alpha: draw.opacity).cgColor) // set stroke to the context pointer
         context?.strokePath() // set path to the context pointer
         
-        container.image = UIGraphicsGetImageFromCurrentImageContext()
+        draw.container.image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext() // ends graphic context
     }
     

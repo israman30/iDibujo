@@ -15,7 +15,7 @@ extension MainController {
         let actionSheet = UIAlertController(title: "Hello", message: "What are you going to do?", preferredStyle: .actionSheet)
         actionSheet.addAction(UIAlertAction(title: "Save your Art 🎨", style: .default, handler: { (UIAlertAction) in
             
-            guard let image = self.canvasViewModel.container.image else { return }
+            guard let image = self.canvasViewModel.draw.container.image else { return }
             UIImageWriteToSavedPhotosAlbum(
                 image,
                 self,
