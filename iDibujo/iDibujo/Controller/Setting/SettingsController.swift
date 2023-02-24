@@ -10,13 +10,7 @@ import UIKit
 
 class SettingsController: UIViewController {
     
-    var red: CGFloat = 0.0
-    var blue: CGFloat = 0.0
-    var green: CGFloat = 0.0
-    
-    var brushSize1: CGFloat = 5.0
-    
-    var opacity: CGFloat = 1.0
+    var settingsViewModel = SettingsViewModel()
     
     var delegate: SettingsDelagate?
     
@@ -129,15 +123,15 @@ class SettingsController: UIViewController {
         changeBrushSizeSlider.addTarget(self, action: #selector(handleChangeBrushSize), for: .valueChanged)
         dismissButton.addTarget(self, action: #selector(back), for: .touchUpInside)
         
-        previewDraw(red: red, green: green, blue: blue)
+        previewDraw(red: settingsViewModel.draw.red, green: settingsViewModel.draw.green, blue: settingsViewModel.draw.blue)
         
-        redSlider.value = Float(red)
+        redSlider.value = Float(settingsViewModel.draw.red)
         redLabel.text = String(Int(redSlider.value * 255))
         
-        greenSlider.value = Float(green)
+        greenSlider.value = Float(settingsViewModel.draw.green)
         greenLabel.text = String(Int(greenSlider.value * 255))
         
-        blueSlider.value = Float(blue)
+        blueSlider.value = Float(settingsViewModel.draw.blue)
         blueLabel.text = String(Int(blueSlider.value * 255))
         
         setSettingsView()

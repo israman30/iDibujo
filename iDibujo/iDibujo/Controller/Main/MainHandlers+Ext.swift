@@ -28,11 +28,11 @@ extension MainController {
     @objc func setting() {
         let settingsController = SettingsController()
         settingsController.delegate = self
-        settingsController.red = canvasViewModel.draw.red
-        settingsController.blue = canvasViewModel.draw.blue
-        settingsController.green = canvasViewModel.draw.green
-        settingsController.brushSize1 = canvasViewModel.draw.brushSize
-        settingsController.opacity = canvasViewModel.draw.opacity
+        settingsController.settingsViewModel.draw.red = canvasViewModel.draw.red
+        settingsController.settingsViewModel.draw.blue = canvasViewModel.draw.blue
+        settingsController.settingsViewModel.draw.green = canvasViewModel.draw.green
+        settingsController.settingsViewModel.draw.brushSize = canvasViewModel.draw.brushSize
+        settingsController.settingsViewModel.draw.opacity = canvasViewModel.draw.opacity
         present(settingsController, animated: true, completion: nil)
     }
     
