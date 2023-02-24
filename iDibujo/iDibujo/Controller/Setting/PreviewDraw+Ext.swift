@@ -17,8 +17,8 @@ extension SettingsController {
         // Get context
         let context = UIGraphicsGetCurrentContext()
         // Set stroke color for context
-        context?.setStrokeColor(UIColor(red: red, green: green, blue: blue, alpha: opacity).cgColor)
-        context?.setLineWidth(brushSize1) // Line width context
+        context?.setStrokeColor(UIColor(red: red, green: green, blue: blue, alpha: settingsViewModel.draw.opacity).cgColor)
+        context?.setLineWidth(settingsViewModel.draw.brushSize) // Line width context
         context?.setLineCap(CGLineCap.round) // Round line context
         context?.move(to: CGPoint(x: 70, y: 70)) // Move points x to y
         context?.addLine(to: CGPoint(x: 70, y: 70)) // Add line to x and y

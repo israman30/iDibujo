@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D0943A529A930D700C40E27 /* Draw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0943A429A930D700C40E27 /* Draw.swift */; };
+		4D0943A729A9342B00C40E27 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0943A629A9342B00C40E27 /* SettingsViewModel.swift */; };
 		4DA07C1122E748250029882D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA07C1022E748250029882D /* AppDelegate.swift */; };
 		4DA07C1322E748250029882D /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA07C1222E748250029882D /* MainController.swift */; };
 		4DA07C1822E748260029882D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DA07C1722E748260029882D /* Assets.xcassets */; };
@@ -27,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D0943A429A930D700C40E27 /* Draw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Draw.swift; sourceTree = "<group>"; };
+		4D0943A629A9342B00C40E27 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		4DA07C0D22E748250029882D /* iDibujo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iDibujo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DA07C1022E748250029882D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DA07C1222E748250029882D /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
@@ -90,8 +94,7 @@
 		4DD83C9F22E77CD2002933DE /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				4DD83CAA22E8CA81002933DE /* Drawing+Ext.swift */,
-				4DD83CB422E8FE87002933DE /* PreviewDraw+Ext.swift */,
+				4D0943A429A930D700C40E27 /* Draw.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -121,6 +124,7 @@
 		4DD83CA822E8AA08002933DE /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				4DD83CAA22E8CA81002933DE /* Drawing+Ext.swift */,
 				4DA07C1222E748250029882D /* MainController.swift */,
 				4DD83CAC22E8CB60002933DE /* MainHandlers+Ext.swift */,
 				4DD83CAE22E8CB89002933DE /* SavePhotoHandler+Ext.swift */,
@@ -136,6 +140,7 @@
 				4DD83C9D22E77953002933DE /* SettingsController.swift */,
 				4DD83CB222E8FE2F002933DE /* SettingsProtocol.swift */,
 				4DD83CB622E8FEF9002933DE /* SettingsHandlers+Ext.swift */,
+				4DD83CB422E8FE87002933DE /* PreviewDraw+Ext.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -144,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				8DA6815626C750460091DBD0 /* CanvasViewModel.swift */,
+				4D0943A629A9342B00C40E27 /* SettingsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -221,10 +227,12 @@
 				4DD83CB322E8FE2F002933DE /* SettingsProtocol.swift in Sources */,
 				4DD83C9E22E77953002933DE /* SettingsController.swift in Sources */,
 				4DD83CAD22E8CB60002933DE /* MainHandlers+Ext.swift in Sources */,
+				4D0943A529A930D700C40E27 /* Draw.swift in Sources */,
 				4DD83CB522E8FE87002933DE /* PreviewDraw+Ext.swift in Sources */,
 				4DA07C1322E748250029882D /* MainController.swift in Sources */,
 				8DA6815726C750460091DBD0 /* CanvasViewModel.swift in Sources */,
 				4DD83CB722E8FEF9002933DE /* SettingsHandlers+Ext.swift in Sources */,
+				4D0943A729A9342B00C40E27 /* SettingsViewModel.swift in Sources */,
 				4DA07C1122E748250029882D /* AppDelegate.swift in Sources */,
 				4DD83CB122E8CBD4002933DE /* MainDelegate+Ext.swift in Sources */,
 				4DD83CA522E7EE25002933DE /* SettingsView.swift in Sources */,

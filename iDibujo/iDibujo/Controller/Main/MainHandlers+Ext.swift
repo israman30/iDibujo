@@ -13,7 +13,7 @@ extension MainController {
     // MARK: - Reset Main draw view.
     // AlerController class check if user wants to reset the draw.
     @objc func reset() {
-        AlertController.resetDraw(self, imageView: canvasViewModel.container)
+        AlertController.resetDraw(self, imageView: canvasViewModel.draw.container)
     }
     
     // MARK: - Handles when user saves a draw in the local photo gallery library.
@@ -28,11 +28,11 @@ extension MainController {
     @objc func setting() {
         let settingsController = SettingsController()
         settingsController.delegate = self
-        settingsController.red = canvasViewModel.red
-        settingsController.blue = canvasViewModel.blue
-        settingsController.green = canvasViewModel.green
-        settingsController.brushSize1 = canvasViewModel.brushSize
-        settingsController.opacity = canvasViewModel.opacity
+        settingsController.settingsViewModel.draw.red = canvasViewModel.draw.red
+        settingsController.settingsViewModel.draw.blue = canvasViewModel.draw.blue
+        settingsController.settingsViewModel.draw.green = canvasViewModel.draw.green
+        settingsController.settingsViewModel.draw.brushSize = canvasViewModel.draw.brushSize
+        settingsController.settingsViewModel.draw.opacity = canvasViewModel.draw.opacity
         present(settingsController, animated: true, completion: nil)
     }
     
