@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  iDibujo
+
+  Created by Israel Manzo on 2/25/23.
+  Copyright © 2023 Israel Manzo. All rights reserved.
+*/
+"RESET" = "RESETEAR";
+"SAVE" = "SALVAR";
+"DELT" = "BORRAR";
+"MORE" = "MAS";
