@@ -9,3 +9,10 @@
 "SAVE" = "SAVE";
 "DELT" = "DELT";
 "MORE" = "MORE";
+"APPLY" = "APPLY";
+"Brush_Size" = "Brush Size";
+"Opacity" = "Opacity";
+"RGB_Colors" = "RGB Colors";
+"Red_Label" = "Red Label";
+"Green_Label" = "Green Label";
+"Blue_Label" = "Blue Label";

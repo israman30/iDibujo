@@ -9,3 +9,10 @@
 "SAVE" = "SALVAR";
 "DELT" = "BORRAR";
 "MORE" = "MAS";
+"APPLY" = "APLICAR";
+"Brush_Size" = "Tamaño de Brocha";
+"Opacity" = "Opacidad de colores";
+"RGB_Colors" = "Colores RGB";
+"Red_Label" = "Label Rojo";
+"Green_Label" = "Label Verde";
+"Blue_Label" = "Label Azul";
