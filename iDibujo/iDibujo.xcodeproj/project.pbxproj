@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4D0943A529A930D700C40E27 /* Draw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0943A429A930D700C40E27 /* Draw.swift */; };
 		4D0943A729A9342B00C40E27 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0943A629A9342B00C40E27 /* SettingsViewModel.swift */; };
+		4D0943AC29ABF8D000C40E27 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4D0943AE29ABF8D000C40E27 /* Localizable.strings */; };
 		4DA07C1122E748250029882D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA07C1022E748250029882D /* AppDelegate.swift */; };
 		4DA07C1322E748250029882D /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA07C1222E748250029882D /* MainController.swift */; };
 		4DA07C1822E748260029882D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DA07C1722E748260029882D /* Assets.xcassets */; };
@@ -31,6 +32,9 @@
 /* Begin PBXFileReference section */
 		4D0943A429A930D700C40E27 /* Draw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Draw.swift; sourceTree = "<group>"; };
 		4D0943A629A9342B00C40E27 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		4D0943AB29ABF7CE00C40E27 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		4D0943AD29ABF8D000C40E27 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4D0943AF29ABF8D100C40E27 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		4DA07C0D22E748250029882D /* iDibujo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iDibujo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DA07C1022E748250029882D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DA07C1222E748250029882D /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
@@ -63,6 +67,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D0943A829AAF41100C40E27 /* Localizables */ = {
+			isa = PBXGroup;
+			children = (
+				4D0943AE29ABF8D000C40E27 /* Localizable.strings */,
+			);
+			path = Localizables;
+			sourceTree = "<group>";
+		};
 		4DA07C0422E748250029882D = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +98,7 @@
 				4DD83C9F22E77CD2002933DE /* Model */,
 				4DD83CA122E77CE1002933DE /* View */,
 				4DD83CA022E77CDA002933DE /* Controller */,
+				4D0943A829AAF41100C40E27 /* Localizables */,
 				4DA07C1C22E748260029882D /* Info.plist */,
 			);
 			path = iDibujo;
@@ -196,6 +209,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"es-419",
 			);
 			mainGroup = 4DA07C0422E748250029882D;
 			productRefGroup = 4DA07C0E22E748250029882D /* Products */;
@@ -213,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DA07C1B22E748260029882D /* LaunchScreen.storyboard in Resources */,
+				4D0943AC29ABF8D000C40E27 /* Localizable.strings in Resources */,
 				4DA07C1822E748260029882D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -247,10 +262,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		4D0943AE29ABF8D000C40E27 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4D0943AD29ABF8D000C40E27 /* en */,
+				4D0943AF29ABF8D100C40E27 /* es-419 */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		4DA07C1922E748260029882D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				4DA07C1A22E748260029882D /* Base */,
+				4D0943AB29ABF7CE00C40E27 /* es-419 */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -262,6 +287,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -324,6 +350,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

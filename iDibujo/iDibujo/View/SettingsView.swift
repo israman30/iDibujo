@@ -55,6 +55,7 @@ extension SettingsController {
         )
         dismissButton.backgroundColor = .yellow
         dismissButton.shadow()
+        dismissButton.accessibilityHint = NSLocalizedString("Apply_changes", comment: "Apply changes")
         
         imageView.centerInSuperview(size: .init(width: 150, height: 150))
         imageView.layer.cornerRadius = 150 / 2

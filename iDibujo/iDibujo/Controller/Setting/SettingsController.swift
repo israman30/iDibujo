@@ -12,11 +12,11 @@ class SettingsController: UIViewController {
     
     var settingsViewModel = SettingsViewModel()
     
-    var delegate: SettingsDelagate?
+    var delegate: SettingsProtocol?
     
     let dismissButton: UIButton = {
         let btn = UIButton(type: .system)
-        btn.setTitle("APPLY", for: .normal)
+        btn.setTitle(NSLocalizedString("APPLY", comment: "APPLY"), for: .normal)
         btn.setTitleColor(.black, for: .normal)
         btn.titleLabel?.font = .boldSystemFont(ofSize: 20)
         return btn
@@ -31,7 +31,7 @@ class SettingsController: UIViewController {
     
     let brushLabel: UILabel = {
         let label = UILabel()
-        label.text = "Brush Size"
+        label.text = NSLocalizedString("Brush_Size", comment: "Brush Size") 
         label.font = .preferredFont(forTextStyle: .title2)
         label.adjustsFontForContentSizeCategory = true
         return label
@@ -39,7 +39,7 @@ class SettingsController: UIViewController {
     
     let opacityLabel: UILabel = {
         let label = UILabel()
-        label.text = "Opacity"
+        label.text = NSLocalizedString("Opacity", comment: "Opacity") 
         label.font = .preferredFont(forTextStyle: .title2)
         label.adjustsFontForContentSizeCategory = true
         return label
@@ -47,7 +47,7 @@ class SettingsController: UIViewController {
     
     let rgbLabel: UILabel = {
         let label = UILabel()
-        label.text = "RGB Colors"
+        label.text = NSLocalizedString("RGB_Colors", comment: "RGB Colors") 
         label.textAlignment = .center
         label.textColor = .init(red: 141/255, green: 141/255, blue: 145/255, alpha: 1)
         label.font = .preferredFont(forTextStyle: .title1)
@@ -57,7 +57,7 @@ class SettingsController: UIViewController {
     
     let redLabel: UILabel = {
         let label = UILabel()
-        label.text = "Red Label"
+        label.text = NSLocalizedString("Red_Label", comment: "Red Label")
         label.font = .preferredFont(forTextStyle: .title2)
         label.adjustsFontForContentSizeCategory = true
         return label
@@ -65,7 +65,7 @@ class SettingsController: UIViewController {
     
     let greenLabel: UILabel = {
         let label = UILabel()
-        label.text = "Green Label"
+        label.text = NSLocalizedString("Green_Label", comment: "Green Label") 
         label.font = .preferredFont(forTextStyle: .title2)
         label.adjustsFontForContentSizeCategory = true
         return label
@@ -73,7 +73,7 @@ class SettingsController: UIViewController {
     
     let blueLabel: UILabel = {
         let label = UILabel()
-        label.text = "Blue Label"
+        label.text = NSLocalizedString("Blue_Label", comment: "Blue Label")
         label.font = .preferredFont(forTextStyle: .title2)
         label.adjustsFontForContentSizeCategory = true
         return label

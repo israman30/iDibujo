@@ -1,0 +1,27 @@
+/* 
+  Localizable.strings
+  iDibujo
+
+  Created by Israel Manzo on 2/25/23.
+  Copyright © 2023 Israel Manzo. All rights reserved.
+*/
+"RESET" = "RESETEAR";
+"SAVE" = "SALVAR";
+"DELT" = "BORRAR";
+"DRAW" = "DIBUJAR";
+"MORE" = "MAS";
+"APPLY" = "APLICAR";
+"Brush_Size" = "Tamaño de Brocha";
+"Opacity" = "Opacidad de colores";
+"RGB_Colors" = "Colores RGB";
+"Red_Label" = "Label Rojo";
+"Green_Label" = "Label Verde";
+"Blue_Label" = "Label Azul";
+
+/** Hint */
+"Reset_for_canvas" = "Reiniciar canvas";
+"Import_from_library_photo" = "Importa foto de la libreria";
+"Erase_canvas" = "Limpiar el dibujo";
+"Draw_canvas" = "Dibujar en canvas";
+"More_settings" = "Mas opciones";
+"Apply_changes" = "Applicar los cambios";
