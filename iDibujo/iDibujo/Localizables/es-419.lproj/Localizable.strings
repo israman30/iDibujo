@@ -16,3 +16,10 @@
 "Red_Label" = "Label Rojo";
 "Green_Label" = "Label Verde";
 "Blue_Label" = "Label Azul";
+
+/** Hint */
+"Reset_for_canvas" = "Reiniciar canvas";
+"Import_from_library_photo" = "Importa foto de la libreria";
+"Erase_canvas" = "Limpiar canvas";
+"More_settings" = "Mas opciones";
+"Apply_changes" = "Applicar los cambios";

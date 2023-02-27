@@ -11,7 +11,7 @@ import UIKit
 class MainController: UIViewController {
     
     let resetButton: UIButton = {
-        let btn = CustomButton(for: NSLocalizedString("RESET", comment: "Tap to reset canvas"), titleColor: .white, background: .resetColor, fontSize: 23)
+        let btn = CustomButton(for: NSLocalizedString("RESET", comment: "RESET"), titleColor: .white, background: .resetColor, fontSize: 23)
         btn.setTitle("RESET", for: .normal)
         return btn
     }()
