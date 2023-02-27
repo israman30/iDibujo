@@ -32,7 +32,6 @@ extension MainController {
         importButton.accessibilityHint = NSLocalizedString("Import_from_library_photo", comment: "Import from library photo")
         
         eraserButton.layer.cornerRadius = 5
-        eraserButton.accessibilityHint = NSLocalizedString("Erase_canvas", comment: "Erase canvas")
         
         moreButton.layer.cornerRadius = 5
         moreButton.accessibilityHint = NSLocalizedString("More_settings", comment: "More settings")
