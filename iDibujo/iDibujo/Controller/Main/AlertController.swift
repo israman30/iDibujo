@@ -13,6 +13,7 @@ struct AlertController {
     let alertTitle = NSLocalizedString("Alert_Recycle_Logo", comment: "♻️")
     let alertMessage = NSLocalizedString("Alert_Comment_Reset_Art", comment: "Are yo sure you want to reset your art???")
     let actionYes = NSLocalizedString("Alert_YES", comment: "YES")
+    let actionNo = NSLocalizedString("Alert_NO", comment: "NO")
     let actionCancel = NSLocalizedString("Alert_Action_Cancel", comment: "Cancel ❌")
     
     static func resetDraw(_ vc: UIViewController, imageView: UIImageView) {
@@ -30,7 +31,7 @@ struct AlertController {
     static func alert(_ viewController: UIViewController, title: String, message: String){
         
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        let action = UIAlertAction(title: actionNo, style: .default, handler: nil)
         alertController.addAction(action)
         
         viewController.present(alertController, animated: true, completion: nil)

@@ -35,6 +35,7 @@
 "Alert_Recycle_Log" = "♻️";
 "Alert_Comment_Reset_Art" = "Estas sguro en terminar tu arte..???";
 "Alert_YES" = "SI";
+"Alert_NO" = "NO";
 
 /** Hint */
 "Reset_for_canvas" = "Reiniciar canvas";
