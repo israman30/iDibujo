@@ -10,16 +10,10 @@ import UIKit
 
 struct AlertController {
     
-    let alertTitle = NSLocalizedString("Alert_Recycle_Logo", comment: "♻️")
-    let alertMessage = NSLocalizedString("Alert_Comment_Reset_Art", comment: "Are yo sure you want to reset your art???")
-    let actionYes = NSLocalizedString("Alert_YES", comment: "YES")
-    let actionNo = NSLocalizedString("Alert_NO", comment: "NO")
-    let actionCancel = NSLocalizedString("Alert_Action_Cancel", comment: "Cancel ❌")
-    
     static func resetDraw(_ vc: UIViewController, imageView: UIImageView) {
-        let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
+        let alert = UIAlertController(title: NSLocalizedString("Alert_Recycle_Logo", comment: "♻️"), message: NSLocalizedString("Alert_Comment_Reset_Art", comment: "Are yo sure you want to reset your art???"), preferredStyle: .alert)
         
-        let action = UIAlertAction(title: actionYes, style: .default) { (alert) in
+        let action = UIAlertAction(title: NSLocalizedString("Alert_YES", comment: "YES"), style: .default) { alert in
             imageView.image = nil
         }
         let cancel = UIAlertAction(title: "NO", style: .destructive, handler: nil)
@@ -31,7 +25,7 @@ struct AlertController {
     static func alert(_ viewController: UIViewController, title: String, message: String){
         
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let action = UIAlertAction(title: actionNo, style: .default, handler: nil)
+        let action = UIAlertAction(title: NSLocalizedString("Alert_NO", comment: "NO"), style: .default, handler: nil)
         alertController.addAction(action)
         
         viewController.present(alertController, animated: true, completion: nil)
@@ -40,7 +34,7 @@ struct AlertController {
     static func actionSheet(_ viewController: UIViewController, title: String, message: String){
         let actionSheet = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
         
-        let cancel = UIAlertAction(title: actionCancel, style: .cancel, handler: nil)
+        let cancel = UIAlertAction(title: NSLocalizedString("Alert_Action_Cancel", comment: "Cancel ❌"), style: .cancel, handler: nil)
         // TODO: add aditional buttons
         
         actionSheet.addAction(cancel)
