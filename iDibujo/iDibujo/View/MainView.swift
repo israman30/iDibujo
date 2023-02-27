@@ -32,6 +32,11 @@ extension MainController {
         importButton.accessibilityHint = NSLocalizedString("Import_from_library_photo", comment: "Import from library photo")
         
         eraserButton.layer.cornerRadius = 5
+        if !canvasViewModel.draw.isDrawing {
+            eraserButton.accessibilityHint = NSLocalizedString("Draw_canvas", comment: "Draw in canvas")
+        } else {
+            eraserButton.accessibilityHint = NSLocalizedString("Erase_canvas", comment: "Erase canvas")
+        }
         
         moreButton.layer.cornerRadius = 5
         moreButton.accessibilityHint = NSLocalizedString("More_settings", comment: "More settings")

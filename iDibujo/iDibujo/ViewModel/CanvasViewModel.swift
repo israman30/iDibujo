@@ -17,11 +17,9 @@ class CanvasViewModel {
         if draw.isDrawing {
             (draw.red, draw.green, draw.blue) = (1, 1, 1)
             eraserButton.setTitle(NSLocalizedString("DRAW", comment: "DRAW"), for: .normal)
-            eraserButton.accessibilityHint = NSLocalizedString("Draw_canvas", comment: "Draw in canvas")
         } else {
             (draw.red, draw.green, draw.blue) = (0, 0, 0)
             eraserButton.setTitle(NSLocalizedString("DELT", comment: "DELT"), for: .normal)
-            eraserButton.accessibilityHint = NSLocalizedString("Erase_canvas", comment: "Erase canvas")
         }
         draw.isDrawing = !draw.isDrawing
     }
