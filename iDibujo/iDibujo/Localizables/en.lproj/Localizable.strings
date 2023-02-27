@@ -25,6 +25,13 @@
 "CYAN_COLOR" = "Cyan Color";
 "WHITE_COLOR" = "White Color";
 "BLACK_COLOR" = "Black Color";
+"Alert_Hello" = "Hello";
+"Alert_Message" = "What are you going to do?";
+"Alert_Action_Title" = "Save your Art 🎨";
+"Alert_Action_Cancel" = "Cancel ❌";
+"Alert_Error" = "Error";
+"Alert_Saved" = "Saved";
+"Alert_Saved_Comment" = "You photo has been saved!";
 
 /** Hint */
 "Reset_for_canvas" = "Reset for canvas";
