@@ -73,42 +73,42 @@ extension MainController {
         redColorButton.layer.borderColor = UIColor.black.cgColor
         redColorButton.layer.borderWidth = 2
         redColorButton.layer.cornerRadius = 8
-        redColorButton.accessibilityLabel = "RED COLOR"
+        redColorButton.accessibilityLabel = NSLocalizedString("RED_COLOR", comment: "RED COLOR") 
         
         greenColorButton.layer.borderColor = UIColor.black.cgColor
         greenColorButton.layer.borderWidth = 2
         greenColorButton.layer.cornerRadius = 8
-        greenColorButton.accessibilityLabel = "GREEN COLOR"
+        greenColorButton.accessibilityLabel = NSLocalizedString("GREEN_COLOR", comment: "GREEN COLOR") 
         
         blueColorButton.layer.borderColor = UIColor.black.cgColor
         blueColorButton.layer.borderWidth = 2
         blueColorButton.layer.cornerRadius = 8
-        blueColorButton.accessibilityLabel = "BLUE COLOR"
+        blueColorButton.accessibilityLabel = NSLocalizedString("BLUE_COLOR", comment: "BLUE COLOR") 
         
         pinkColorButton.layer.borderColor = UIColor.black.cgColor
         pinkColorButton.layer.borderWidth = 2
         pinkColorButton.layer.cornerRadius = 8
-        pinkColorButton.accessibilityLabel = "PINK COLOR"
+        pinkColorButton.accessibilityLabel = NSLocalizedString("PINK_COLOR", comment: "PINK COLOR") 
         
         yellowColorButton.layer.borderColor = UIColor.black.cgColor
         yellowColorButton.layer.borderWidth = 2
         yellowColorButton.layer.cornerRadius = 8
-        yellowColorButton.accessibilityLabel = "YELLOW COLOR"
+        yellowColorButton.accessibilityLabel = NSLocalizedString("YELLOW_COLOR", comment: "YELLOW COLOR") 
         
         cyanColorButton.layer.borderColor = UIColor.black.cgColor
         cyanColorButton.layer.borderWidth = 2
         cyanColorButton.layer.cornerRadius = 10
-        cyanColorButton.accessibilityLabel = "CYAN COLOR"
+        cyanColorButton.accessibilityLabel = NSLocalizedString("CYAN_COLOR", comment: "CYAN COLOR") 
         
         whiteColorButton.layer.borderColor = UIColor.black.cgColor
         whiteColorButton.layer.borderWidth = 2
         whiteColorButton.layer.cornerRadius = 8
-        whiteColorButton.accessibilityLabel = "WHITE COLOR"
+        whiteColorButton.accessibilityLabel = NSLocalizedString("WHITE_COLOR", comment: "WHITE COLOR") 
         
         blackColorButton.layer.borderColor = UIColor.black.cgColor
         blackColorButton.layer.borderWidth = 2
         blackColorButton.layer.cornerRadius = 8
-        blackColorButton.accessibilityLabel = "BLACK COLOR"
+        blackColorButton.accessibilityLabel = NSLocalizedString("BLACK_COLOR", comment: "BLACK COLOR") 
         
         canvasViewModel.draw.container.addSubview(stackView)
         stackView.anchor(

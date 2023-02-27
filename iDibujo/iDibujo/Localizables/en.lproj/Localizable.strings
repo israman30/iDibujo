@@ -17,6 +17,14 @@
 "Red_Label" = "Red Label";
 "Green_Label" = "Green Label";
 "Blue_Label" = "Blue Label";
+"RED_COLOR" = "Red Color";
+"GREEN_COLOR" = "Green Color";
+"BLUE_COLOR" = "Blue Color";
+"PINK_COLOR" = "Pink Color";
+"YELLOW_COLOR" = "Yellow Color";
+"CYAN_COLOR" = "Cyan Color";
+"WHITE_COLOR" = "White Color";
+"BLACK_COLOR" = "Black Color";
 
 /** Hint */
 "Reset_for_canvas" = "Reset for canvas";

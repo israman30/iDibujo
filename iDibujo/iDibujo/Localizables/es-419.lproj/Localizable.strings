@@ -17,6 +17,14 @@
 "Red_Label" = "Label Rojo";
 "Green_Label" = "Label Verde";
 "Blue_Label" = "Label Azul";
+"RED_COLOR" = "Color Rojo";
+"GREEN_COLOR" = "Color Verde";
+"BLUE_COLOR" = "Color Azul";
+"PINK_COLOR" = "Color Rosa";
+"YELLOW_COLOR" = "Color Amarillo";
+"CYAN_COLOR" = "Color Cyan";
+"WHITE_COLOR" = "Color Blanco";
+"BLACK_COLOR" = "Color Negro";
 
 /** Hint */
 "Reset_for_canvas" = "Reiniciar canvas";
