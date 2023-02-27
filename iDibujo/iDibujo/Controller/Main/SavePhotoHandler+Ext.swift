@@ -11,9 +11,14 @@ import UIKit
 extension MainController {
     
     func savePhotoToLibrary() {
+        ////  ------ Localizables String -----
+        let title = NSLocalizedString("Alert_Hello", comment: "Hello")
+        let message = NSLocalizedString("Alert_Message", comment: "What are you going to do?")
+        let actionTitle = NSLocalizedString("Alert_Action_Title", comment: "Save your Art 🎨")
+        let cancelTitle = NSLocalizedString("Alert_Action_Cancel", comment: "Cancel ❌")
         
-        let actionSheet = UIAlertController(title: "Hello", message: "What are you going to do?", preferredStyle: .actionSheet)
-        actionSheet.addAction(UIAlertAction(title: "Save your Art 🎨", style: .default, handler: { (UIAlertAction) in
+        let actionSheet = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
+        actionSheet.addAction(UIAlertAction(title: actionTitle, style: .default, handler: { (UIAlertAction) in
             
             guard let image = self.canvasViewModel.draw.container.image else { return }
             UIImageWriteToSavedPhotosAlbum(
@@ -24,16 +29,16 @@ extension MainController {
             )
         }))
         
-        actionSheet.addAction(UIAlertAction(title: "Cancel ❌", style: .default, handler: nil))
+        actionSheet.addAction(UIAlertAction(title: cancelTitle, style: .default, handler: nil))
         
         present(actionSheet, animated: true, completion: nil)
     }
     
     @objc func image(_ image: UIImage, didFinishWithError error: Error?, contextInfo: UnsafeRawPointer) {
         if let error = error {
-            AlertController.alert(self, title: "Error", message: error.localizedDescription)
+            AlertController.alert(self, title: NSLocalizedString("Alert_Error", comment: "Error"), message: error.localizedDescription)
         } else {
-            AlertController.alert(self, title: "Saved", message: "You photo has been saved!")
+            AlertController.alert(self, title: NSLocalizedString("Alert_Saved", comment: "Saved"), message: NSLocalizedString("Alert_Saved_Comment", comment: "You photo has been saved!"))
         }
     }
     

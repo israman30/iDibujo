@@ -17,6 +17,25 @@
 "Red_Label" = "Label Rojo";
 "Green_Label" = "Label Verde";
 "Blue_Label" = "Label Azul";
+"RED_COLOR" = "Color Rojo";
+"GREEN_COLOR" = "Color Verde";
+"BLUE_COLOR" = "Color Azul";
+"PINK_COLOR" = "Color Rosa";
+"YELLOW_COLOR" = "Color Amarillo";
+"CYAN_COLOR" = "Color Cyan";
+"WHITE_COLOR" = "Color Blanco";
+"BLACK_COLOR" = "Color Negro";
+"Alert_Hello" = "Hola";
+"Alert_Message" = "Que deseas hacer?";
+"Alert_Action_Title" = "Guarda tu arte 🎨";
+"Alert_Action_Cancel" = "Cancelar ❌";
+"Alert_Error" = "Error";
+"Alert_Saved" = "Guardado";
+"Alert_Saved_Comment" = "Tu foto ha sido guardada!";
+"Alert_Recycle_Logo" = "♻️";
+"Alert_Comment_Reset_Art" = "Estas seguro en terminar tu arte..???";
+"Alert_YES" = "SI";
+"Alert_NO" = "NO";
 
 /** Hint */
 "Reset_for_canvas" = "Reiniciar canvas";

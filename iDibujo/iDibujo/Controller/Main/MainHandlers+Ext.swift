@@ -13,6 +13,7 @@ extension MainController {
     // MARK: - Reset Main draw view.
     // AlerController class check if user wants to reset the draw.
     @objc func reset() {
+        guard canvasViewModel.draw.container.image != nil else { return }
         AlertController.resetDraw(self, imageView: canvasViewModel.draw.container)
     }
     
