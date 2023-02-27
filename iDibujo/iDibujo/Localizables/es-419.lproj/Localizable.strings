@@ -32,6 +32,9 @@
 "Alert_Error" = "Error";
 "Alert_Saved" = "Guardado";
 "Alert_Saved_Comment" = "Tu foto ha sido guardada!";
+"Alert_Recycle_Log" = "♻️";
+"Alert_Comment_Reset_Art" = "Estas sguro en terminar tu arte..???";
+"Alert_YES" = "SI";
 
 /** Hint */
 "Reset_for_canvas" = "Reiniciar canvas";
