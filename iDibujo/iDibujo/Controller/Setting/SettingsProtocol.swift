@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol SettingsDelagate {
+protocol SettingsProtocol {
     func settingsDidFinish(_ settings: SettingsController )
 }
 

@@ -8,6 +8,7 @@
 "RESET" = "RESETEAR";
 "SAVE" = "SALVAR";
 "DELT" = "BORRAR";
+"DRAW" = "DIBUJAR";
 "MORE" = "MAS";
 "APPLY" = "APLICAR";
 "Brush_Size" = "Tamaño de Brocha";

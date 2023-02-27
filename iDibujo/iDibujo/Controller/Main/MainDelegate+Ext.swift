@@ -11,7 +11,7 @@ import UIKit
  MARK: - Handles MainController delegation
  - Handles the delegation of SettingController to the MainController, passing the values that the user changed using slider values.
  */
-extension MainController: SettingsDelagate {
+extension MainController: SettingsProtocol {
     
     func settingsDidFinish(_ settings: SettingsController) {
         canvasViewModel.draw.red = settings.settingsViewModel.draw.red

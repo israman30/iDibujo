@@ -8,6 +8,7 @@
 "RESET" = "RESET";
 "SAVE" = "SAVE";
 "DELT" = "DELT";
+"DRAW" = "DRAW";
 "MORE" = "MORE";
 "APPLY" = "APPLY";
 "Brush_Size" = "Brush Size";

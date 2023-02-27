@@ -16,10 +16,10 @@ class CanvasViewModel {
     func eraseCanvas(eraserButton: UIButton) {
         if draw.isDrawing {
             (draw.red, draw.green, draw.blue) = (1, 1, 1)
-            eraserButton.setTitle("DRAW", for: .normal)
+            eraserButton.setTitle(NSLocalizedString("DRAW", comment: "DRAW"), for: .normal)
         } else {
             (draw.red, draw.green, draw.blue) = (0, 0, 0)
-            eraserButton.setTitle("DELT", for: .normal)
+            eraserButton.setTitle(NSLocalizedString("DELT", comment: "DELT"), for: .normal)
         }
         draw.isDrawing = !draw.isDrawing
     }
@@ -58,17 +58,17 @@ class CanvasViewModel {
      */
     func draw(from: CGPoint, to: CGPoint) {
         // Get current graphic context
-        let context = UIGraphicsGetCurrentContext()
+        guard let context = UIGraphicsGetCurrentContext() else { return }
         // move the pointer method from x to y
-        context?.move(to: CGPoint(x: from.x, y: from.y))
+        context.move(to: CGPoint(x: from.x, y: from.y))
         // add line to the context when x and y moves
-        context?.addLine(to: CGPoint(x: to.x, y: to.y))
+        context.addLine(to: CGPoint(x: to.x, y: to.y))
         
-        context?.setBlendMode(.normal)
-        context?.setLineCap(CGLineCap.round) // give round to the line
-        context?.setLineWidth(draw.brushSize) // Brush size variable value
-        context?.setStrokeColor(UIColor(red: draw.red, green: draw.green, blue: draw.blue, alpha: draw.opacity).cgColor) // set stroke to the context pointer
-        context?.strokePath() // set path to the context pointer
+        context.setBlendMode(.normal)
+        context.setLineCap(CGLineCap.round) // give round to the line
+        context.setLineWidth(draw.brushSize) // Brush size variable value
+        context.setStrokeColor(UIColor(red: draw.red, green: draw.green, blue: draw.blue, alpha: draw.opacity).cgColor) // set stroke to the context pointer
+        context.strokePath() // set path to the context pointer
         
         draw.container.image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext() // ends graphic context

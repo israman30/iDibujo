@@ -12,7 +12,7 @@ class SettingsController: UIViewController {
     
     var settingsViewModel = SettingsViewModel()
     
-    var delegate: SettingsDelagate?
+    var delegate: SettingsProtocol?
     
     let dismissButton: UIButton = {
         let btn = UIButton(type: .system)
