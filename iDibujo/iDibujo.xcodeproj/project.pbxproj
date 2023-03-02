@@ -35,6 +35,7 @@
 		4D0943AB29ABF7CE00C40E27 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		4D0943AD29ABF8D000C40E27 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4D0943AF29ABF8D100C40E27 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		4D0943D229B143B300C40E27 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4DA07C0D22E748250029882D /* iDibujo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iDibujo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DA07C1022E748250029882D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DA07C1222E748250029882D /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
@@ -210,6 +211,7 @@
 				en,
 				Base,
 				"es-419",
+				ru,
 			);
 			mainGroup = 4DA07C0422E748250029882D;
 			productRefGroup = 4DA07C0E22E748250029882D /* Products */;
@@ -267,6 +269,7 @@
 			children = (
 				4D0943AD29ABF8D000C40E27 /* en */,
 				4D0943AF29ABF8D100C40E27 /* es-419 */,
+				4D0943D229B143B300C40E27 /* ru */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
