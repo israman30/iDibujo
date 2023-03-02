@@ -90,6 +90,7 @@ class SettingsController: UIViewController {
     
     let opacitySlider: UISlider = {
         let slider = UISlider()
+        slider.setValue(1, animated: true)
         return slider
     }()
     
