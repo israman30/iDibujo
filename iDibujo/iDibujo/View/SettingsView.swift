@@ -57,11 +57,17 @@ extension SettingsController {
         dismissButton.shadow()
         dismissButton.accessibilityHint = NSLocalizedString("Apply_changes", comment: "Apply changes")
         
-        imageView.centerInSuperview(size: .init(width: 150, height: 150))
+//        imageView.centerInSuperview(size: .init(width: 150, height: 150))
         imageView.layer.cornerRadius = 150 / 2
         imageView.layer.masksToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -200).isActive = true
+        
+        NSLayoutConstraint.activate([
+            imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -200),
+            imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            imageView.widthAnchor.constraint(equalToConstant: 150),
+            imageView.heightAnchor.constraint(equalToConstant: 150)
+        ])
     }
     
 }
