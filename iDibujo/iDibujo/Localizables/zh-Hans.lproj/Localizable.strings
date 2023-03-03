@@ -1,0 +1,46 @@
+/* 
+  Localizable.strings
+  iDibujo
+
+  Created by Israel Manzo on 2/25/23.
+  Copyright © 2023 Israel Manzo. All rights reserved.
+*/
+"RESET" = "重置";
+"SAVE" = "节省";
+"DELT" = "删除";
+"DRAW" = "画";
+"MORE" = "更多的";
+"APPLY" = "申请";
+"Brush_Size" = "刷子大小";
+"Opacity" = "不透明度";
+"RGB_Colors" = "RGB 颜色";
+"Red_Label" = "红标";
+"Green_Label" = "绿色标签";
+"Blue_Label" = "蓝色标签";
+"RED_COLOR" = "红色";
+"GREEN_COLOR" = "绿色";
+"BLUE_COLOR" = "蓝色";
+"PINK_COLOR" = "粉色";
+"YELLOW_COLOR" = "黄色";
+"CYAN_COLOR" = "青色";
+"WHITE_COLOR" = "白色";
+"BLACK_COLOR" = "黑色";
+"Alert_Hello" = "你好";
+"Alert_Message" = "你会怎样做";
+"Alert_Action_Title" = "保存你的艺术 🎨";
+"Alert_Action_Cancel" = "取消 ❌";
+"Alert_Error" = "错误";
+"Alert_Saved" = "已保存";
+"Alert_Saved_Comment" = "您的照片已保存";
+"Alert_Recycle_Logo" = "♻️";
+"Alert_Comment_Reset_Art" = "你确定要重置你的艺术作品吗";
+"Alert_YES" = "是的";
+"Alert_NO" = "不";
+
+/** Hint */
+"Reset_for_canvas" = "重置画布";
+"Import_from_library_photo" = "从图库中导入照片";
+"Erase_canvas" = "擦除画布";
+"Draw_canvas" = "绘制画布";
+"More_settings" = "更多设置";
+"Apply_changes" = "应用更改";
