@@ -1,7 +1,7 @@
 # iDibujo
 Create simple or amazing art with the drawing application. :iphone:
 
-> Draw something on the main view, customizing brush with size using sliders, opacity and rgb colors.  Reset the draw and start over. Save the your art once are you done, or cancel it. UIGraphic context: Using current context add from start CGpoint to end CGpoint. CGLine cap creates brush size and set the stroke path.
+> An easy and simple application friendly user for all ages, available in the _App Store_.
 
 <p align="center">
 <img src="/img/one.png" width="250"> <img src="/img/two.png" width="250">
@@ -9,11 +9,11 @@ Create simple or amazing art with the drawing application. :iphone:
 
 ## Thecnology
 
-- Xcode & Swift
+- Version 1.1
 
 - UIKit
 
-- UIEvent/moving event methods and CGPoint
+- MVVM architecture, protocol and delegates
 
 - UIGraphicContext
 
