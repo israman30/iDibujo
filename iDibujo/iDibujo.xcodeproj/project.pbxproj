@@ -419,6 +419,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G9TBJCK73T;
 				INFOPLIST_FILE = iDibujo/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "iDibujo a Picture";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -438,6 +439,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G9TBJCK73T;
 				INFOPLIST_FILE = iDibujo/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "iDibujo a Picture";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
