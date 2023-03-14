@@ -8,26 +8,31 @@
 
 import UIKit
 
+class CustomFont {
+    static let font = UIFont(name: "ChalkboardSE-Light", size: 23)!
+}
+
 class MainController: UIViewController {
     
+    
     let resetButton: UIButton = {
-        let btn = CustomButton(for: NSLocalizedString("RESET", comment: "RESET"), titleColor: .white, background: .resetColor, fontSize: 23)
+        let btn = CustomButton(for: NSLocalizedString("RESET", comment: "RESET"), titleColor: .white, background: .resetColor, fontSize: 23, font: CustomFont.font)
         btn.setTitle("RESET", for: .normal)
         return btn
     }()
     
     let importButton: UIButton = {
-        let btn = CustomButton(for: NSLocalizedString("SAVE", comment: "SAVE"), titleColor: .white, background: .importColor, fontSize: 23)
+        let btn = CustomButton(for: NSLocalizedString("SAVE", comment: "SAVE"), titleColor: .white, background: .importColor, fontSize: 23, font: CustomFont.font)
         return btn
     }()
     
     let eraserButton: UIButton = {
-        let btn = CustomButton(for: NSLocalizedString("DELT", comment: "DELT"), titleColor: .white, background: .eraseColor, fontSize: 23)
+        let btn = CustomButton(for: NSLocalizedString("DELT", comment: "DELT"), titleColor: .white, background: .eraseColor, fontSize: 23, font: CustomFont.font)
         return btn
     }()
     
     let moreButton: UIButton = {
-        let btn = CustomButton(for: NSLocalizedString("MORE", comment: "MORE"), titleColor: .white, background: .moreColor, fontSize:23)
+        let btn = CustomButton(for: NSLocalizedString("MORE", comment: "MORE"), titleColor: .white, background: .moreColor, fontSize:23, font: CustomFont.font)
         return btn
     }()
     
