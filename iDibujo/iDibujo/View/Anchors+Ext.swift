@@ -11,7 +11,7 @@ import UIKit
 // MARK: - Custom button for each BUTTON color
 class CustomButton: UIButton {
     
-    convenience init(for title: String, titleColor: UIColor, background: UIColor, fontSize: CGFloat, font: UIFont) {
+    convenience init(for title: String, titleColor: UIColor, background: UIColor, fontSize: CGFloat) {
         self.init()
         setTitle(title, for: .normal)
         setTitleColor(titleColor, for: .normal)
@@ -22,7 +22,6 @@ class CustomButton: UIButton {
         titleLabel?.isAccessibilityElement = true
         layer.borderWidth = 3
         layer.borderColor = UIColor.black.cgColor
-        titleLabel?.font = font
     }
 }
 
