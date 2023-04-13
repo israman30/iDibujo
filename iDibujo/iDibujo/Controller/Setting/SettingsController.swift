@@ -31,7 +31,7 @@ class SettingsController: UIViewController {
     
     let brushLabel: UILabel = {
         let label = UILabel()
-        label.text = NSLocalizedString("Brush_Size", comment: "Brush Size") 
+        label.text = NSLocalizedString("Brush_Size", comment: "Brush Size")
         label.font = .preferredFont(forTextStyle: .title2)
         label.adjustsFontForContentSizeCategory = true
         return label
@@ -39,7 +39,7 @@ class SettingsController: UIViewController {
     
     let opacityLabel: UILabel = {
         let label = UILabel()
-        label.text = NSLocalizedString("Opacity", comment: "Opacity") 
+        label.text = NSLocalizedString("Opacity", comment: "Opacity")
         label.font = .preferredFont(forTextStyle: .title2)
         label.adjustsFontForContentSizeCategory = true
         return label
@@ -47,7 +47,7 @@ class SettingsController: UIViewController {
     
     let rgbLabel: UILabel = {
         let label = UILabel()
-        label.text = NSLocalizedString("RGB_Colors", comment: "RGB Colors") 
+        label.text = NSLocalizedString("RGB_Colors", comment: "RGB Colors")
         label.textAlignment = .center
         label.textColor = .init(red: 141/255, green: 141/255, blue: 145/255, alpha: 1)
         label.font = .preferredFont(forTextStyle: .title1)
@@ -65,7 +65,7 @@ class SettingsController: UIViewController {
     
     let greenLabel: UILabel = {
         let label = UILabel()
-        label.text = NSLocalizedString("Green_Label", comment: "Green Label") 
+        label.text = NSLocalizedString("Green_Label", comment: "Green Label")
         label.font = .preferredFont(forTextStyle: .title2)
         label.adjustsFontForContentSizeCategory = true
         return label
@@ -80,38 +80,43 @@ class SettingsController: UIViewController {
     }()
     
     // MARK: - SLIDERS BLOCK
-    let changeBrushSizeSlider: UISlider = {
-        let slider = UISlider()
+    let changeBrushSizeSlider: CustomSlider = {
+        let slider = CustomSlider(firstColor: CustomColor.blackPrimary, secondColor: CustomColor.blackSecondary)
         slider.value = 10
         slider.minimumValue = 1
         slider.maximumValue = 90
+        slider.customBackgorundShapeSlider()
         return slider
     }()
     
-    let opacitySlider: UISlider = {
-        let slider = UISlider()
+    let opacitySlider: CustomSlider = {
+        let slider = CustomSlider(firstColor: .clear, secondColor: .clear)
         slider.setValue(1, animated: true)
+        slider.customBackgorundShapeSlider()
         return slider
     }()
     
-    let redSlider: UISlider = {
-        let slider = UISlider()
-        slider.minimumTrackTintColor = .red
-        slider.thumbTintColor = .red
+    let redSlider: CustomSlider = {
+        let slider = CustomSlider(firstColor: CustomColor.redPrimary, secondColor: CustomColor.redSecondary)
+        slider.minimumTrackTintColor = CustomColor.redPrimary
+        slider.thumbTintColor = CustomColor.redPrimary
+        slider.customBackgorundShapeSlider()
         return slider
     }()
     
-    let greenSlider: UISlider = {
-        let slider = UISlider()
+    let greenSlider: CustomSlider = {
+        let slider = CustomSlider(firstColor: CustomColor.greenPrimary, secondColor: CustomColor.greenSecondary)
         slider.minimumTrackTintColor = .green
         slider.thumbTintColor = .green
+        slider.customBackgorundShapeSlider()
         return slider
     }()
     
-    let blueSlider: UISlider = {
-        let slider = UISlider()
+    let blueSlider: CustomSlider = {
+        let slider = CustomSlider(firstColor: CustomColor.bluePrimary, secondColor: CustomColor.blueSecondary)
         slider.minimumTrackTintColor = .blue
         slider.thumbTintColor = .blue
+        slider.customBackgorundShapeSlider()
         return slider
     }()
     
@@ -134,6 +139,8 @@ class SettingsController: UIViewController {
         
         blueSlider.value = Float(settingsViewModel.draw.blue)
         blueLabel.text = String(Int(blueSlider.value * 255))
+        
+        changeBrushSizeSlider.value = 10
         
         setSettingsView()
         setSliders()
