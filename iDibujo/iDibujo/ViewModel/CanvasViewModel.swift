@@ -16,10 +16,16 @@ class CanvasViewModel {
     func eraseCanvas(eraserButton: UIButton) {
         if draw.isDrawing {
             (draw.red, draw.green, draw.blue) = (1, 1, 1)
-            eraserButton.setTitle(NSLocalizedString("DRAW", comment: "DRAW"), for: .normal)
+            let fontLarge = UIFont.systemFont(ofSize: 30)
+            let config = UIImage.SymbolConfiguration(font: fontLarge)
+            let image = UIImage(systemName: CustomIcon.hand_draw, withConfiguration: config)
+            eraserButton.setImage(image, for: .normal)
         } else {
             (draw.red, draw.green, draw.blue) = (0, 0, 0)
-            eraserButton.setTitle(NSLocalizedString("DELT", comment: "DELT"), for: .normal)
+            let fontLarge = UIFont.systemFont(ofSize: 30)
+            let config = UIImage.SymbolConfiguration(font: fontLarge)
+            let image = UIImage(systemName: CustomIcon.reaser, withConfiguration: config)
+            eraserButton.setImage(image, for: .normal)
         }
         draw.isDrawing = !draw.isDrawing
     }

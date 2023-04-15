@@ -11,23 +11,22 @@ import UIKit
 class MainController: UIViewController {
     
     let resetButton: UIButton = {
-        let btn = CustomButton(for: NSLocalizedString("RESET", comment: "RESET"), titleColor: .white, background: .resetColor, fontSize: 23)
-        btn.setTitle("RESET", for: .normal)
+        let btn = CustomButton(titleColor: .white, background: .resetColor, fontSize: 33, imageString: CustomIcon.trash_square)
         return btn
     }()
     
     let importButton: UIButton = {
-        let btn = CustomButton(for: NSLocalizedString("SAVE", comment: "SAVE"), titleColor: .white, background: .importColor, fontSize: 23)
+        let btn = CustomButton(titleColor: .white, background: .importColor, fontSize: 23, imageString: CustomIcon.tray_and_arrow_down)
         return btn
     }()
     
     let eraserButton: UIButton = {
-        let btn = CustomButton(for: NSLocalizedString("DELT", comment: "DELT"), titleColor: .white, background: .eraseColor, fontSize: 23)
+        let btn = CustomButton(titleColor: .white, background: .eraseColor, fontSize: 23, imageString: CustomIcon.reaser)
         return btn
     }()
     
     let moreButton: UIButton = {
-        let btn = CustomButton(for: NSLocalizedString("MORE", comment: "MORE"), titleColor: .white, background: .moreColor, fontSize:23)
+        let btn = CustomButton(titleColor: .white, background: .moreColor, fontSize:23, imageString: CustomIcon.scribble_variable)
         return btn
     }()
     
