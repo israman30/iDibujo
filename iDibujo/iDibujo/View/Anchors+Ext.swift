@@ -14,8 +14,7 @@ class CustomButton: UIButton {
     convenience init(for title: String = "", titleColor: UIColor, background: UIColor, fontSize: CGFloat, imageString: String = "") {
         self.init()
         setTitle(title, for: .normal)
-        setTitleColor(titleColor, for: .normal)
-        tintColor = .white
+        tintColor = titleColor
         let fontLarge = UIFont.systemFont(ofSize: 30)
         let config = UIImage.SymbolConfiguration(font: fontLarge)
         let image = UIImage(systemName: imageString, withConfiguration: config)

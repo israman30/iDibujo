@@ -22,6 +22,16 @@ class SettingsController: UIViewController {
         return btn
     }()
     
+    let closeButton: UIButton = {
+        let btn = UIButton(type: .system)
+        let fontLarge = UIFont.systemFont(ofSize: 30)
+        let config = UIImage.SymbolConfiguration(font: fontLarge)
+        let image = UIImage(systemName: CustomIcon.xmark_square, withConfiguration: config)
+        btn.setImage(image, for: .normal)
+        btn.tintColor = .black
+        return btn
+    }()
+    
     let imageView: UIImageView = {
         let brush = UIImageView()
         brush.isUserInteractionEnabled = true
@@ -128,6 +138,7 @@ class SettingsController: UIViewController {
         opacitySlider.addTarget(self, action: #selector(handleChangeOpacitySize), for: .valueChanged)
         changeBrushSizeSlider.addTarget(self, action: #selector(handleChangeBrushSize), for: .valueChanged)
         dismissButton.addTarget(self, action: #selector(back), for: .touchUpInside)
+        closeButton.addTarget(self, action: #selector(closeView), for: .touchUpInside)
         
         previewDraw(red: settingsViewModel.draw.red, green: settingsViewModel.draw.green, blue: settingsViewModel.draw.blue)
         

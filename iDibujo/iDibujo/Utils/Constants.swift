@@ -28,4 +28,5 @@ struct CustomIcon {
     static let hand_draw = "hand.draw"
     static let reaser = "eraser"
     static let scribble_variable = "scribble.variable"
+    static let xmark_square = "xmark.square"
 }

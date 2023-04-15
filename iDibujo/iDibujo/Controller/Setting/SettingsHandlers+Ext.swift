@@ -45,5 +45,9 @@ extension SettingsController {
         previewDraw(red: settingsViewModel.draw.red, green: settingsViewModel.draw.green, blue: settingsViewModel.draw.blue)
     }
     
+    @objc func closeView() {
+        dismiss(animated: true)
+    }
+    
 }
 

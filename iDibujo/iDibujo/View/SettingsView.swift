@@ -43,7 +43,9 @@ extension SettingsController {
         
         view.backgroundColor = .white
         
-        view.addSubViews(dismissButton, imageView)
+        view.addSubViews(dismissButton, closeButton, imageView)
+        
+        closeButton.anchor(top: dismissButton.topAnchor, left: nil, bottom: nil, right: view.rightAnchor)
         
         dismissButton.anchor(
             top: view.safeAreaLayoutGuide.topAnchor,
