@@ -36,6 +36,9 @@
 "Alert_Comment_Reset_Art" = "Estas seguro en terminar tu arte..???";
 "Alert_YES" = "SI";
 "Alert_NO" = "NO";
+"Red" = "Rojo";
+"Green" = "Verde";
+"Blue" = "Azul";
 
 /** Hint */
 "Reset_for_canvas" = "Reiniciar canvas";

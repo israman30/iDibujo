@@ -12,17 +12,33 @@ extension SettingsController {
     
     // MARK: - SETTING SLIDER FOR SETTINGS CONTROLLER
     func setSliders() {
+        let redColor = UILabel()
+        redColor.text = NSLocalizedString("Red", comment: "Red")
+        let greenColor = UILabel()
+        greenColor.text = NSLocalizedString("Green", comment: "Green")
+        let blueColor = UILabel()
+        blueColor.text = NSLocalizedString("Blue", comment: "Blue")
+        
+        let redStackView = UIStackView(arrangedSubviews: [redColor, UIView(), redLabel])
+        redStackView.axis = .horizontal
+        
+        let greenStackView = UIStackView(arrangedSubviews: [greenColor, UIView(), greenLabel])
+        greenStackView.axis = .horizontal
+        
+        let blueStackView = UIStackView(arrangedSubviews: [blueColor, UIView(), blueLabel])
+        blueStackView.axis = .horizontal
+        
         let stackSliderView = UIStackView(arrangedSubviews: [
             brushLabel,
             changeBrushSizeSlider,
             opacityLabel,
             opacitySlider,
             rgbLabel,
-            redLabel,
+            redStackView,
             redSlider,
-            greenLabel,
+            greenStackView,
             greenSlider,
-            blueLabel,
+            blueStackView,
             blueSlider
             ])
         stackSliderView.distribution = .fillEqually

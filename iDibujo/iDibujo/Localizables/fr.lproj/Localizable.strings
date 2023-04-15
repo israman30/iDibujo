@@ -36,6 +36,9 @@
 "Alert_Comment_Reset_Art" = "Êtes-vous sûr de vouloir réinitialiser votre art ???";
 "Alert_YES" = "OUI";
 "Alert_NO" = "NON";
+"Red" = "Rouge";
+"Green" = "Vert";
+"Blue" = "Bleu";
 
 /** Hint */
 "Reset_for_canvas" = "Réinitialiser pour la toile";
