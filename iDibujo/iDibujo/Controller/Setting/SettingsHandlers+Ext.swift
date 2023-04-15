@@ -42,6 +42,7 @@ extension SettingsController {
     
     @objc func handleChangeBrushSize(_ sender: UISlider) {
         settingsViewModel.draw.brushSize = CGFloat(sender.value)
+        brushSizeLabel.text = "\(Int(sender.value))"
         previewDraw(red: settingsViewModel.draw.red, green: settingsViewModel.draw.green, blue: settingsViewModel.draw.blue)
     }
     

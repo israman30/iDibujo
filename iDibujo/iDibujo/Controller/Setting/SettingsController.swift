@@ -47,6 +47,14 @@ class SettingsController: UIViewController {
         return label
     }()
     
+    let brushSizeLabel: UILabel = {
+        let label = UILabel()
+        label.text = "10"
+        label.font = .preferredFont(forTextStyle: .title2)
+        label.adjustsFontForContentSizeCategory = true
+        return label
+    }()
+    
     let opacityLabel: UILabel = {
         let label = UILabel()
         label.text = NSLocalizedString("Opacity", comment: "Opacity")

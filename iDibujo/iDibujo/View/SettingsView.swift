@@ -19,6 +19,9 @@ extension SettingsController {
         let blueColor = UILabel()
         blueColor.text = NSLocalizedString("Blue", comment: "Blue")
         
+        let brushSizeStackView = UIStackView(arrangedSubviews: [brushLabel, UIView(), brushSizeLabel])
+        brushSizeStackView.axis = .horizontal
+        
         let redStackView = UIStackView(arrangedSubviews: [redColor, UIView(), redLabel])
         redStackView.axis = .horizontal
         
@@ -29,7 +32,7 @@ extension SettingsController {
         blueStackView.axis = .horizontal
         
         let stackSliderView = UIStackView(arrangedSubviews: [
-            brushLabel,
+            brushSizeStackView,
             changeBrushSizeSlider,
             opacityLabel,
             opacitySlider,
