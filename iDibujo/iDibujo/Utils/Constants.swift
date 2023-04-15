@@ -21,3 +21,11 @@ struct CustomColor {
     static let bluePrimary = UIColor.blue
     static let blueSecondary = UIColor(red: 0/255, green: 0/255, blue: 125/255, alpha: 1)
 }
+
+struct CustomIcon {
+    static let tray_and_arrow_down = "tray.and.arrow.down"
+    static let trash_square = "trash.square"
+    static let hand_draw = "hand.draw"
+    static let reaser = "eraser"
+    static let scribble_variable = "scribble.variable"
+}
