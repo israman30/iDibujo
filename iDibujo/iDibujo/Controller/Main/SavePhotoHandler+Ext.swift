@@ -18,9 +18,9 @@ extension MainController {
         let cancelTitle = NSLocalizedString("Alert_Action_Cancel", comment: "Cancel ❌")
         
         let actionSheet = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
-        actionSheet.addAction(UIAlertAction(title: actionTitle, style: .default, handler: { (UIAlertAction) in
-            
-            guard let image = self.canvasViewModel.draw.container.image else { return }
+        
+        actionSheet.addAction(UIAlertAction(title: actionTitle, style: .default, handler: { [weak self] _ in
+            guard let self = self, let image = self.canvasViewModel.draw.container.image else { return }
             UIImageWriteToSavedPhotosAlbum(
                 image,
                 self,
@@ -31,7 +31,7 @@ extension MainController {
         
         actionSheet.addAction(UIAlertAction(title: cancelTitle, style: .default, handler: nil))
         
-        present(actionSheet, animated: true, completion: nil)
+        present(actionSheet, animated: true)
     }
     
     @objc func image(_ image: UIImage, didFinishWithError error: Error?, contextInfo: UnsafeRawPointer) {
