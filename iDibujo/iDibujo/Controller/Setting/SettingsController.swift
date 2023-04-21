@@ -99,35 +99,35 @@ class SettingsController: UIViewController {
     
     // MARK: - SLIDERS BLOCK
     let changeBrushSizeSlider: CustomSlider = {
-        let slider = CustomSlider()
+        let slider = CustomSlider(firstColor: CustomColor.blackPrimary, secondColor: CustomColor.blackSecondary)
         slider.value = 10
         slider.minimumValue = 1
         slider.maximumValue = 90
         return slider
     }()
     
-    let opacitySlider: UISlider = {
-        let slider = UISlider()
+    let opacitySlider: CustomSlider = {
+        let slider = CustomSlider(firstColor: CustomColor.blackPrimary, secondColor: CustomColor.blackSecondary)
         slider.setValue(1, animated: true)
         return slider
     }()
     
-    let redSlider: UISlider = {
-        let slider = UISlider()
+    let redSlider: CustomSlider = {
+        let slider = CustomSlider(firstColor: CustomColor.redPrimary, secondColor: CustomColor.redSecondary)
         slider.minimumTrackTintColor = .red
         slider.thumbTintColor = .red
         return slider
     }()
     
-    let greenSlider: UISlider = {
-        let slider = UISlider()
+    let greenSlider: CustomSlider = {
+        let slider = CustomSlider(firstColor: CustomColor.greenPrimary, secondColor: CustomColor.greenSecondary)
         slider.minimumTrackTintColor = .green
         slider.thumbTintColor = .green
         return slider
     }()
     
-    let blueSlider: UISlider = {
-        let slider = UISlider()
+    let blueSlider: CustomSlider = {
+        let slider = CustomSlider(firstColor: CustomColor.bluePrimary, secondColor: CustomColor.blueSecondary)
         slider.minimumTrackTintColor = .blue
         slider.thumbTintColor = .blue
         return slider
@@ -165,10 +165,22 @@ final class CustomSlider: UISlider {
     
     private let baseLayer = CALayer()
     private let trackLayer = CAGradientLayer()
+    var firstColor: UIColor? = nil
+    var secondColor: UIColor? = nil
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         setup()
+    }
+    
+    init(firstColor: UIColor? = nil, secondColor: UIColor? = nil) {
+        super.init(frame: .zero)
+        self.firstColor = firstColor
+        self.secondColor = secondColor
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     private func setup() {
@@ -192,20 +204,14 @@ final class CustomSlider: UISlider {
         baseLayer.borderColor = UIColor.lightGray.cgColor
         baseLayer.masksToBounds = true
         baseLayer.backgroundColor = UIColor.white.cgColor
-        baseLayer.frame = .init(x: 0,
-                                y: frame.height / 4,
-                                width: frame.width,
-                                height: frame.height / 2)
+        baseLayer.frame = .init(x: 0, y: frame.height / 4, width: frame.width, height: frame.height / 2)
         baseLayer.cornerRadius = baseLayer.frame.height / 2
         layer.insertSublayer(baseLayer, at: 0)
     }
     
     private func createThumbImageView() {
         let thumbSize = (3 * frame.height) / 4
-        let thumbView = ThumbView(frame: .init(x: 0,
-                                               y: 0,
-                                               width: thumbSize,
-                                               height: thumbSize))
+        let thumbView = ThumbView(frame: .init(x: 0, y: 0, width: thumbSize, height: thumbSize))
         thumbView.layer.cornerRadius = thumbSize / 2
         let thumbSnapshot = thumbView.snapshot
         setThumbImage(thumbSnapshot, for: .normal)
@@ -218,15 +224,10 @@ final class CustomSlider: UISlider {
     }
     
     private func configureTrackLayer() {
-        let firstColor = UIColor(red: 210/255, green: 152/255, blue: 238/255, alpha: 1).cgColor
-        let secondColor = UIColor(red: 166/255, green: 20/255, blue: 217/255, alpha: 1).cgColor
-        trackLayer.colors = [firstColor, secondColor]
+        trackLayer.colors = [firstColor?.cgColor ?? UIColor(), secondColor?.cgColor ?? UIColor()]
         trackLayer.startPoint = .init(x: 0, y: 0.5)
         trackLayer.endPoint = .init(x: 1, y: 0.5)
-        trackLayer.frame = .init(x: 0,
-                                 y: frame.height / 4,
-                                 width: 0,
-                                 height: frame.height / 2)
+        trackLayer.frame = .init(x: 0, y: frame.height / 4, width: 0, height: frame.height / 2)
         trackLayer.cornerRadius = trackLayer.frame.height / 2
         layer.insertSublayer(trackLayer, at: 1)
     }
@@ -259,7 +260,7 @@ final class ThumbView: UIView {
     }
  
     private func setup() {
-        backgroundColor = UIColor(red: 183 / 255, green: 122 / 255, blue: 231 / 255, alpha: 1)
+        backgroundColor = CustomColor.blackSecondary
         let middleView = UIView(frame: .init(x: frame.midX - 6,
                                              y: frame.midY - 6,
                                              width: 12,
