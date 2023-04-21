@@ -12,17 +12,36 @@ extension SettingsController {
     
     // MARK: - SETTING SLIDER FOR SETTINGS CONTROLLER
     func setSliders() {
+        let redColor = UILabel()
+        redColor.text = NSLocalizedString("Red", comment: "Red")
+        let greenColor = UILabel()
+        greenColor.text = NSLocalizedString("Green", comment: "Green")
+        let blueColor = UILabel()
+        blueColor.text = NSLocalizedString("Blue", comment: "Blue")
+        
+        let brushSizeStackView = UIStackView(arrangedSubviews: [brushLabel, UIView(), brushSizeLabel])
+        brushSizeStackView.axis = .horizontal
+        
+        let redStackView = UIStackView(arrangedSubviews: [redColor, UIView(), redLabel])
+        redStackView.axis = .horizontal
+        
+        let greenStackView = UIStackView(arrangedSubviews: [greenColor, UIView(), greenLabel])
+        greenStackView.axis = .horizontal
+        
+        let blueStackView = UIStackView(arrangedSubviews: [blueColor, UIView(), blueLabel])
+        blueStackView.axis = .horizontal
+        
         let stackSliderView = UIStackView(arrangedSubviews: [
-            brushLabel,
+            brushSizeStackView,
             changeBrushSizeSlider,
             opacityLabel,
             opacitySlider,
             rgbLabel,
-            redLabel,
+            redStackView,
             redSlider,
-            greenLabel,
+            greenStackView,
             greenSlider,
-            blueLabel,
+            blueStackView,
             blueSlider
             ])
         stackSliderView.distribution = .fillEqually
@@ -43,7 +62,9 @@ extension SettingsController {
         
         view.backgroundColor = .white
         
-        view.addSubViews(dismissButton, imageView)
+        view.addSubViews(dismissButton, closeButton, imageView)
+        
+        closeButton.anchor(top: dismissButton.topAnchor, left: nil, bottom: nil, right: view.rightAnchor)
         
         dismissButton.anchor(
             top: view.safeAreaLayoutGuide.topAnchor,

@@ -14,12 +14,26 @@ class CanvasViewModel {
     
     // MARK: - Erase button re assigning values to delete stroke + switch title.
     func eraseCanvas(eraserButton: UIButton) {
+        
+        let fontLarge = UIFont.systemFont(ofSize: 30)
+        let config = UIImage.SymbolConfiguration(font: fontLarge)
+        var image: UIImage!
+        
         if draw.isDrawing {
             (draw.red, draw.green, draw.blue) = (1, 1, 1)
+<<<<<<< HEAD
+            image = UIImage(systemName: CustomIcon.hand_draw, withConfiguration: config)
+            eraserButton.setImage(image, for: .normal)
+        } else {
+            (draw.red, draw.green, draw.blue) = (0, 0, 0)
+            image = UIImage(systemName: CustomIcon.reaser, withConfiguration: config)
+            eraserButton.setImage(image, for: .normal)
+=======
             eraserButton.setTitle(NSLocalizedString("DRAW", comment: "DRAW"), for: .normal)
         } else {
             (draw.red, draw.green, draw.blue) = (0, 0, 0)
             eraserButton.setTitle(NSLocalizedString("DELT", comment: "DELT"), for: .normal)
+>>>>>>> master
         }
         draw.isDrawing = !draw.isDrawing
     }

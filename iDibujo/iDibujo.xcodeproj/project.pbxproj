@@ -10,6 +10,12 @@
 		4D0943A529A930D700C40E27 /* Draw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0943A429A930D700C40E27 /* Draw.swift */; };
 		4D0943A729A9342B00C40E27 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0943A629A9342B00C40E27 /* SettingsViewModel.swift */; };
 		4D0943AC29ABF8D000C40E27 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4D0943AE29ABF8D000C40E27 /* Localizable.strings */; };
+<<<<<<< HEAD
+		4D3C9D8F29E85E640049DF73 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3C9D8E29E85E640049DF73 /* Constants.swift */; };
+		4D3C9D9129E89F230049DF73 /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3C9D9029E89F230049DF73 /* CustomSlider.swift */; };
+		4D3C9D9329EA4E510049DF73 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3C9D9229EA4E510049DF73 /* Extensions.swift */; };
+=======
+>>>>>>> master
 		4DA07C1122E748250029882D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA07C1022E748250029882D /* AppDelegate.swift */; };
 		4DA07C1322E748250029882D /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA07C1222E748250029882D /* MainController.swift */; };
 		4DA07C1822E748260029882D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DA07C1722E748260029882D /* Assets.xcassets */; };
@@ -38,6 +44,12 @@
 		4D0943D229B143B300C40E27 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4D0943D329B16E8000C40E27 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4D0943D429B1957A00C40E27 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+<<<<<<< HEAD
+		4D3C9D8E29E85E640049DF73 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		4D3C9D9029E89F230049DF73 /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
+		4D3C9D9229EA4E510049DF73 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+=======
+>>>>>>> master
 		4DA07C0D22E748250029882D /* iDibujo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iDibujo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DA07C1022E748250029882D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DA07C1222E748250029882D /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
@@ -78,6 +90,19 @@
 			path = Localizables;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
+		4D3C9D8D29E85E580049DF73 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				4D3C9D8E29E85E640049DF73 /* Constants.swift */,
+				4D3C9D9029E89F230049DF73 /* CustomSlider.swift */,
+				4D3C9D9229EA4E510049DF73 /* Extensions.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+=======
+>>>>>>> master
 		4DA07C0422E748250029882D = {
 			isa = PBXGroup;
 			children = (
@@ -259,6 +284,7 @@
 				4DD83CA522E7EE25002933DE /* SettingsView.swift in Sources */,
 				4DD83CAB22E8CA81002933DE /* Drawing+Ext.swift in Sources */,
 				4DD83CA722E7F064002933DE /* AlertController.swift in Sources */,
+				4D3C9D9329EA4E510049DF73 /* Extensions.swift in Sources */,
 				4DD83CA322E77D19002933DE /* MainView.swift in Sources */,
 				4DD83CAF22E8CB89002933DE /* SavePhotoHandler+Ext.swift in Sources */,
 				4DD83C9C22E74C58002933DE /* Anchors+Ext.swift in Sources */,
@@ -426,7 +452,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.israelmanzo.iDibujo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -448,7 +474,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.israelmanzo.iDibujo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

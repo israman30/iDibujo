@@ -8,6 +8,8 @@
 
 import UIKit
 
+<<<<<<< HEAD
+=======
 // MARK: - Custom button for each BUTTON color
 class CustomButton: UIButton {
     
@@ -60,6 +62,7 @@ extension UIView {
     }
 }
 
+>>>>>>> master
 // MARK: -  ANCHOR CONSTRAINT EXTENSION VIEW FOR AUTOLAYOUT
 struct AnchoredConstraints {
     var top, left, bottom, right, width, height: NSLayoutConstraint?

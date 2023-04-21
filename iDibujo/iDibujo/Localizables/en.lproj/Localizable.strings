@@ -36,6 +36,9 @@
 "Alert_Comment_Reset_Art" = "Are yo sure you want to reset your art???";
 "Alert_YES" = "YES";
 "Alert_NO" = "NO";
+"Red" = "Red";
+"Green" = "Green";
+"Blue" = "Blue";
 
 /** Hint */
 "Reset_for_canvas" = "Reset for canvas";

@@ -36,6 +36,9 @@
 "Alert_Comment_Reset_Art" = "你确定要重置你的艺术作品吗";
 "Alert_YES" = "是的";
 "Alert_NO" = "不";
+"Red" = "红色的";
+"Green" = "绿色的";
+"Blue" = "蓝色的";
 
 /** Hint */
 "Reset_for_canvas" = "重置画布";
