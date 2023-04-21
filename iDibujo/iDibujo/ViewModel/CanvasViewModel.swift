@@ -21,12 +21,19 @@ class CanvasViewModel {
         
         if draw.isDrawing {
             (draw.red, draw.green, draw.blue) = (1, 1, 1)
+<<<<<<< HEAD
             image = UIImage(systemName: CustomIcon.hand_draw, withConfiguration: config)
             eraserButton.setImage(image, for: .normal)
         } else {
             (draw.red, draw.green, draw.blue) = (0, 0, 0)
             image = UIImage(systemName: CustomIcon.reaser, withConfiguration: config)
             eraserButton.setImage(image, for: .normal)
+=======
+            eraserButton.setTitle(NSLocalizedString("DRAW", comment: "DRAW"), for: .normal)
+        } else {
+            (draw.red, draw.green, draw.blue) = (0, 0, 0)
+            eraserButton.setTitle(NSLocalizedString("DELT", comment: "DELT"), for: .normal)
+>>>>>>> master
         }
         draw.isDrawing = !draw.isDrawing
     }
