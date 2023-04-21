@@ -25,7 +25,7 @@ class CanvasViewModel {
             eraserButton.setImage(image, for: .normal)
         } else {
             (draw.red, draw.green, draw.blue) = (0, 0, 0)
-            image = UIImage(systemName: CustomIcon.reaser, withConfiguration: config)
+            image = UIImage(systemName: CustomIcon.ereaser, withConfiguration: config)
             eraserButton.setImage(image, for: .normal)
         }
         draw.isDrawing = !draw.isDrawing
