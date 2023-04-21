@@ -43,6 +43,7 @@ class SettingsController: UIViewController {
         let label = UILabel()
         label.text = NSLocalizedString("Brush_Size", comment: "Brush Size") 
         label.font = .preferredFont(forTextStyle: .title2)
+        label.textColor = CustomColor.blackPrimary
         label.adjustsFontForContentSizeCategory = true
         return label
     }()
@@ -51,6 +52,7 @@ class SettingsController: UIViewController {
         let label = UILabel()
         label.text = "10"
         label.font = .preferredFont(forTextStyle: .title2)
+        label.textColor = CustomColor.blackPrimary
         label.adjustsFontForContentSizeCategory = true
         return label
     }()
@@ -59,6 +61,7 @@ class SettingsController: UIViewController {
         let label = UILabel()
         label.text = NSLocalizedString("Opacity", comment: "Opacity") 
         label.font = .preferredFont(forTextStyle: .title2)
+        label.textColor = CustomColor.blackPrimary
         label.adjustsFontForContentSizeCategory = true
         return label
     }()
@@ -67,7 +70,7 @@ class SettingsController: UIViewController {
         let label = UILabel()
         label.text = NSLocalizedString("RGB_Colors", comment: "RGB Colors") 
         label.textAlignment = .center
-        label.textColor = .init(red: 141/255, green: 141/255, blue: 145/255, alpha: 1)
+        label.textColor = CustomColor.blackSecondary
         label.font = .preferredFont(forTextStyle: .title1)
         label.adjustsFontForContentSizeCategory = true
         return label
@@ -77,6 +80,7 @@ class SettingsController: UIViewController {
         let label = UILabel()
         label.text = NSLocalizedString("Red_Label", comment: "Red Label")
         label.font = .preferredFont(forTextStyle: .title2)
+        label.textColor = CustomColor.blackPrimary
         label.adjustsFontForContentSizeCategory = true
         return label
     }()
@@ -85,6 +89,7 @@ class SettingsController: UIViewController {
         let label = UILabel()
         label.text = NSLocalizedString("Green_Label", comment: "Green Label") 
         label.font = .preferredFont(forTextStyle: .title2)
+        label.textColor = CustomColor.blackPrimary
         label.adjustsFontForContentSizeCategory = true
         return label
     }()
@@ -93,41 +98,42 @@ class SettingsController: UIViewController {
         let label = UILabel()
         label.text = NSLocalizedString("Blue_Label", comment: "Blue Label")
         label.font = .preferredFont(forTextStyle: .title2)
+        label.textColor = CustomColor.blackPrimary
         label.adjustsFontForContentSizeCategory = true
         return label
     }()
     
     // MARK: - SLIDERS BLOCK
-    let changeBrushSizeSlider: UISlider = {
-        let slider = UISlider()
+    let changeBrushSizeSlider: CustomSlider = {
+        let slider = CustomSlider(firstColor: CustomColor.blackPrimary, secondColor: CustomColor.blackSecondary)
         slider.value = 10
         slider.minimumValue = 1
         slider.maximumValue = 90
         return slider
     }()
     
-    let opacitySlider: UISlider = {
-        let slider = UISlider()
+    let opacitySlider: CustomSlider = {
+        let slider = CustomSlider(firstColor: CustomColor.blackPrimary, secondColor: CustomColor.blackSecondary)
         slider.setValue(1, animated: true)
         return slider
     }()
     
-    let redSlider: UISlider = {
-        let slider = UISlider()
+    let redSlider: CustomSlider = {
+        let slider = CustomSlider(firstColor: CustomColor.redPrimary, secondColor: CustomColor.redSecondary)
         slider.minimumTrackTintColor = .red
         slider.thumbTintColor = .red
         return slider
     }()
     
-    let greenSlider: UISlider = {
-        let slider = UISlider()
+    let greenSlider: CustomSlider = {
+        let slider = CustomSlider(firstColor: CustomColor.greenPrimary, secondColor: CustomColor.greenSecondary)
         slider.minimumTrackTintColor = .green
         slider.thumbTintColor = .green
         return slider
     }()
     
-    let blueSlider: UISlider = {
-        let slider = UISlider()
+    let blueSlider: CustomSlider = {
+        let slider = CustomSlider(firstColor: CustomColor.bluePrimary, secondColor: CustomColor.blueSecondary)
         slider.minimumTrackTintColor = .blue
         slider.thumbTintColor = .blue
         return slider
