@@ -26,7 +26,7 @@ struct CustomIcon {
     static let tray_and_arrow_down = "tray.and.arrow.down"
     static let trash_square = "trash.square"
     static let hand_draw = "hand.draw"
-    static let reaser = "eraser"
+    static let ereaser = "eraser"
     static let scribble_variable = "scribble.variable"
     static let xmark_square = "xmark.square"
 }
