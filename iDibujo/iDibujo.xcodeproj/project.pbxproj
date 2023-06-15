@@ -29,6 +29,7 @@
 		4DD83CB322E8FE2F002933DE /* SettingsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD83CB222E8FE2F002933DE /* SettingsProtocol.swift */; };
 		4DD83CB522E8FE87002933DE /* PreviewDraw+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD83CB422E8FE87002933DE /* PreviewDraw+Ext.swift */; };
 		4DD83CB722E8FEF9002933DE /* SettingsHandlers+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD83CB622E8FEF9002933DE /* SettingsHandlers+Ext.swift */; };
+		4DDFED4E2A3AADA600BA881D /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDFED4D2A3AADA600BA881D /* PreviewView.swift */; };
 		8DA6815726C750460091DBD0 /* CanvasViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA6815626C750460091DBD0 /* CanvasViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,7 @@
 		4DD83CB222E8FE2F002933DE /* SettingsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsProtocol.swift; sourceTree = "<group>"; };
 		4DD83CB422E8FE87002933DE /* PreviewDraw+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PreviewDraw+Ext.swift"; sourceTree = "<group>"; };
 		4DD83CB622E8FEF9002933DE /* SettingsHandlers+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsHandlers+Ext.swift"; sourceTree = "<group>"; };
+		4DDFED4D2A3AADA600BA881D /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
 		8DA6815626C750460091DBD0 /* CanvasViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,6 +92,7 @@
 				4D2C642929F22C7C000AF59E /* Constants.swift */,
 				4D2C642B29F22C8F000AF59E /* Extensions.swift */,
 				4D2C642D29F236A3000AF59E /* CustomSlider.swift */,
+				4DDFED4D2A3AADA600BA881D /* PreviewView.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 			files = (
 				4DD83CB322E8FE2F002933DE /* SettingsProtocol.swift in Sources */,
 				4DD83C9E22E77953002933DE /* SettingsController.swift in Sources */,
+				4DDFED4E2A3AADA600BA881D /* PreviewView.swift in Sources */,
 				4DD83CAD22E8CB60002933DE /* MainHandlers+Ext.swift in Sources */,
 				4D0943A529A930D700C40E27 /* Draw.swift in Sources */,
 				4DD83CB522E8FE87002933DE /* PreviewDraw+Ext.swift in Sources */,
