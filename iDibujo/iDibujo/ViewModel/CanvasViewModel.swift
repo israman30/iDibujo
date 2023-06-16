@@ -8,7 +8,13 @@
 
 import UIKit
 
-class CanvasViewModel {
+protocol CanvasViewModelProtocol {
+    func eraseCanvas(eraserButton: UIButton)
+    func colorPicker(_ sender: UISlider)
+    func draw(from: CGPoint, to: CGPoint)
+}
+
+class CanvasViewModel: CanvasViewModelProtocol {
     
     var draw = Draw()
     
