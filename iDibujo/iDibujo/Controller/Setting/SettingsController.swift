@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class SettingsController: UIViewController {
     
@@ -168,3 +169,12 @@ class SettingsController: UIViewController {
 }
 
 
+
+// MARK: - Preview 
+struct SettingsController_Preview: PreviewProvider {
+    static var previews: some View {
+        UIViewControllerPreview {
+            SettingsController()
+        }
+    }
+}
