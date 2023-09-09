@@ -30,8 +30,19 @@
 		4DD83CB522E8FE87002933DE /* PreviewDraw+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD83CB422E8FE87002933DE /* PreviewDraw+Ext.swift */; };
 		4DD83CB722E8FEF9002933DE /* SettingsHandlers+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD83CB622E8FEF9002933DE /* SettingsHandlers+Ext.swift */; };
 		4DDFED4E2A3AADA600BA881D /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDFED4D2A3AADA600BA881D /* PreviewView.swift */; };
+		4DDFED562A3CDAA800BA881D /* iDibujoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDFED552A3CDAA800BA881D /* iDibujoTests.swift */; };
 		8DA6815726C750460091DBD0 /* CanvasViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA6815626C750460091DBD0 /* CanvasViewModel.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4DDFED572A3CDAA800BA881D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4DA07C0522E748250029882D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4DA07C0C22E748250029882D;
+			remoteInfo = iDibujo;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		4D0943A429A930D700C40E27 /* Draw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Draw.swift; sourceTree = "<group>"; };
@@ -64,11 +75,20 @@
 		4DD83CB422E8FE87002933DE /* PreviewDraw+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PreviewDraw+Ext.swift"; sourceTree = "<group>"; };
 		4DD83CB622E8FEF9002933DE /* SettingsHandlers+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsHandlers+Ext.swift"; sourceTree = "<group>"; };
 		4DDFED4D2A3AADA600BA881D /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
+		4DDFED532A3CDAA800BA881D /* iDibujoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iDibujoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4DDFED552A3CDAA800BA881D /* iDibujoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iDibujoTests.swift; sourceTree = "<group>"; };
 		8DA6815626C750460091DBD0 /* CanvasViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		4DA07C0A22E748250029882D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4DDFED502A3CDAA800BA881D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -101,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				4DA07C0F22E748250029882D /* iDibujo */,
+				4DDFED542A3CDAA800BA881D /* iDibujoTests */,
 				4DA07C0E22E748250029882D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -109,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				4DA07C0D22E748250029882D /* iDibujo.app */,
+				4DDFED532A3CDAA800BA881D /* iDibujoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -181,6 +203,14 @@
 			path = Setting;
 			sourceTree = "<group>";
 		};
+		4DDFED542A3CDAA800BA881D /* iDibujoTests */ = {
+			isa = PBXGroup;
+			children = (
+				4DDFED552A3CDAA800BA881D /* iDibujoTests.swift */,
+			);
+			path = iDibujoTests;
+			sourceTree = "<group>";
+		};
 		8DA6815526C750330091DBD0 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -210,6 +240,24 @@
 			productReference = 4DA07C0D22E748250029882D /* iDibujo.app */;
 			productType = "com.apple.product-type.application";
 		};
+		4DDFED522A3CDAA800BA881D /* iDibujoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4DDFED5B2A3CDAA800BA881D /* Build configuration list for PBXNativeTarget "iDibujoTests" */;
+			buildPhases = (
+				4DDFED4F2A3CDAA800BA881D /* Sources */,
+				4DDFED502A3CDAA800BA881D /* Frameworks */,
+				4DDFED512A3CDAA800BA881D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4DDFED582A3CDAA800BA881D /* PBXTargetDependency */,
+			);
+			name = iDibujoTests;
+			productName = iDibujoTests;
+			productReference = 4DDFED532A3CDAA800BA881D /* iDibujoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -217,12 +265,16 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastSwiftUpdateCheck = 1030;
+				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				ORGANIZATIONNAME = "Israel Manzo";
 				TargetAttributes = {
 					4DA07C0C22E748250029882D = {
 						CreatedOnToolsVersion = 10.3;
+					};
+					4DDFED522A3CDAA800BA881D = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 4DA07C0C22E748250029882D;
 					};
 				};
 			};
@@ -244,6 +296,7 @@
 			projectRoot = "";
 			targets = (
 				4DA07C0C22E748250029882D /* iDibujo */,
+				4DDFED522A3CDAA800BA881D /* iDibujoTests */,
 			);
 		};
 /* End PBXProject section */
@@ -256,6 +309,13 @@
 				4DA07C1B22E748260029882D /* LaunchScreen.storyboard in Resources */,
 				4D0943AC29ABF8D000C40E27 /* Localizable.strings in Resources */,
 				4DA07C1822E748260029882D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4DDFED512A3CDAA800BA881D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,7 +350,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4DDFED4F2A3CDAA800BA881D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4DDFED562A3CDAA800BA881D /* iDibujoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4DDFED582A3CDAA800BA881D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4DA07C0C22E748250029882D /* iDibujo */;
+			targetProxy = 4DDFED572A3CDAA800BA881D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4D0943AE29ABF8D000C40E27 /* Localizable.strings */ = {
@@ -481,6 +557,46 @@
 			};
 			name = Release;
 		};
+		4DDFED592A3CDAA800BA881D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G9TBJCK73T;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.israman.somenews.iDibujoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iDibujo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/iDibujo";
+			};
+			name = Debug;
+		};
+		4DDFED5A2A3CDAA800BA881D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G9TBJCK73T;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.israman.somenews.iDibujoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iDibujo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/iDibujo";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -498,6 +614,15 @@
 			buildConfigurations = (
 				4DA07C2022E748260029882D /* Debug */,
 				4DA07C2122E748260029882D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4DDFED5B2A3CDAA800BA881D /* Build configuration list for PBXNativeTarget "iDibujoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4DDFED592A3CDAA800BA881D /* Debug */,
+				4DDFED5A2A3CDAA800BA881D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
