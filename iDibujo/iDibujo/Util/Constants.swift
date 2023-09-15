@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import SwiftUI
 
 struct CustomColor {
+    static let blackColor = UIColor(Color(.label))
     static let blackPrimary = UIColor.black
     static let blackSecondary = UIColor(red: 105/255, green: 105/255, blue: 105/255, alpha: 1)
     

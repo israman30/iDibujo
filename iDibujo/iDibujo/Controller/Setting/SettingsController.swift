@@ -29,7 +29,7 @@ class SettingsController: UIViewController {
         let config = UIImage.SymbolConfiguration(font: fontLarge)
         let image = UIImage(systemName: CustomIcon.xmark_square, withConfiguration: config)
         btn.setImage(image, for: .normal)
-        btn.tintColor = .black
+        btn.tintColor = CustomColor.blackColor
         return btn
     }()
     
@@ -44,7 +44,7 @@ class SettingsController: UIViewController {
         let label = UILabel()
         label.text = NSLocalizedString("Brush_Size", comment: "Brush Size") 
         label.font = .preferredFont(forTextStyle: .title2)
-        label.textColor = CustomColor.blackPrimary
+        label.textColor = CustomColor.blackColor
         label.adjustsFontForContentSizeCategory = true
         return label
     }()
@@ -53,7 +53,7 @@ class SettingsController: UIViewController {
         let label = UILabel()
         label.text = "10"
         label.font = .preferredFont(forTextStyle: .title2)
-        label.textColor = CustomColor.blackPrimary
+        label.textColor = CustomColor.blackColor
         label.adjustsFontForContentSizeCategory = true
         return label
     }()
@@ -71,7 +71,7 @@ class SettingsController: UIViewController {
         let label = UILabel()
         label.text = NSLocalizedString("RGB_Colors", comment: "RGB Colors") 
         label.textAlignment = .center
-        label.textColor = CustomColor.blackSecondary
+        label.textColor = CustomColor.blackColor
         label.font = .preferredFont(forTextStyle: .title1)
         label.adjustsFontForContentSizeCategory = true
         return label
