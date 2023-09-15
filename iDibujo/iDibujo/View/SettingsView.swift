@@ -60,7 +60,7 @@ extension SettingsController {
     // MARK: - SETTINGS VIEW FOR SETTING CONTROLLER
     func setSettingsView() {
         
-        view.backgroundColor = .white
+//        view.backgroundColor = .white
         
         view.addSubViews(dismissButton, closeButton, imageView)
         
