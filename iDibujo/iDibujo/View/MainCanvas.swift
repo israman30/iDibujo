@@ -32,12 +32,16 @@ struct MainCanvas: View {
             selectedColor = color
         } label: {
             Image(systemName: "circle.fill")
-                .font(.title)
+                .font(.largeTitle)
                 .foregroundStyle(color)
-                .mask {
-                    Image(systemName: "pencil.tip")
-                        .font(.largeTitle)
-                }
+                .background(
+                    Circle()
+                        .stroke(.black, lineWidth: 4)
+                )
+//                .mask {
+//                    Image(systemName: "pencil.tip")
+//                        .font(.largeTitle)
+//                }
         }
     }
     
