@@ -13,16 +13,24 @@ struct MainCanvas: View {
     @State private var lines = [Line]()
     @State private var selectedColor = Color.black
     @State private var colors: [Color] = [.green, .orange, .blue, .red, .pink, .black, .purple]
+    @State private var presentSheet = false
+    @State private var settingsDetent = PresentationDetent.medium
     
     var body: some View {
         VStack {
             HStack {
+                Spacer()
+                menuList()
+            }
+            .padding(.horizontal)
+            
+            CanvasView(lines: $lines, selectedColor: $selectedColor)
+            
+            HStack {
                 ForEach(colors, id: \.self) { color in
                     colorButton(color: color)
                 }
-                clearButton()
             }
-            CanvasView(lines: $lines, selectedColor: $selectedColor)
         }
     }
     
@@ -38,11 +46,31 @@ struct MainCanvas: View {
                     Circle()
                         .stroke(.black, lineWidth: 4)
                 )
-//                .mask {
-//                    Image(systemName: "pencil.tip")
-//                        .font(.largeTitle)
-//                }
         }
+    }
+    
+    @ViewBuilder
+    func menuList() -> some View {
+        Menu {
+            Button {
+                lines.removeAll()
+            } label: {
+                Text("Clear")
+            }
+            Button {
+                self.presentSheet = true
+            } label: {
+                Text("Adjust")
+            }
+        } label: {
+            Image(systemName: "pencil.tip.crop.circle.badge.arrow.forward")
+                .font(.largeTitle)
+                .foregroundStyle(.gray)
+        }
+        .sheet(isPresented: $presentSheet, content: {
+            EmptyView()
+                .presentationDetents([.medium, .large], selection: $settingsDetent)
+        })
     }
     
     @ViewBuilder
