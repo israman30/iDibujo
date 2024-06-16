@@ -16,7 +16,7 @@ struct Line {
 struct MainCanvas: View {
     
     @State private var lines = [Line]()
-    @State private var selectedColor = Color.blue
+    @State private var selectedColor = Color.black
     @State private var colors: [Color] = [.green, .orange, .blue, .red, .pink, .black, .purple]
     
     var body: some View {
