@@ -55,11 +55,15 @@ struct MainCanvas: View {
             Button {
                 lines.removeAll()
             } label: {
-                Text("Clear")
+                HStack {
+                    Image(systemName: "eraser")
+                    Text("Clear")
+                }
             }
             Button {
                 self.presentSheet = true
             } label: {
+                Image(systemName: "scribble.variable")
                 Text("Adjust")
             }
         } label: {
