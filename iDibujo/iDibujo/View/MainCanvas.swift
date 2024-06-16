@@ -27,6 +27,28 @@ struct MainCanvas: View {
                 }
                 clearButton()
             }
+            Canvas { context, size in
+                lines.forEach {
+                    var path = Path()
+                    path.addLines($0.points)
+                    
+                    let strokeStyle = StrokeStyle(lineWidth: 5, lineCap: .round, lineJoin: .round)
+                    context.stroke(path, with: .color($0.color), style: strokeStyle)
+                }
+            } // minimunDistance is the initial point when the line starts
+            .gesture(
+                DragGesture(minimumDistance: 0, coordinateSpace: .local)
+                    .onChanged({ value in
+                        let position = value.location
+                        // if no value has found/no line append a new start to create line
+                        if value.translation == .zero {
+                            lines.append(Line(points: [position], color: selectedColor))
+                        } else { // otherwise append to last point to create a line
+                            guard let lastIndex = lines.indices.last else { return }
+                            lines[lastIndex].points.append(position)
+                        }
+                    })
+            )
         }
     }
     
