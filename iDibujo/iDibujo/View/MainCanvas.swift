@@ -54,7 +54,6 @@ struct MainCanvas: View {
     func menuList() -> some View {
         Menu {
             Button {
-//                lines.removeAll()
                 self.showingAlert = true
             } label: {
                 HStack {
