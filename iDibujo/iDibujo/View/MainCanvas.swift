@@ -15,6 +15,7 @@ struct MainCanvas: View {
     @State private var colors: [Color] = [.green, .orange, .blue, .red, .pink, .black, .purple]
     @State private var presentSheet = false
     @State private var settingsDetent = PresentationDetent.medium
+    @State private var showingAlert = false
     
     var body: some View {
         VStack {
@@ -53,13 +54,16 @@ struct MainCanvas: View {
     func menuList() -> some View {
         Menu {
             Button {
-                lines.removeAll()
+//                lines.removeAll()
+                self.showingAlert = true
             } label: {
                 HStack {
                     Image(systemName: "eraser")
                     Text("Clear")
                 }
             }
+            .disabled(lines.isEmpty ? true : false)
+            
             Button {
                 self.presentSheet = true
             } label: {
@@ -75,6 +79,12 @@ struct MainCanvas: View {
             EmptyView()
                 .presentationDetents([.medium, .large], selection: $settingsDetent)
         })
+        .alert("Are you deleting your art?", isPresented: $showingAlert) {
+            Button("Yes", role: .destructive) {
+                lines.removeAll()
+            }
+            Button("No", role: .cancel) { }
+        }
     }
     
     @ViewBuilder
