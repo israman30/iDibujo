@@ -8,14 +8,19 @@
 
 import SwiftUI
 
+final class LineViewModel: ObservableObject {
+    @Published var lineWithValue = 5.0
+    @Published var lines = [Line]()
+    @Published var colors: [Color] = [.green, .orange, .blue, .red, .pink, .black, .purple]
+    @Published var selectedColor = Color.black
+}
+
 struct MainCanvas: View {
     
-    @State private var lines = [Line]()
-    @State private var selectedColor = Color.black
-    @State private var colors: [Color] = [.green, .orange, .blue, .red, .pink, .black, .purple]
     @State private var presentSheet = false
     @State private var settingsDetent = PresentationDetent.medium
     @State private var showingAlert = false
+    @StateObject private var lineViewModel = LineViewModel()
     
     var body: some View {
         VStack {
@@ -25,10 +30,10 @@ struct MainCanvas: View {
             }
             .padding(.horizontal)
             
-            CanvasView(lines: $lines, selectedColor: $selectedColor)
+            CanvasView(lines: $lineViewModel.lines, selectedColor: $lineViewModel.selectedColor)
             
             HStack {
-                ForEach(colors, id: \.self) { color in
+                ForEach(lineViewModel.colors, id: \.self) { color in
                     colorButton(color: color)
                 }
             }
@@ -38,7 +43,7 @@ struct MainCanvas: View {
     @ViewBuilder
     func colorButton(color: Color) -> some View {
         Button {
-            selectedColor = color
+            lineViewModel.selectedColor = color
         } label: {
             Image(systemName: "circle.fill")
                 .font(.largeTitle)
@@ -61,7 +66,7 @@ struct MainCanvas: View {
                     Text("Clear")
                 }
             }
-            .disabled(lines.isEmpty ? true : false)
+            .disabled(lineViewModel.lines.isEmpty ? true : false)
             
             Button {
                 self.presentSheet = true
@@ -80,7 +85,7 @@ struct MainCanvas: View {
         })
         .alert("Are you deleting your art?", isPresented: $showingAlert) {
             Button("Yes", role: .destructive) {
-                lines.removeAll()
+                lineViewModel.lines.removeAll()
             }
             Button("No", role: .cancel) { }
         }
@@ -89,7 +94,7 @@ struct MainCanvas: View {
     @ViewBuilder
     func clearButton() -> some View {
         Button {
-            lines.removeAll()
+            lineViewModel.lines.removeAll()
         } label: {
             Image(systemName: "pencil.tip.crop.circle.badge.minus")
                 .font(.largeTitle)
