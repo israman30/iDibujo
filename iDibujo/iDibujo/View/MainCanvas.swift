@@ -80,7 +80,7 @@ struct MainCanvas: View {
                 .foregroundStyle(.gray)
         }
         .sheet(isPresented: $presentSheet, content: {
-            EmptyView()
+            PresentedView()
                 .presentationDetents([.medium, .large], selection: $settingsDetent)
         })
         .alert("Are you deleting your art?", isPresented: $showingAlert) {
