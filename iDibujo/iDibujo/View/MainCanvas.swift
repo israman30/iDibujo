@@ -9,7 +9,7 @@
 import SwiftUI
 
 final class LineViewModel: ObservableObject {
-    @Published var lineWithValue = 5.0
+    @Published var lineWithValue: CGFloat = 5.0
     @Published var lines = [Line]()
     @Published var colors: [Color] = [.green, .orange, .blue, .red, .pink, .black, .purple]
     @Published var selectedColor = Color.black
@@ -30,7 +30,10 @@ struct MainCanvas: View {
             }
             .padding(.horizontal)
             
-            CanvasView(lines: $lineViewModel.lines, selectedColor: $lineViewModel.selectedColor)
+            CanvasView(
+                lines: $lineViewModel.lines,
+                selectedColor: $lineViewModel.selectedColor, vm: lineViewModel
+            )
             
             HStack {
                 ForEach(lineViewModel.colors, id: \.self) { color in
@@ -80,7 +83,7 @@ struct MainCanvas: View {
                 .foregroundStyle(.gray)
         }
         .sheet(isPresented: $presentSheet, content: {
-            PresentedView()
+            PresentedView(vm: lineViewModel)
                 .presentationDetents([.medium, .large], selection: $settingsDetent)
         })
         .alert("Are you deleting your art?", isPresented: $showingAlert) {

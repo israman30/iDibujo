@@ -12,6 +12,7 @@ struct CanvasView: View {
     
     @Binding var lines: [Line]
     @Binding var selectedColor: Color
+    @State var vm: LineViewModel
     
     var body: some View {
         Canvas { context, size in
@@ -19,7 +20,7 @@ struct CanvasView: View {
                 var path = Path()
                 path.addLines($0.points)
                 
-                let strokeStyle = StrokeStyle(lineWidth: 5, lineCap: .round, lineJoin: .round)
+                let strokeStyle = StrokeStyle(lineWidth: vm.lineWithValue, lineCap: .round, lineJoin: .round)
                 context.stroke(path, with: .color($0.color), style: strokeStyle)
             }
         } // minimunDistance is the initial point when the line starts
