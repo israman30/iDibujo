@@ -13,13 +13,15 @@ struct CanvasView: View {
     @Binding var lines: [Line]
     @Binding var selectedColor: Color
     @State var vm: LineViewModel
+    @State var newValue: [CGFloat] = []
     
     var body: some View {
         Canvas { context, size in
             lines.forEach {
                 var path = Path()
+                self.newValue.append(vm.lineWithValue)
                 path.addLines($0.points)
-                
+                path.addLines(newValue)
                 let strokeStyle = StrokeStyle(lineWidth: vm.lineWithValue, lineCap: .round, lineJoin: .round)
                 context.stroke(path, with: .color($0.color), style: strokeStyle)
             }

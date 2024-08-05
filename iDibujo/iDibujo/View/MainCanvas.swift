@@ -83,7 +83,9 @@ struct MainCanvas: View {
                 .foregroundStyle(.gray)
         }
         .sheet(isPresented: $presentSheet, content: {
-            PresentedView(vm: lineViewModel)
+            PresentedView(vm: lineViewModel) { value in
+                lineViewModel.lineWithValue = value
+            }
                 .presentationDetents([.medium, .large], selection: $settingsDetent)
         })
         .alert("Are you deleting your art?", isPresented: $showingAlert) {
