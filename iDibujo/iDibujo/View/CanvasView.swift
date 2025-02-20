@@ -23,7 +23,6 @@ struct CanvasView: View {
                     self.newValue.append(vm.lineWithValue)
                 }
                 path.addLines($0.points)
-//                path.addLines(newValue)
                 let strokeStyle = StrokeStyle(lineWidth: vm.lineWithValue, lineCap: .round, lineJoin: .round)
                 context.stroke(path, with: .color($0.color), style: strokeStyle)
             }
