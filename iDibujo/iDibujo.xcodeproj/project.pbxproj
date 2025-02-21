@@ -21,6 +21,7 @@
 		4DA07C1322E748250029882D /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA07C1222E748250029882D /* MainController.swift */; };
 		4DA07C1822E748260029882D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DA07C1722E748260029882D /* Assets.xcassets */; };
 		4DA07C1B22E748260029882D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DA07C1922E748260029882D /* LaunchScreen.storyboard */; };
+		4DBD6EC62D680AAD00F92F49 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBD6EC52D680A9400F92F49 /* PickerView.swift */; };
 		4DD83C9C22E74C58002933DE /* Anchors+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD83C9B22E74C58002933DE /* Anchors+Ext.swift */; };
 		4DD83C9E22E77953002933DE /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD83C9D22E77953002933DE /* SettingsController.swift */; };
 		4DD83CA322E77D19002933DE /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD83CA222E77D19002933DE /* MainView.swift */; };
@@ -70,6 +71,7 @@
 		4DA07C1722E748260029882D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4DA07C1A22E748260029882D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4DA07C1C22E748260029882D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4DBD6EC52D680A9400F92F49 /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		4DD83C9B22E74C58002933DE /* Anchors+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Anchors+Ext.swift"; sourceTree = "<group>"; };
 		4DD83C9D22E77953002933DE /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		4DD83CA222E77D19002933DE /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 				4D6CAEE12C1E780500DEE983 /* MainCanvas.swift */,
 				4D6CAEE72C1FB8BA00DEE983 /* PresentedView.swift */,
 				4D6CAEE32C1F3E6900DEE983 /* CanvasView.swift */,
+				4DBD6EC52D680A9400F92F49 /* PickerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 				4DD83CB722E8FEF9002933DE /* SettingsHandlers+Ext.swift in Sources */,
 				4D0943A729A9342B00C40E27 /* SettingsViewModel.swift in Sources */,
 				4DA07C1122E748250029882D /* AppDelegate.swift in Sources */,
+				4DBD6EC62D680AAD00F92F49 /* PickerView.swift in Sources */,
 				4D2C642E29F236A3000AF59E /* CustomSlider.swift in Sources */,
 				4DD83CB122E8CBD4002933DE /* MainDelegate+Ext.swift in Sources */,
 				4DD83CA522E7EE25002933DE /* SettingsView.swift in Sources */,
