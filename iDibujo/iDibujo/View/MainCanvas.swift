@@ -20,6 +20,7 @@ struct MainCanvas: View {
     @State private var presentSheet = false
     @State private var settingsDetent = PresentationDetent.medium
     @State private var showingAlert = false
+    @State var colorPicked: Color = .blue
     @StateObject private var lineViewModel = LineViewModel()
     
     var body: some View {
@@ -60,39 +61,34 @@ struct MainCanvas: View {
     
     @ViewBuilder
     func menuList() -> some View {
-        Menu {
-            Button {
-                self.showingAlert = true
-            } label: {
-                HStack {
-                    Image(systemName: "eraser")
-                    Text("Clear")
+        VStack {
+            Menu {
+                Button {
+                    self.showingAlert = true
+                } label: {
+                    HStack {
+                        Image(systemName: "eraser")
+                        Text("Clear")
+                    }
                 }
-            }
-            .disabled(lineViewModel.lines.isEmpty ? true : false)
-            
-            Button {
-                self.presentSheet = true
+                .disabled(lineViewModel.lines.isEmpty ? true : false)
+                
+                Button { } label: {
+                    Text("Back")
+                }
             } label: {
-                Image(systemName: "scribble.variable")
-                Text("Adjust")
+                Image(systemName: "pencil.tip.crop.circle.badge.arrow.forward")
+                    .font(.largeTitle)
+                    .foregroundStyle(.gray)
             }
-        } label: {
-            Image(systemName: "pencil.tip.crop.circle.badge.arrow.forward")
-                .font(.largeTitle)
-                .foregroundStyle(.gray)
-        }
-        .sheet(isPresented: $presentSheet, content: {
-            PresentedView(vm: lineViewModel) { value in
-                lineViewModel.lineWithValue = value
+            .alert("Are you deleting your art?", isPresented: $showingAlert) {
+                Button("Yes", role: .destructive) {
+                    lineViewModel.lines.removeAll()
+                }
+                Button("No", role: .cancel) { }
             }
-                .presentationDetents([.medium, .large], selection: $settingsDetent)
-        })
-        .alert("Are you deleting your art?", isPresented: $showingAlert) {
-            Button("Yes", role: .destructive) {
-                lineViewModel.lines.removeAll()
-            }
-            Button("No", role: .cancel) { }
+            ColorPicker("PickColor", selection: $colorPicked)
+                .labelsHidden()
         }
     }
     
