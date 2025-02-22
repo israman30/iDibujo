@@ -87,8 +87,11 @@ struct MainCanvas: View {
                 }
                 Button("No", role: .cancel) { }
             }
-            ColorPicker("PickColor", selection: $colorPicked)
+            ColorPicker("PickColor", selection: $lineViewModel.selectedColor)
                 .labelsHidden()
+                .onChange(of: lineViewModel.selectedColor) { oldValue, newValue in
+                    self.colorPicked = newValue
+                }
         }
     }
     

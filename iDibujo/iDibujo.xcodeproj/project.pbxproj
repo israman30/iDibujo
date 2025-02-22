@@ -544,7 +544,7 @@
 				DEVELOPMENT_TEAM = G9TBJCK73T;
 				INFOPLIST_FILE = iDibujo/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "iDibujo a Picture";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -566,7 +566,7 @@
 				DEVELOPMENT_TEAM = G9TBJCK73T;
 				INFOPLIST_FILE = iDibujo/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "iDibujo a Picture";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
