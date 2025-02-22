@@ -24,21 +24,24 @@ struct MainCanvas: View {
     @StateObject private var lineViewModel = LineViewModel()
     
     var body: some View {
-        VStack {
-            HStack {
-                Spacer()
-                menuList()
-            }
-            .padding(.horizontal)
-            
+        ZStack {
             CanvasView(
                 lines: $lineViewModel.lines,
                 selectedColor: $lineViewModel.selectedColor, vm: lineViewModel
             )
+            .ignoresSafeArea(.all)
             
-            HStack {
-                ForEach(lineViewModel.colors, id: \.self) { color in
-                    colorButton(color: color)
+            VStack {
+                HStack {
+                    Spacer()
+                    menuList()
+                }
+                .padding(.horizontal)
+                Spacer()
+                HStack {
+                    ForEach(lineViewModel.colors, id: \.self) { color in
+                        colorButton(color: color)
+                    }
                 }
             }
         }
