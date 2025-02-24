@@ -22,10 +22,10 @@ struct PresentedView: View {
             Text(String(format: "%.2f", value))
                 .font(.headline)
         }
-        .onChange(of: value, perform: { value in
+        .onChange(of: value) { _ , value in
             self.value = value
             closure!(value)
-        })
+        }
         
         .padding()
     }
