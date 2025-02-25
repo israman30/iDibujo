@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 final class LineViewModel: ObservableObject {
     @Published var lineWithValue: CGFloat = 5.0
@@ -79,6 +80,13 @@ struct MainCanvas: View {
                 Button { } label: {
                     Text("Back")
                 }
+                
+                Button {
+                    // TODO: Save canvas
+                    savePhotoLibrary()
+                } label: {
+                    Text("Save")
+                }
             } label: {
                 Image(systemName: "pencil.tip.crop.circle.badge.arrow.forward")
                     .font(.largeTitle)
@@ -107,6 +115,11 @@ struct MainCanvas: View {
                 .font(.largeTitle)
                 .foregroundStyle(.gray)
         }
+    }
+    
+    func savePhotoLibrary() {
+        let image = self.snapshot()
+        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
     }
 }
 
