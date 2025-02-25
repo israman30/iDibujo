@@ -7,7 +7,6 @@
 //
 
 import SwiftUI
-import PhotosUI
 
 final class LineViewModel: ObservableObject {
     @Published var lineWithValue: CGFloat = 5.0
@@ -23,7 +22,6 @@ final class LineViewModel: ObservableObject {
 }
 
 struct MainCanvas: View {
-    
     @State private var presentSheet = false
     @State private var settingsDetent = PresentationDetent.medium
     @State private var showingAlert = false
