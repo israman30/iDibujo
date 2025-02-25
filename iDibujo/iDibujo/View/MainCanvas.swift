@@ -86,11 +86,11 @@ struct MainCanvas: View {
                 }
                 
                 Button {
-                    // TODO: Save canvas
                     savePhotoLibrary()
                 } label: {
                     Text("Save")
                 }
+                .disabled(lineViewModel.lines.isEmpty ? true : false)
             } label: {
                 Image(systemName: "pencil.tip.crop.circle.badge.arrow.forward")
                     .font(.largeTitle)
