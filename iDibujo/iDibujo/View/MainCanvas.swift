@@ -18,6 +18,7 @@ final class LineViewModel: ObservableObject {
     func save(from view: any View) {
         let image = view.snapshot()
         UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+        print("Photo saved on library: \(image.description)")
     }
 }
 
