@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 53;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,10 +13,15 @@
 		4D2C642A29F22C7C000AF59E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2C642929F22C7C000AF59E /* Constants.swift */; };
 		4D2C642C29F22C8F000AF59E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2C642B29F22C8F000AF59E /* Extensions.swift */; };
 		4D2C642E29F236A3000AF59E /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2C642D29F236A3000AF59E /* CustomSlider.swift */; };
+		4D6CAEE22C1E780500DEE983 /* MainCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6CAEE12C1E780500DEE983 /* MainCanvas.swift */; };
+		4D6CAEE42C1F3E6900DEE983 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6CAEE32C1F3E6900DEE983 /* CanvasView.swift */; };
+		4D6CAEE62C1F3EE000DEE983 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6CAEE52C1F3EE000DEE983 /* Line.swift */; };
+		4D6CAEE82C1FB8BA00DEE983 /* PresentedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6CAEE72C1FB8BA00DEE983 /* PresentedView.swift */; };
 		4DA07C1122E748250029882D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA07C1022E748250029882D /* AppDelegate.swift */; };
 		4DA07C1322E748250029882D /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA07C1222E748250029882D /* MainController.swift */; };
 		4DA07C1822E748260029882D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DA07C1722E748260029882D /* Assets.xcassets */; };
 		4DA07C1B22E748260029882D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DA07C1922E748260029882D /* LaunchScreen.storyboard */; };
+		4DBD6EC62D680AAD00F92F49 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBD6EC52D680A9400F92F49 /* PickerView.swift */; };
 		4DD83C9C22E74C58002933DE /* Anchors+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD83C9B22E74C58002933DE /* Anchors+Ext.swift */; };
 		4DD83C9E22E77953002933DE /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD83C9D22E77953002933DE /* SettingsController.swift */; };
 		4DD83CA322E77D19002933DE /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD83CA222E77D19002933DE /* MainView.swift */; };
@@ -56,12 +61,17 @@
 		4D2C642929F22C7C000AF59E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4D2C642B29F22C8F000AF59E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		4D2C642D29F236A3000AF59E /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
+		4D6CAEE12C1E780500DEE983 /* MainCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCanvas.swift; sourceTree = "<group>"; };
+		4D6CAEE32C1F3E6900DEE983 /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
+		4D6CAEE52C1F3EE000DEE983 /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
+		4D6CAEE72C1FB8BA00DEE983 /* PresentedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentedView.swift; sourceTree = "<group>"; };
 		4DA07C0D22E748250029882D /* iDibujo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iDibujo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DA07C1022E748250029882D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DA07C1222E748250029882D /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		4DA07C1722E748260029882D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4DA07C1A22E748260029882D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4DA07C1C22E748260029882D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4DBD6EC52D680A9400F92F49 /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		4DD83C9B22E74C58002933DE /* Anchors+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Anchors+Ext.swift"; sourceTree = "<group>"; };
 		4DD83C9D22E77953002933DE /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		4DD83CA222E77D19002933DE /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -153,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				4D0943A429A930D700C40E27 /* Draw.swift */,
+				4D6CAEE52C1F3EE000DEE983 /* Line.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -175,6 +186,10 @@
 				4DD83CA422E7EE25002933DE /* SettingsView.swift */,
 				4DA07C1722E748260029882D /* Assets.xcassets */,
 				4DA07C1922E748260029882D /* LaunchScreen.storyboard */,
+				4D6CAEE12C1E780500DEE983 /* MainCanvas.swift */,
+				4D6CAEE72C1FB8BA00DEE983 /* PresentedView.swift */,
+				4D6CAEE32C1F3E6900DEE983 /* CanvasView.swift */,
+				4DBD6EC52D680A9400F92F49 /* PickerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -266,7 +281,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1620;
 				ORGANIZATIONNAME = "Israel Manzo";
 				TargetAttributes = {
 					4DA07C0C22E748250029882D = {
@@ -338,13 +353,18 @@
 				4DD83CB722E8FEF9002933DE /* SettingsHandlers+Ext.swift in Sources */,
 				4D0943A729A9342B00C40E27 /* SettingsViewModel.swift in Sources */,
 				4DA07C1122E748250029882D /* AppDelegate.swift in Sources */,
+				4DBD6EC62D680AAD00F92F49 /* PickerView.swift in Sources */,
 				4D2C642E29F236A3000AF59E /* CustomSlider.swift in Sources */,
 				4DD83CB122E8CBD4002933DE /* MainDelegate+Ext.swift in Sources */,
 				4DD83CA522E7EE25002933DE /* SettingsView.swift in Sources */,
 				4DD83CAB22E8CA81002933DE /* Drawing+Ext.swift in Sources */,
+				4D6CAEE82C1FB8BA00DEE983 /* PresentedView.swift in Sources */,
+				4D6CAEE42C1F3E6900DEE983 /* CanvasView.swift in Sources */,
 				4DD83CA722E7F064002933DE /* AlertController.swift in Sources */,
 				4DD83CA322E77D19002933DE /* MainView.swift in Sources */,
+				4D6CAEE22C1E780500DEE983 /* MainCanvas.swift in Sources */,
 				4DD83CAF22E8CB89002933DE /* SavePhotoHandler+Ext.swift in Sources */,
+				4D6CAEE62C1F3EE000DEE983 /* Line.swift in Sources */,
 				4DD83C9C22E74C58002933DE /* Anchors+Ext.swift in Sources */,
 				4D2C642A29F22C7C000AF59E /* Constants.swift in Sources */,
 			);
@@ -397,6 +417,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -432,6 +453,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -446,7 +468,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -460,6 +482,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -495,6 +518,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -503,7 +527,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -522,7 +546,7 @@
 				DEVELOPMENT_TEAM = G9TBJCK73T;
 				INFOPLIST_FILE = iDibujo/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "iDibujo a Picture";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -544,7 +568,7 @@
 				DEVELOPMENT_TEAM = G9TBJCK73T;
 				INFOPLIST_FILE = iDibujo/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "iDibujo a Picture";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
