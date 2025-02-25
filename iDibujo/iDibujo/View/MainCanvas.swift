@@ -12,7 +12,7 @@ import PhotosUI
 final class LineViewModel: ObservableObject {
     @Published var lineWithValue: CGFloat = 5.0
     @Published var lines = [Line]()
-    @Published var colors: [Color] = [.green, .orange, .blue, .red, .pink, .black, .purple]
+    @Published var colors: [Color] = [.red, .yellow, .blue, .green, .orange, .pink, .black]
     @Published var selectedColor = Color.black
     
     func save(from view: any View) {
