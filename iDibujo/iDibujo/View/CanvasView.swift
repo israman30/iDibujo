@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+// MARK: - The extension provides a method to capture a snapshot of the displayed element or the view itself.
 extension View {
     func snapshot() -> UIImage {
         let controller = UIHostingController(rootView: self)
@@ -26,7 +27,6 @@ extension View {
 }
 
 struct CanvasView: View {
-    
     @Binding var lines: [Line]
     @Binding var selectedColor: Color
     @State var vm: LineViewModel

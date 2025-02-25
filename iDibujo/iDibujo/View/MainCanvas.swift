@@ -14,6 +14,9 @@ final class LineViewModel: ObservableObject {
     @Published var colors: [Color] = [.red, .yellow, .blue, .green, .orange, .pink, .black]
     @Published var selectedColor = Color.black
     
+    // MARK: - This function captures and stores the view's context in the local photo library.
+    /// - Parameters:
+    ///    - view: takes the view for saving it context
     func save(from view: any View) {
         let image = view.snapshot()
         UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
@@ -22,8 +25,6 @@ final class LineViewModel: ObservableObject {
 }
 
 struct MainCanvas: View {
-    @State private var presentSheet = false
-    @State private var settingsDetent = PresentationDetent.medium
     @State private var showingAlert = false
     @State var colorPicked: Color = .blue
     @StateObject private var lineViewModel = LineViewModel()
