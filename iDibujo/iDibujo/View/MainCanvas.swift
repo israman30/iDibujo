@@ -14,6 +14,11 @@ final class LineViewModel: ObservableObject {
     @Published var lines = [Line]()
     @Published var colors: [Color] = [.green, .orange, .blue, .red, .pink, .black, .purple]
     @Published var selectedColor = Color.black
+    
+    func save(from view: any View) {
+        let image = view.snapshot()
+        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+    }
 }
 
 struct MainCanvas: View {
@@ -117,9 +122,8 @@ struct MainCanvas: View {
         }
     }
     
-    func savePhotoLibrary() {
-        let image = self.snapshot()
-        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+    private func savePhotoLibrary() {
+        lineViewModel.save(from: self)
     }
 }
 
