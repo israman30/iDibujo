@@ -8,24 +8,11 @@
 
 import SwiftUI
 
-// MARK: - The extension provides a method to capture a snapshot of the displayed element or the view itself.
-extension View {
-    func snapshot() -> UIImage {
-        let controller = UIHostingController(rootView: self)
-        let view = controller.view
-
-        let targetSize = controller.view.intrinsicContentSize
-        view?.bounds = CGRect(origin: .zero, size: targetSize)
-        view?.backgroundColor = .clear
-
-        let renderer = UIGraphicsImageRenderer(size: targetSize)
-
-        return renderer.image { _ in
-            view?.drawHierarchy(in: controller.view.bounds, afterScreenUpdates: true)
-        }
-    }
-}
-
+/// MARK: - `CanvasView` renders the dashboard or canvas where users can draw using gestures.
+/// - Parameters:
+///   - lines: array of `Line` to store each point of the gesture
+///   - selectedColor: reference for adding a new color to the array
+///   - newValue: array that soter the line with CGFloat value
 struct CanvasView: View {
     @Binding var lines: [Line]
     @Binding var selectedColor: Color
@@ -60,3 +47,20 @@ struct CanvasView: View {
     }
 }
 
+// MARK: - The extension provides a method to capture a snapshot of the displayed element or the view itself.
+extension View {
+    func snapshot() -> UIImage {
+        let controller = UIHostingController(rootView: self)
+        let view = controller.view
+
+        let targetSize = controller.view.intrinsicContentSize
+        view?.bounds = CGRect(origin: .zero, size: targetSize)
+        view?.backgroundColor = .clear
+
+        let renderer = UIGraphicsImageRenderer(size: targetSize)
+
+        return renderer.image { _ in
+            view?.drawHierarchy(in: controller.view.bounds, afterScreenUpdates: true)
+        }
+    }
+}
