@@ -9,7 +9,8 @@ import SwiftUI
 
 struct MainCanvas: View {
     @State private var showingAlert = false
-    @State var colorPicked: Color = .blue
+    @State private var colorPicked: Color = .blue
+    @State private var alert: AlertComponent? = nil
     @StateObject private var lineViewModel = LineViewModel()
     
     var body: some View {
@@ -55,8 +56,9 @@ struct MainCanvas: View {
     func menuList() -> some View {
         VStack {
             Menu {
+                /// Clear `Canvas` button
                 Button {
-                    self.showingAlert = true
+                    presentAlert()
                 } label: {
                     HStack {
                         Image(systemName: "eraser")
@@ -64,34 +66,40 @@ struct MainCanvas: View {
                     }
                 }
                 .disabled(lineViewModel.lines.isEmpty ? true : false)
-                
+                /// Back to `Canvas` button
                 Button { } label: {
                     Text("Back")
                 }
-                
+                /// Save to `Photo` Library  button
                 Button {
                     savePhotoLibrary()
                 } label: {
                     Text("Save")
                 }
                 .disabled(lineViewModel.lines.isEmpty ? true : false)
+                
             } label: {
                 Image(systemName: "pencil.tip.crop.circle.badge.arrow.forward")
                     .font(.largeTitle)
                     .foregroundStyle(.gray)
             }
-            .alert("Are you deleting your art?", isPresented: $showingAlert) {
-                Button("Yes", role: .destructive) {
-                    lineViewModel.lines.removeAll()
-                }
-                Button("No", role: .cancel) { }
-            }
+            .presentAlert($alert, isPresented: $showingAlert)
+            
             ColorPicker("PickColor", selection: $lineViewModel.selectedColor)
                 .labelsHidden()
                 .onChange(of: lineViewModel.selectedColor) { oldValue, newValue in
                     self.colorPicked = newValue
                 }
         }
+    }
+    
+    private func presentAlert() {
+        showingAlert = true
+        alert = .delete({
+            lineViewModel.lines.removeAll()
+        }, cancel: {
+            self.showingAlert = false
+        })
     }
     
     @ViewBuilder

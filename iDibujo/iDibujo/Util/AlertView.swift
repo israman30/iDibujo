@@ -16,12 +16,12 @@ protocol AlertProtocol {
 }
 
 enum AlertComponent: AlertProtocol {
-    case success(_ okAction: () -> Void?, cancel: () -> Void)
+    case delete(_ okAction: () -> Void?, cancel: () -> Void?)
     case failure(_ failure: () -> Void?)
     
     var title: String {
         switch self {
-        case .success:
+        case .delete:
             return "¡Listo!"
         case .failure:
             return "Error"
@@ -30,8 +30,8 @@ enum AlertComponent: AlertProtocol {
     
     var message: String {
         switch self {
-        case .success:
-            return "Success"
+        case .delete:
+            return "Are you deleting your art?"
         case .failure:
             return "Failure"
         }
@@ -44,11 +44,11 @@ enum AlertComponent: AlertProtocol {
     @ViewBuilder
     func setButtons() -> some View {
         switch self {
-        case .success(let okAction, let cancel):
-            Button("Success") {
+        case .delete(let okAction, let cancel):
+            Button("Yes", role: .destructive) {
                 okAction()
             }
-            Button("Cancel") {
+            Button("No", role: .cancel) {
                 cancel()
             }
         case .failure(let failure):
