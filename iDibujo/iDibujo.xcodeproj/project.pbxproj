@@ -22,6 +22,7 @@
 		4DA07C1822E748260029882D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DA07C1722E748260029882D /* Assets.xcassets */; };
 		4DA07C1B22E748260029882D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DA07C1922E748260029882D /* LaunchScreen.storyboard */; };
 		4DBD6EC62D680AAD00F92F49 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBD6EC52D680A9400F92F49 /* PickerView.swift */; };
+		4DBD6EC82D6F6F8400F92F49 /* LineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBD6EC72D6F6F8400F92F49 /* LineViewModel.swift */; };
 		4DD83C9C22E74C58002933DE /* Anchors+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD83C9B22E74C58002933DE /* Anchors+Ext.swift */; };
 		4DD83C9E22E77953002933DE /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD83C9D22E77953002933DE /* SettingsController.swift */; };
 		4DD83CA322E77D19002933DE /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD83CA222E77D19002933DE /* MainView.swift */; };
@@ -72,6 +73,7 @@
 		4DA07C1A22E748260029882D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4DA07C1C22E748260029882D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DBD6EC52D680A9400F92F49 /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
+		4DBD6EC72D6F6F8400F92F49 /* LineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineViewModel.swift; sourceTree = "<group>"; };
 		4DD83C9B22E74C58002933DE /* Anchors+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Anchors+Ext.swift"; sourceTree = "<group>"; };
 		4DD83C9D22E77953002933DE /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		4DD83CA222E77D19002933DE /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 			children = (
 				8DA6815626C750460091DBD0 /* CanvasViewModel.swift */,
 				4D0943A629A9342B00C40E27 /* SettingsViewModel.swift */,
+				4DBD6EC72D6F6F8400F92F49 /* LineViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 				4D6CAEE42C1F3E6900DEE983 /* CanvasView.swift in Sources */,
 				4DD83CA722E7F064002933DE /* AlertController.swift in Sources */,
 				4DD83CA322E77D19002933DE /* MainView.swift in Sources */,
+				4DBD6EC82D6F6F8400F92F49 /* LineViewModel.swift in Sources */,
 				4D6CAEE22C1E780500DEE983 /* MainCanvas.swift in Sources */,
 				4DD83CAF22E8CB89002933DE /* SavePhotoHandler+Ext.swift in Sources */,
 				4D6CAEE62C1F3EE000DEE983 /* Line.swift in Sources */,
