@@ -21,6 +21,7 @@
 		4DA07C1822E748260029882D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DA07C1722E748260029882D /* Assets.xcassets */; };
 		4DA07C1B22E748260029882D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DA07C1922E748260029882D /* LaunchScreen.storyboard */; };
 		4DBD6EC82D6F6F8400F92F49 /* LineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBD6EC72D6F6F8400F92F49 /* LineViewModel.swift */; };
+		4DBD6ECA2D6F7D0400F92F49 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBD6EC92D6F7D0400F92F49 /* AlertView.swift */; };
 		4DD83C9C22E74C58002933DE /* Anchors+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD83C9B22E74C58002933DE /* Anchors+Ext.swift */; };
 		4DD83C9E22E77953002933DE /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD83C9D22E77953002933DE /* SettingsController.swift */; };
 		4DD83CA322E77D19002933DE /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD83CA222E77D19002933DE /* MainView.swift */; };
@@ -70,6 +71,7 @@
 		4DA07C1A22E748260029882D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4DA07C1C22E748260029882D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DBD6EC72D6F6F8400F92F49 /* LineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineViewModel.swift; sourceTree = "<group>"; };
+		4DBD6EC92D6F7D0400F92F49 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		4DD83C9B22E74C58002933DE /* Anchors+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Anchors+Ext.swift"; sourceTree = "<group>"; };
 		4DD83C9D22E77953002933DE /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		4DD83CA222E77D19002933DE /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				4D2C642B29F22C8F000AF59E /* Extensions.swift */,
 				4D2C642D29F236A3000AF59E /* CustomSlider.swift */,
 				4DDFED4D2A3AADA600BA881D /* PreviewView.swift */,
+				4DBD6EC92D6F7D0400F92F49 /* AlertView.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 				4DD83CA322E77D19002933DE /* MainView.swift in Sources */,
 				4DBD6EC82D6F6F8400F92F49 /* LineViewModel.swift in Sources */,
 				4D6CAEE22C1E780500DEE983 /* MainCanvas.swift in Sources */,
+				4DBD6ECA2D6F7D0400F92F49 /* AlertView.swift in Sources */,
 				4DD83CAF22E8CB89002933DE /* SavePhotoHandler+Ext.swift in Sources */,
 				4D6CAEE62C1F3EE000DEE983 /* Line.swift in Sources */,
 				4DD83C9C22E74C58002933DE /* Anchors+Ext.swift in Sources */,
