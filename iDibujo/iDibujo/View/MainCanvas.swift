@@ -5,28 +5,12 @@
 //  Created by Israel Manzo on 6/15/24.
 //  Copyright © 2024 Israel Manzo. All rights reserved.
 //
-
 import SwiftUI
-
-final class LineViewModel: ObservableObject {
-    @Published var lineWithValue: CGFloat = 5.0
-    @Published var lines = [Line]()
-    @Published var colors: [Color] = [.red, .yellow, .blue, .green, .orange, .pink, .black]
-    @Published var selectedColor = Color.black
-    
-    // MARK: - This function captures and stores the view's context in the local photo library.
-    /// - Parameters:
-    ///    - view: takes the view for saving it context
-    func save(from view: any View) {
-        let image = view.snapshot()
-        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
-        print("Photo saved on library: \(image.description)")
-    }
-}
 
 struct MainCanvas: View {
     @State private var showingAlert = false
-    @State var colorPicked: Color = .blue
+    @State private var colorPicked: Color = .blue
+    @State private var alert: AlertComponent? = nil
     @StateObject private var lineViewModel = LineViewModel()
     
     var body: some View {
@@ -58,7 +42,7 @@ struct MainCanvas: View {
         Button {
             lineViewModel.selectedColor = color
         } label: {
-            Image(systemName: "circle.fill")
+            Image(systemName: CustomIcon.circleFill)
                 .font(.largeTitle)
                 .foregroundStyle(color)
                 .background(
@@ -72,38 +56,42 @@ struct MainCanvas: View {
     func menuList() -> some View {
         VStack {
             Menu {
+                /// Clear `Canvas` button
                 Button {
-                    self.showingAlert = true
+                    presentAlert()
                 } label: {
                     HStack {
-                        Image(systemName: "eraser")
-                        Text("Clear")
+                        Image(systemName: CustomIcon.eraser)
+                        Text(Labels.clearCanvas)
+                    }
+                }
+                .disabled(lineViewModel.lines.isEmpty ? true : false)
+                /// Back to `Canvas` button
+                Button { } label: {
+                    HStack {
+                        Text(Labels.back)
+                        Image(systemName: CustomIcon.backToCanvas)
+                    }
+                }
+                /// Save to `Photo` Library  button
+                Button {
+                    savePhotoLibrary()
+                } label: {
+                    HStack {
+                        Text(Labels.save)
+                        Image(systemName: CustomIcon.saveCanvas)
                     }
                 }
                 .disabled(lineViewModel.lines.isEmpty ? true : false)
                 
-                Button { } label: {
-                    Text("Back")
-                }
-                
-                Button {
-                    savePhotoLibrary()
-                } label: {
-                    Text("Save")
-                }
-                .disabled(lineViewModel.lines.isEmpty ? true : false)
             } label: {
-                Image(systemName: "pencil.tip.crop.circle.badge.arrow.forward")
+                Image(systemName: CustomIcon.pencil)
                     .font(.largeTitle)
                     .foregroundStyle(.gray)
             }
-            .alert("Are you deleting your art?", isPresented: $showingAlert) {
-                Button("Yes", role: .destructive) {
-                    lineViewModel.lines.removeAll()
-                }
-                Button("No", role: .cancel) { }
-            }
-            ColorPicker("PickColor", selection: $lineViewModel.selectedColor)
+            .presentAlert($alert, isPresented: $showingAlert)
+            
+            ColorPicker(Labels.colorPicker, selection: $lineViewModel.selectedColor)
                 .labelsHidden()
                 .onChange(of: lineViewModel.selectedColor) { oldValue, newValue in
                     self.colorPicked = newValue
@@ -111,15 +99,13 @@ struct MainCanvas: View {
         }
     }
     
-    @ViewBuilder
-    func clearButton() -> some View {
-        Button {
+    private func presentAlert() {
+        showingAlert = true
+        alert = .delete({
             lineViewModel.lines.removeAll()
-        } label: {
-            Image(systemName: "pencil.tip.crop.circle.badge.minus")
-                .font(.largeTitle)
-                .foregroundStyle(.gray)
-        }
+        }, cancel: {
+            self.showingAlert = false
+        })
     }
     
     private func savePhotoLibrary() {
