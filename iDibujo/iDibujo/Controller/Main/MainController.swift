@@ -22,7 +22,7 @@ class MainController: UIViewController {
     }()
     
     let eraserButton: UIButton = {
-        let btn = CustomButton(titleColor: .white, background: .eraseColor, fontSize: 23, imageString: CustomIcon.ereaser)
+        let btn = CustomButton(titleColor: .white, background: .eraseColor, fontSize: 23, imageString: CustomIcon.eraser)
         return btn
     }()
     
