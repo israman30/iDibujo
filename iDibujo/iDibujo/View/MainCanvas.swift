@@ -79,7 +79,7 @@ struct MainCanvas: View {
                 } label: {
                     HStack {
                         Text(Labels.save)
-                        Image(systemName: "tray.and.arrow.down")
+                        Image(systemName: CustomIcon.saveCanvas)
                     }
                 }
                 .disabled(lineViewModel.lines.isEmpty ? true : false)

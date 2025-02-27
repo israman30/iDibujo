@@ -35,6 +35,7 @@ struct CustomIcon {
     static let circleFill = "circle.fill"
     static let backToCanvas = "arrowshape.backward"
     static let pencil = "pencil.tip.crop.circle.badge.arrow.forward"
+    static let saveCanvas = "tray.and.arrow.down"
 }
 
 struct Labels {
