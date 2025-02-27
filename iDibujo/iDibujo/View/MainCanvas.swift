@@ -62,14 +62,14 @@ struct MainCanvas: View {
                 } label: {
                     HStack {
                         Image(systemName: CustomIcon.eraser)
-                        Text("Clear")
+                        Text(Labels.clearCanvas)
                     }
                 }
                 .disabled(lineViewModel.lines.isEmpty ? true : false)
                 /// Back to `Canvas` button
                 Button { } label: {
                     HStack {
-                        Text("Back")
+                        Text(Labels.back)
                         Image(systemName: CustomIcon.backToCanvas)
                     }
                 }
@@ -77,7 +77,10 @@ struct MainCanvas: View {
                 Button {
                     savePhotoLibrary()
                 } label: {
-                    Text("Save")
+                    HStack {
+                        Text(Labels.save)
+                        Image(systemName: "tray.and.arrow.down")
+                    }
                 }
                 .disabled(lineViewModel.lines.isEmpty ? true : false)
                 
@@ -88,7 +91,7 @@ struct MainCanvas: View {
             }
             .presentAlert($alert, isPresented: $showingAlert)
             
-            ColorPicker("Color Picker", selection: $lineViewModel.selectedColor)
+            ColorPicker(Labels.colorPicker, selection: $lineViewModel.selectedColor)
                 .labelsHidden()
                 .onChange(of: lineViewModel.selectedColor) { oldValue, newValue in
                     self.colorPicked = newValue

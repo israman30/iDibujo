@@ -36,3 +36,10 @@ struct CustomIcon {
     static let backToCanvas = "arrowshape.backward"
     static let pencil = "pencil.tip.crop.circle.badge.arrow.forward"
 }
+
+struct Labels {
+    static let colorPicker = "Color Picker"
+    static let save = "Save Canvas"
+    static let back = "Back"
+    static let clearCanvas = "Clear Canvas"
+}
