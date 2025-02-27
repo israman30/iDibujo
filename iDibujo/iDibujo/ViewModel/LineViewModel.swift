@@ -8,7 +8,19 @@
 
 import SwiftUI
 
-final class LineViewModel: ObservableObject {
+/// `CanvasProtocol` defines the blueprint for storing canvas properties.
+protocol CanvasProtocol: ObservableObject {
+    var lineWithValue: CGFloat { get set }
+    var lines: [Line] { get set }
+    var selectedColor: Color { get set }
+}
+
+/// `SaveCanvasProtocol` defines the blueprint for saving a canvas snapshot.
+protocol SaveCanvasProtocol: ObservableObject {
+    func save(from view: any View)
+}
+
+final class LineViewModel: CanvasProtocol, SaveCanvasProtocol {
     @Published var lineWithValue: CGFloat = 5.0
     @Published var lines = [Line]()
     @Published var colors: [Color] = [.red, .yellow, .blue, .green, .orange, .pink, .black]
