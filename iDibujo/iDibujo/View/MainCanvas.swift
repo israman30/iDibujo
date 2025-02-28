@@ -6,12 +6,16 @@
 //  Copyright © 2024 Israel Manzo. All rights reserved.
 //
 import SwiftUI
+import PhotosUI
 
 struct MainCanvas: View {
     @State private var showingAlert = false
     @State private var colorPicked: Color = .blue
     @State private var alert: AlertComponent? = nil
     @StateObject private var lineViewModel = LineViewModel()
+    
+    @State var photosPickerItem: PhotosPickerItem?
+    @State var coverImage: UIImage? = nil
     
     var body: some View {
         ZStack {
@@ -31,6 +35,15 @@ struct MainCanvas: View {
                 HStack {
                     ForEach(lineViewModel.colors, id: \.self) { color in
                         colorButton(color: color)
+                    }
+                }
+            }
+        }
+        .onChange(of: photosPickerItem) { oldValue, newValue in
+            Task {
+                if let photosPickerItem, let data = try? await photosPickerItem.loadTransferable(type: Data.self) {
+                    if let image = UIImage(data: data) {
+//                        coverImage = image
                     }
                 }
             }
@@ -84,6 +97,7 @@ struct MainCanvas: View {
                 }
                 .disabled(lineViewModel.lines.isEmpty ? true : false)
                 
+                
             } label: {
                 Image(systemName: CustomIcon.pencil)
                     .font(.largeTitle)
@@ -91,6 +105,11 @@ struct MainCanvas: View {
             }
             .presentAlert($alert, isPresented: $showingAlert)
             
+            PhotosPicker(selection: $photosPickerItem, matching: .images) {
+                Image(systemName: "photo.circle")
+                    .font(.largeTitle)
+                    .foregroundStyle(Color(.systemGray))
+            }
             ColorPicker(Labels.colorPicker, selection: $lineViewModel.selectedColor)
                 .labelsHidden()
                 .onChange(of: lineViewModel.selectedColor) { oldValue, newValue in
