@@ -4,7 +4,7 @@ Create simple or amazing art with the drawing application. :iphone:
 > An easy and simple application friendly user for all ages, available in the _App Store_.
 
 <p align="center">
-<img src="/img/one.png" width="250"> <img src="/img/two.png" width="250">
+<img src="/img/One.png" width="250"> <img src="/img/Two.png" width="250">
 </p>
 
 ## Thecnology
