@@ -15,6 +15,8 @@ struct MainCanvas: View {
     
     var body: some View {
         ZStack {
+            Color.white
+                .ignoresSafeArea()
             CanvasView(
                 lines: $lineViewModel.lines,
                 selectedColor: $lineViewModel.selectedColor, vm: lineViewModel
