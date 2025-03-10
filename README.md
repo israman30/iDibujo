@@ -25,6 +25,6 @@ Effortlessly create simple sketches or breathtaking masterpieces with our intuit
 <p align="center">
 
 _**Israel Manzo ®**_
-<ins>[LinkedIn](https://www.linkedin.com/in/israel-manzo/) </ins>
+[LinkedIn](https://www.linkedin.com/in/israel-manzo/)
 
 </p>
