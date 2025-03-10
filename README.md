@@ -22,7 +22,9 @@ Effortlessly create simple sketches or breathtaking masterpieces with our intuit
 - Third release on 2025
 
 [iDibujo](https://apps.apple.com/us/app/idibujo/id1237783038)
+<p align="center">
 
-## Author
--  [Israel Manzo ®](http://israelmanzo.com)
-- [LinkedIn](https://www.linkedin.com/in/israel-manzo/) 
+_**Israel Manzo ®**_
+<ins>[LinkedIn](https://www.linkedin.com/in/israel-manzo/) </ins>
+
+</p>
