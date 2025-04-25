@@ -31,10 +31,17 @@ struct CanvasView: View {
     
     var body: some View {
         VStack {
-            ColorPicker("line color", selection: $selectedColor)
-            Slider(value: $selectedWidth, in: 1...10) {
-                Text("line width: \($selectedWidth)")
+            VStack {
+                ColorPicker("line color", selection: $selectedColor)
+                HStack {
+                    Slider(value: $selectedWidth, in: 1...20) {
+                        Text("line width: \($selectedWidth)")
+                    }
+                    Text(String(format: "%.0f",selectedWidth))
+                }
             }
+            .padding(.horizontal)
+            
             Canvas { context, size in
                 for line in lines {
                     var path = Path()
