@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct Line {
+struct Line: Identifiable {
+    var id = UUID()
     var points: [CGPoint]
     var color: Color
     var width: CGFloat
@@ -26,8 +27,10 @@ struct ContentView: View {
 struct CanvasView: View {
     
     @State private var lines = [Line]()
+    @State private var deletedLines: [Line] = []
     @State private var selectedColor: Color = .black
     @State private var selectedWidth: CGFloat = 1
+    @State private var showDialog: Bool = false
     
     let canvas = CanvasEnginer()
     
@@ -35,8 +38,28 @@ struct CanvasView: View {
         VStack {
             VStack {
                 ColorPicker("line color", selection: $selectedColor)
-                Button("Delete") {
-                    lines = []
+                HStack {
+                    Button("undo") {
+                        let last = lines.removeLast()
+                        deletedLines.append(last)
+                    }
+                    .disabled(lines.count == 0)
+                    
+                    Button("Delete") {
+                        showDialog = true
+                    }
+                    .confirmationDialog("Delete..?", isPresented: $showDialog) {
+                        Button("Delete", role: .destructive) {
+                            lines = []
+                            deletedLines = []
+                        }
+                    }
+                    
+                    Button("redo") {
+                        let last = deletedLines.removeLast()
+                        lines.append(last)
+                    }
+                    .disabled(deletedLines.count == 0)
                 }
                 HStack {
                     Slider(value: $selectedWidth, in: 1...20) {
@@ -69,6 +92,11 @@ struct CanvasView: View {
                         lines[index].points.append(newPoint)
                     }
                 })
+                .onEnded({ value in
+                    if let lastLine = lines.last?.points, lastLine.isEmpty {
+                        lines.removeLast()
+                    }
+                })
             )
         }
     }
@@ -87,5 +115,28 @@ class CanvasEnginer {
     
     func calculate(_ point1: CGPoint, point2: CGPoint) -> CGPoint {
         CGPoint(x: (point1.x + point2.x) / 2, y: (point1.y + point2.y) / 2)
+    }
+}
+
+// MARK: - These component are for lower version of iOS devices less than iOS 15
+struct CanvasLowetVersion: View {
+    var lines: [Line]
+    var body: some View {
+        ZStack {
+            Color.white
+            ForEach(lines) { line in
+                DrawingShape(points: line.points)
+                    .stroke(line.color, style: StrokeStyle(lineWidth: line.width, lineCap: .round, lineJoin: .round))
+            }
+        }
+    }
+}
+
+struct DrawingShape: Shape {
+    let points: [CGPoint]
+    var canvas = CanvasEnginer()
+    
+    func path(in rect: CGRect) -> Path {
+        canvas.createPath(for: points)
     }
 }
