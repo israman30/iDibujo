@@ -26,30 +26,40 @@ struct ContentView: View {
 struct CanvasView: View {
     
     @State private var lines = [Line]()
+    @State private var selectedColor: Color = .black
+    @State private var selectedWidth: CGFloat = 1
     
     var body: some View {
-        Canvas { context, size in
-            for line in lines {
-                var path = Path()
-                path.addLines(line.points)
-                
-                context.stroke(path, with: .color(line.color), lineWidth: line.width)
+        VStack {
+            ColorPicker("line color", selection: $selectedColor)
+            Slider(value: $selectedWidth, in: 1...10) {
+                Text("line width: \($selectedWidth)")
             }
-        }
-        .gesture(
-            DragGesture(
-                minimumDistance: 0,
-                coordinateSpace: .local
-            ).onChanged({ value in
-                let newPoint = value.location
-                if value.translation.width + value.translation.height == 0 {
-                    // TODO: implement color
-                    lines.append(Line(points: [newPoint], color: .blue, width: 5))
-                } else {
-                    let index = lines.count - 1
-                    lines[index].points.append(newPoint)
+            Canvas { context, size in
+                for line in lines {
+                    var path = Path()
+                    path.addLines(line.points)
+                    
+                    context.stroke(path, with: .color(line.color), lineWidth: line.width)
                 }
-            })
-        )
+            }
+            .gesture(
+                DragGesture(
+                    minimumDistance: 0,
+                    coordinateSpace: .local
+                ).onChanged({ value in
+                        let newPoint = value.location
+                        if value.translation.width + value.translation.height == 0 {
+                            // TODO: implement color
+                            lines.append(
+                                Line(points: [newPoint], color: selectedColor, width: selectedWidth)
+                            )
+                    } else {
+                        let index = lines.count - 1
+                        lines[index].points.append(newPoint)
+                    }
+                })
+            )
+        }
     }
 }
