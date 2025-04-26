@@ -19,7 +19,9 @@ struct MainCanvas: View {
                 .ignoresSafeArea()
             CanvasView(
                 lines: $lineViewModel.lines,
-                selectedColor: $lineViewModel.selectedColor, vm: lineViewModel
+                selectedColor: $lineViewModel.selectedColor,
+                deletedLines: $lineViewModel.deletedLines,
+                vm: lineViewModel
             )
             .ignoresSafeArea(.all)
             
@@ -95,9 +97,6 @@ struct MainCanvas: View {
             
             ColorPicker(Labels.colorPicker, selection: $lineViewModel.selectedColor)
                 .labelsHidden()
-                .onChange(of: lineViewModel.selectedColor) { oldValue, newValue in
-                    self.colorPicked = newValue
-                }
         }
     }
     
