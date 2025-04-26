@@ -12,14 +12,15 @@ struct SliderView: View {
     @State var height: CGFloat = 150
     @State var dragOffset: CGFloat = 0
     @State var value: CGFloat = 0
+    let width: CGFloat = 40
     
     var body: some View {
         ZStack(alignment: .bottom) {
             Rectangle()
-                .frame(width: 60, height: 150)
+                .frame(width: width, height: 150)
                 .foregroundStyle(.gray)
             Rectangle()
-                .frame(width: 60, height: min(150, max(height + dragOffset, dragOffset)))
+                .frame(width: width, height: min(150, max(height + dragOffset, dragOffset)))
         }
         .gesture(
             DragGesture()
