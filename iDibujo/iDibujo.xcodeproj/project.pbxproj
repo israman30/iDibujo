@@ -16,6 +16,7 @@
 		4D6CAEE42C1F3E6900DEE983 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6CAEE32C1F3E6900DEE983 /* CanvasView.swift */; };
 		4D6CAEE62C1F3EE000DEE983 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6CAEE52C1F3EE000DEE983 /* Line.swift */; };
 		4D86F03E2DBC9E6C00F32335 /* CanvasEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D86F03D2DBC9E6C00F32335 /* CanvasEngine.swift */; };
+		4D86F0402DBC9F5100F32335 /* SliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D86F03F2DBC9F5100F32335 /* SliderView.swift */; };
 		4DA07C1122E748250029882D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA07C1022E748250029882D /* AppDelegate.swift */; };
 		4DA07C1322E748250029882D /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA07C1222E748250029882D /* MainController.swift */; };
 		4DA07C1822E748260029882D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DA07C1722E748260029882D /* Assets.xcassets */; };
@@ -60,6 +61,7 @@
 		4D6CAEE32C1F3E6900DEE983 /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 		4D6CAEE52C1F3EE000DEE983 /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		4D86F03D2DBC9E6C00F32335 /* CanvasEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasEngine.swift; sourceTree = "<group>"; };
+		4D86F03F2DBC9F5100F32335 /* SliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderView.swift; sourceTree = "<group>"; };
 		4DA07C0D22E748250029882D /* iDibujo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iDibujo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DA07C1022E748250029882D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DA07C1222E748250029882D /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 				4DA07C1922E748260029882D /* LaunchScreen.storyboard */,
 				4D6CAEE12C1E780500DEE983 /* MainCanvas.swift */,
 				4D6CAEE32C1F3E6900DEE983 /* CanvasView.swift */,
+				4D86F03F2DBC9F5100F32335 /* SliderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 				4D0943A729A9342B00C40E27 /* SettingsViewModel.swift in Sources */,
 				4DA07C1122E748250029882D /* AppDelegate.swift in Sources */,
 				4D2C642E29F236A3000AF59E /* CustomSlider.swift in Sources */,
+				4D86F0402DBC9F5100F32335 /* SliderView.swift in Sources */,
 				4DD83CB122E8CBD4002933DE /* MainDelegate+Ext.swift in Sources */,
 				4DD83CA522E7EE25002933DE /* SettingsView.swift in Sources */,
 				4DD83CAB22E8CA81002933DE /* Drawing+Ext.swift in Sources */,
