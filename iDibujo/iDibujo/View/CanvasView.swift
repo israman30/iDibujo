@@ -61,36 +61,3 @@ struct CanvasView: View {
         )
     }
 }
-
-class CanvasEnginer {
-    func createPath(for points: [CGPoint]) -> Path {
-        var path = Path()
-        path.move(to: points[0])
-        for point in points[1...] {
-            path.addLine(to: point)
-        }
-        return path
-    }
-    
-    func calculate(_ point1: CGPoint, point2: CGPoint) -> CGPoint {
-        CGPoint(x: (point1.x + point2.x) / 2, y: (point1.y + point2.y) / 2)
-    }
-}
-
-// MARK: - The extension provides a method to capture a snapshot of the displayed element or the view itself.
-extension View {
-    func snapshot() -> UIImage {
-        let controller = UIHostingController(rootView: self)
-        let view = controller.view
-
-        let targetSize = controller.view.intrinsicContentSize
-        view?.bounds = CGRect(origin: .zero, size: targetSize)
-        view?.backgroundColor = .clear
-
-        let renderer = UIGraphicsImageRenderer(size: targetSize)
-
-        return renderer.image { _ in
-            view?.drawHierarchy(in: controller.view.bounds, afterScreenUpdates: true)
-        }
-    }
-}
