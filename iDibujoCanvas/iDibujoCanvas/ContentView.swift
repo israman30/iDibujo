@@ -81,12 +81,11 @@ struct CanvasView: View {
                     minimumDistance: 0,
                     coordinateSpace: .local
                 ).onChanged({ value in
-                        let newPoint = value.location
-                        if value.translation.width + value.translation.height == 0 {
-                            // TODO: implement color
-                            lines.append(
-                                Line(points: [newPoint], color: selectedColor, width: selectedWidth)
-                            )
+                    let newPoint = value.location
+                    if value.translation.width + value.translation.height == 0 {
+                        lines.append(
+                            Line(points: [newPoint], color: selectedColor, width: selectedWidth)
+                        )
                     } else {
                         let index = lines.count - 1
                         lines[index].points.append(newPoint)
@@ -103,7 +102,6 @@ struct CanvasView: View {
 }
 
 class CanvasEnginer {
-    
     func createPath(for points: [CGPoint]) -> Path {
         var path = Path()
         path.move(to: points[0])
