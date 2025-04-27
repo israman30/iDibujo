@@ -97,6 +97,8 @@ struct MainCanvas: View {
             
             ColorPicker(Labels.colorPicker, selection: $lineViewModel.selectedColor)
                 .labelsHidden()
+            
+            SliderView()
         }
     }
     
