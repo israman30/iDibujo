@@ -46,6 +46,7 @@ struct SliderView: View {
                 .foregroundStyle(.black)
                 .contentTransition(.numericText())
         }
+        .padding(.vertical, 10)
     }
 }
 
