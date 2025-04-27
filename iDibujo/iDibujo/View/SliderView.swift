@@ -10,8 +10,8 @@ import SwiftUI
 
 struct SliderView: View {
     @State var height: CGFloat = 150
-    @State var dragOffset: CGFloat = 0
-    @State var value: CGFloat = 0
+    @State var dragOffset: CGFloat = 1
+    @Binding var value: CGFloat
     let width: CGFloat = 25
     
     var body: some View {
@@ -22,15 +22,17 @@ struct SliderView: View {
                     .foregroundStyle(.gray)
                 Rectangle()
                     .foregroundStyle(.black)
-                    .frame(width: width, height: min(150, max(height + dragOffset, dragOffset)))
+                    .frame(width: width, height: min(value * 150 / 40, height, max(height + dragOffset, dragOffset)))
+                    .transition(.slide)
+                    .animation(.linear(duration: 0.1), value: value)
             }
             .gesture(
                 DragGesture()
                     .onChanged({ value in
                         withAnimation {
                             dragOffset = -value.translation.height * 1.2
-                            let newHeight = min(150, max(0, height + dragOffset))
-                            self.value = newHeight / 150 * 100
+                            let newHeight = min(150, max(5, height + dragOffset))
+                            self.value = newHeight / 150 * 40
                         }
                     })
                     .onEnded({ value in
@@ -51,5 +53,5 @@ struct SliderView: View {
 }
 
 #Preview {
-    SliderView()
+    SliderView(value: .constant(10))
 }
