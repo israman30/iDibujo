@@ -12,36 +12,38 @@ struct SliderView: View {
     @State var height: CGFloat = 150
     @State var dragOffset: CGFloat = 0
     @State var value: CGFloat = 0
-    let width: CGFloat = 40
+    let width: CGFloat = 25
     
     var body: some View {
-        ZStack(alignment: .bottom) {
-            Rectangle()
-                .frame(width: width, height: 150)
-                .foregroundStyle(.gray)
-            Rectangle()
-                .frame(width: width, height: min(150, max(height + dragOffset, dragOffset)))
-        }
-        .gesture(
-            DragGesture()
-                .onChanged({ value in
-                    withAnimation {
-                        dragOffset = -value.translation.height * 1.2
-                        let newHeight = min(150, max(0, height + dragOffset))
-                        self.value = newHeight / 150 * 100
-                    }
-                })
-                .onEnded({ value in
-                    height = min(150, max(0, height + dragOffset))
-                    dragOffset = 0
-                })
-        )
-        .clipShape(.rect(cornerRadius: 20))
-        .frame(height: 150)
-        .overlay {
+        VStack {
+            ZStack(alignment: .bottom) {
+                Rectangle()
+                    .frame(width: width, height: 150)
+                    .foregroundStyle(.gray)
+                Rectangle()
+                    .foregroundStyle(.black)
+                    .frame(width: width, height: min(150, max(height + dragOffset, dragOffset)))
+            }
+            .gesture(
+                DragGesture()
+                    .onChanged({ value in
+                        withAnimation {
+                            dragOffset = -value.translation.height * 1.2
+                            let newHeight = min(150, max(0, height + dragOffset))
+                            self.value = newHeight / 150 * 100
+                        }
+                    })
+                    .onEnded({ value in
+                        height = min(150, max(0, height + dragOffset))
+                        dragOffset = 0
+                    })
+            )
+            .clipShape(.rect(cornerRadius: 20))
+            .frame(height: 150)
+    
             Text(String(format: "%.0f", value))
                 .font(.title3)
-                .foregroundStyle(.white)
+                .foregroundStyle(.black)
                 .contentTransition(.numericText())
         }
     }
