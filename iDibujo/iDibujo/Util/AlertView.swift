@@ -52,7 +52,7 @@ enum AlertComponent: AlertProtocol {
                 cancel()
             }
         case .failure(let failure):
-            Button("Faithure") {
+            Button("Failure") {
                 failure()
             }
         }

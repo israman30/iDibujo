@@ -794,7 +794,7 @@
         }
       }
     },
-    "Faithure" : {
+    "Failure" : {
 
     },
     "Green" : {
@@ -930,9 +930,6 @@
           }
         }
       }
-    },
-    "Line Width" : {
-
     },
     "MORE" : {
       "extractionState" : "manual",
