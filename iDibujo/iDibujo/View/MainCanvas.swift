@@ -100,30 +100,7 @@ struct MainCanvas: View {
             
             SliderView(value: $lineViewModel.lineWithValue)
             
-            VStack(spacing: 15) {
-                /// `undo` Button
-                Button {
-                    let lastLine = lineViewModel.lines.removeLast()
-                    lineViewModel.deletedLines.append(lastLine)
-                } label: {
-                    Image(systemName: "arrow.clockwise")
-                        .font(.title3)
-                        .fontWeight(.heavy)
-                }
-                .disabled(lineViewModel.lines.count == 0)
-                .foregroundStyle(lineViewModel.lines.count == 0 ? Color(.lightGray) : .black)
-                /// `redo` Buton
-                Button {
-                    let lastLine = lineViewModel.deletedLines.removeLast()
-                    lineViewModel.lines.append(lastLine)
-                } label: {
-                    Image(systemName: "arrow.counterclockwise")
-                        .font(.title3)
-                        .fontWeight(.heavy)
-                }
-                .disabled(lineViewModel.deletedLines.count == 0)
-                .foregroundStyle(lineViewModel.deletedLines.count == 0 ? Color(.lightGray) : .black)
-            }
+            UndoRedoButtonView(lineViewModel: lineViewModel)
         }
     }
     
@@ -145,3 +122,32 @@ struct MainCanvas: View {
     MainCanvas()
 }
 
+struct UndoRedoButtonView: View {
+    @ObservedObject var lineViewModel: LineViewModel
+    var body: some View {
+        VStack(spacing: 15) {
+            /// `undo` Button
+            Button {
+                let lastLine = lineViewModel.lines.removeLast()
+                lineViewModel.deletedLines.append(lastLine)
+            } label: {
+                Image(systemName: "arrow.clockwise")
+                    .font(.title3)
+                    .fontWeight(.heavy)
+            }
+            .disabled(lineViewModel.lines.count == 0)
+            .foregroundStyle(lineViewModel.lines.count == 0 ? Color(.lightGray) : .black)
+            /// `redo` Buton
+            Button {
+                let lastLine = lineViewModel.deletedLines.removeLast()
+                lineViewModel.lines.append(lastLine)
+            } label: {
+                Image(systemName: "arrow.counterclockwise")
+                    .font(.title3)
+                    .fontWeight(.heavy)
+            }
+            .disabled(lineViewModel.deletedLines.count == 0)
+            .foregroundStyle(lineViewModel.deletedLines.count == 0 ? Color(.lightGray) : .black)
+        }
+    }
+}
