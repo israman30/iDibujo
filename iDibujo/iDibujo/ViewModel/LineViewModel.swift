@@ -33,6 +33,7 @@ final class LineViewModel: CanvasProtocol, SaveCanvasProtocol {
     ///    - view: takes the view for saving it context
     func save(from view: any View) {
         let image = view.snapshot()
+        isSaved = true
         UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
         print("Photo saved on library: \(image.description)")
     }
