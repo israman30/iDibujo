@@ -125,7 +125,7 @@ struct MainCanvas: View {
 struct UndoRedoButtonView: View {
     @ObservedObject var lineViewModel: LineViewModel
     var body: some View {
-        VStack(spacing: 15) {
+        VStack(spacing: 20) {
             /// `undo` Button
             Button {
                 let lastLine = lineViewModel.lines.removeLast()
