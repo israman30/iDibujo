@@ -19,7 +19,9 @@ struct MainCanvas: View {
                 .ignoresSafeArea()
             CanvasView(
                 lines: $lineViewModel.lines,
-                selectedColor: $lineViewModel.selectedColor, vm: lineViewModel
+                selectedColor: $lineViewModel.selectedColor,
+                deletedLines: $lineViewModel.deletedLines,
+                vm: lineViewModel
             )
             .ignoresSafeArea(.all)
             
@@ -57,47 +59,19 @@ struct MainCanvas: View {
     @ViewBuilder
     func menuList() -> some View {
         VStack {
-            Menu {
-                /// Clear `Canvas` button
-                Button {
-                    presentAlert()
-                } label: {
-                    HStack {
-                        Image(systemName: CustomIcon.eraser)
-                        Text(Labels.clearCanvas)
-                    }
-                }
-                .disabled(lineViewModel.lines.isEmpty ? true : false)
-                /// Back to `Canvas` button
-                Button { } label: {
-                    HStack {
-                        Text(Labels.back)
-                        Image(systemName: CustomIcon.backToCanvas)
-                    }
-                }
-                /// Save to `Photo` Library  button
-                Button {
-                    savePhotoLibrary()
-                } label: {
-                    HStack {
-                        Text(Labels.save)
-                        Image(systemName: CustomIcon.saveCanvas)
-                    }
-                }
-                .disabled(lineViewModel.lines.isEmpty ? true : false)
-                
-            } label: {
-                Image(systemName: CustomIcon.pencil)
-                    .font(.largeTitle)
-                    .foregroundStyle(.gray)
-            }
+            MenuButtonView(lineViewModel: lineViewModel, savePhotoLibrary: {
+                savePhotoLibrary()
+            }, presentAlert: {
+                presentAlert()
+            })
             .presentAlert($alert, isPresented: $showingAlert)
             
             ColorPicker(Labels.colorPicker, selection: $lineViewModel.selectedColor)
                 .labelsHidden()
-                .onChange(of: lineViewModel.selectedColor) { oldValue, newValue in
-                    self.colorPicked = newValue
-                }
+            
+            SliderView(value: $lineViewModel.lineWithValue)
+            
+            UndoRedoButtonView(lineViewModel: lineViewModel)
         }
     }
     
@@ -117,4 +91,78 @@ struct MainCanvas: View {
 
 #Preview {
     MainCanvas()
+}
+
+struct MenuButtonView: View {
+    var lineViewModel: LineViewModel
+    var savePhotoLibrary: () -> Void
+    var presentAlert: () -> Void
+    
+    var body: some View {
+        Menu {
+            /// Clear `Canvas` button
+            Button {
+                presentAlert()
+            } label: {
+                HStack {
+                    Image(systemName: CustomIcon.eraser)
+                    Text(Labels.clearCanvas)
+                }
+            }
+            .disabled(lineViewModel.lines.isEmpty ? true : false)
+            /// Back to `Canvas` button
+            Button { } label: {
+                HStack {
+                    Text(Labels.back)
+                    Image(systemName: CustomIcon.backToCanvas)
+                }
+            }
+            /// Save to `Photo` Library  button
+            Button {
+                savePhotoLibrary()
+            } label: {
+                HStack {
+                    Text(Labels.save)
+                    Image(systemName: CustomIcon.saveCanvas)
+                }
+            }
+            .disabled(lineViewModel.lines.isEmpty ? true : false)
+            
+        } label: {
+            Image(systemName: CustomIcon.pencil)
+                .font(.largeTitle)
+                .foregroundStyle(.gray)
+        }
+    }
+}
+
+struct UndoRedoButtonView: View {
+    @ObservedObject var lineViewModel: LineViewModel
+    
+    var body: some View {
+        VStack(spacing: 20) {
+            /// `undo` Button
+            Button {
+                let lastLine = lineViewModel.lines.removeLast()
+                lineViewModel.deletedLines.append(lastLine)
+            } label: {
+                Image(systemName: "arrow.clockwise")
+                    .font(.title3)
+                    .fontWeight(.heavy)
+            }
+            .disabled(lineViewModel.lines.count == 0)
+            .if(lineViewModel.lines.count == 0)
+            /// `redo` Buton
+            Button {
+                let lastLine = lineViewModel.deletedLines.removeLast()
+                lineViewModel.lines.append(lastLine)
+            } label: {
+                Image(systemName: "arrow.counterclockwise")
+                    .font(.title3)
+                    .fontWeight(.heavy)
+            }
+            .disabled(lineViewModel.deletedLines.count == 0)
+            .if(lineViewModel.deletedLines.count == 0)
+        }
+    }
 }

@@ -11,5 +11,6 @@ import SwiftUI
 struct Line {
     var points: [CGPoint]
     var color: Color
+    var width: CGFloat
 }
 
