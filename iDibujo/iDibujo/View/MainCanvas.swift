@@ -136,7 +136,7 @@ struct UndoRedoButtonView: View {
                     .fontWeight(.heavy)
             }
             .disabled(lineViewModel.lines.count == 0)
-            .foregroundStyle(lineViewModel.lines.count == 0 ? Color(.lightGray) : .black)
+            .if(lineViewModel.lines.count == 0)
             /// `redo` Buton
             Button {
                 let lastLine = lineViewModel.deletedLines.removeLast()
@@ -147,7 +147,18 @@ struct UndoRedoButtonView: View {
                     .fontWeight(.heavy)
             }
             .disabled(lineViewModel.deletedLines.count == 0)
-            .foregroundStyle(lineViewModel.deletedLines.count == 0 ? Color(.lightGray) : .black)
+            .if(lineViewModel.deletedLines.count == 0)
+        }
+    }
+}
+
+extension View {
+    @ViewBuilder
+    func `if`(_ condition: Bool) -> some View {
+        if condition {
+            self.foregroundStyle(Color(.lightGray))
+        } else {
+            self.foregroundStyle(.black)
         }
     }
 }
