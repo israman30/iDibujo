@@ -38,6 +38,10 @@ struct MainCanvas: View {
                     }
                 }
             }
+            ToastView(
+                text: Labels.canvasSaved,
+                isVisible: $lineViewModel.isSaved
+            )
         }
     }
     
@@ -146,7 +150,7 @@ struct UndoRedoButtonView: View {
                 let lastLine = lineViewModel.lines.removeLast()
                 lineViewModel.deletedLines.append(lastLine)
             } label: {
-                Image(systemName: "arrow.clockwise")
+                Image(systemName: CustomIcon.undo)
                     .font(.title3)
                     .fontWeight(.heavy)
             }
@@ -157,7 +161,7 @@ struct UndoRedoButtonView: View {
                 let lastLine = lineViewModel.deletedLines.removeLast()
                 lineViewModel.lines.append(lastLine)
             } label: {
-                Image(systemName: "arrow.counterclockwise")
+                Image(systemName: CustomIcon.redo)
                     .font(.title3)
                     .fontWeight(.heavy)
             }
@@ -166,3 +170,4 @@ struct UndoRedoButtonView: View {
         }
     }
 }
+
