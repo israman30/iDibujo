@@ -26,6 +26,7 @@ final class LineViewModel: CanvasProtocol, SaveCanvasProtocol {
     @Published var colors: [Color] = [.red, .yellow, .blue, .green, .orange, .pink, .black]
     @Published var selectedColor = Color.black
     @Published var deletedLines: [Line] = []
+    @Published var isSaved: Bool = false
     
     // MARK: - This function captures and stores the view's context in the local photo library.
     /// - Parameters:

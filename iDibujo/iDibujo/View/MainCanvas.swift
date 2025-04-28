@@ -38,6 +38,10 @@ struct MainCanvas: View {
                     }
                 }
             }
+            ToastView(
+                text: "Draw saved!",
+                isVisible: $lineViewModel.isSaved
+            )
         }
     }
     
@@ -86,6 +90,7 @@ struct MainCanvas: View {
     
     private func savePhotoLibrary() {
         lineViewModel.save(from: self)
+        lineViewModel.isSaved = true
     }
 }
 
@@ -166,3 +171,4 @@ struct UndoRedoButtonView: View {
         }
     }
 }
+
