@@ -11,7 +11,6 @@ struct MainCanvas: View {
     @State private var showingAlert = false
     @State private var colorPicked: Color = .blue
     @State private var alert: AlertComponent? = nil
-    @State private var showModalSheet: Bool = false
     @StateObject private var lineViewModel = LineViewModel()
     
     var body: some View {
@@ -88,12 +87,6 @@ struct MainCanvas: View {
                     }
                 }
                 .disabled(lineViewModel.lines.isEmpty ? true : false)
-                
-                Button {
-                    showModalSheet = true
-                } label: {
-                    Text("Line Width")
-                }
                 
             } label: {
                 Image(systemName: CustomIcon.pencil)
