@@ -9,6 +9,17 @@
 import UIKit
 import SwiftUI
 
+extension View {
+    @ViewBuilder
+    func `if`(_ condition: Bool) -> some View {
+        if condition {
+            self.foregroundStyle(Color(.lightGray))
+        } else {
+            self.foregroundStyle(.black)
+        }
+    }
+}
+
 // MARK: - The extension provides a method to capture a snapshot of the displayed element or the view itself.
 extension View {
     func snapshot() -> UIImage {

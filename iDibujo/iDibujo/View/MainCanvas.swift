@@ -138,6 +138,7 @@ struct MenuButtonView: View {
 
 struct UndoRedoButtonView: View {
     @ObservedObject var lineViewModel: LineViewModel
+    
     var body: some View {
         VStack(spacing: 20) {
             /// `undo` Button
@@ -162,17 +163,6 @@ struct UndoRedoButtonView: View {
             }
             .disabled(lineViewModel.deletedLines.count == 0)
             .if(lineViewModel.deletedLines.count == 0)
-        }
-    }
-}
-
-extension View {
-    @ViewBuilder
-    func `if`(_ condition: Bool) -> some View {
-        if condition {
-            self.foregroundStyle(Color(.lightGray))
-        } else {
-            self.foregroundStyle(.black)
         }
     }
 }
