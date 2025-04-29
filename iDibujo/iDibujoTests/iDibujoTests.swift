@@ -66,6 +66,12 @@ final class iDibujoTests: XCTestCase {
         XCTAssertTrue(lineViewModel.isSaved, "isSaved should be true after setting")
     }
     
+    func testSaveSetsIsSavedTrue() {
+        let dummyView = Text("Test View")
+        lineViewModel.save(from: dummyView)
+        XCTAssertTrue(lineViewModel.isSaved, "Saving from a view should set isSaved to true.")
+    }
+    
     func testCanvasColorsExisting() {
         let blue = canvasViewModel.draw.blue
         let red = canvasViewModel.draw.red
