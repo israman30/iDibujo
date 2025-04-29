@@ -64,6 +64,16 @@ final class iDibujoTests: XCTestCase {
         XCTAssertThrowsError(try createPathSafely(points: points), "Should throw when no points are provided")
     }
     
+    func testCalculateMidPoint() {
+        let point1 = CGPoint(x: 0, y: 0)
+        let point2 = CGPoint(x: 10, y: 10)
+        
+        let result = canvasEngine.calculate(point1, point2: point2)
+        
+        XCTAssertEqual(result.x, 5)
+        XCTAssertEqual(result.y, 5)
+    }
+    
     func testInitialValues() {
         XCTAssertEqual(lineViewModel.lineWithValue, 5.0, "Default line width should be 5.0")
         XCTAssertTrue(lineViewModel.lines.isEmpty, "Lines should be empty initially")
