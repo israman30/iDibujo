@@ -74,6 +74,16 @@ final class iDibujoTests: XCTestCase {
         XCTAssertEqual(result.y, 5)
     }
     
+    func testCalculateMidPointNegativeCoordinates() {
+        let point1 = CGPoint(x: -10, y: -10)
+        let point2 = CGPoint(x: 10, y: 10)
+        
+        let result = canvasEngine.calculate(point1, point2: point2)
+        
+        XCTAssertEqual(result.x, 0)
+        XCTAssertEqual(result.y, 0)
+    }
+    
     func testInitialValues() {
         XCTAssertEqual(lineViewModel.lineWithValue, 5.0, "Default line width should be 5.0")
         XCTAssertTrue(lineViewModel.lines.isEmpty, "Lines should be empty initially")
