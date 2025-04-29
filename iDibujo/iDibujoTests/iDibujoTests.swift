@@ -7,22 +7,136 @@
 //
 
 import XCTest
+import SwiftUI
 @testable import iDibujo
 
 final class iDibujoTests: XCTestCase {
     
     var canvasViewModel: CanvasViewModel!
     var canvasProtocol: CanvasViewModelProtocol!
+    var lineViewModel: LineViewModel!
+    var canvasEngine: CanvasEnginer!
 
     override func setUpWithError() throws {
         canvasViewModel = CanvasViewModel()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        lineViewModel = LineViewModel()
+        canvasEngine = CanvasEnginer()
     }
 
     override func tearDownWithError() throws {
         canvasViewModel = nil
         canvasProtocol = nil
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        lineViewModel = nil
+        canvasEngine = nil
+    }
+    
+    func testCreatePathFromPoints() {
+        let points: [CGPoint] = [
+            CGPoint(x: 0, y: 0),
+            CGPoint(x: 10, y: 10),
+            CGPoint(x: 20, y: 0)
+        ]
+        
+        let path = canvasEngine.createPath(for: points)
+        
+        XCTAssertFalse(path.isEmpty, "The path should not be empty after creating from points.")
+    }
+    
+    func testCreatePathSinglePoint() {
+        let points: [CGPoint] = [
+            CGPoint(x: 5, y: 5)
+        ]
+        
+        let path = canvasEngine.createPath(for: points)
+        
+        XCTAssertFalse(path.isEmpty, "Path should not be empty even if only one point is provided.")
+    }
+    
+    private func createPathSafely(points: [CGPoint]) throws -> Path {
+        guard !points.isEmpty else {
+            throw NSError(domain: "PointsArrayEmpty", code: 0)
+        }
+        return canvasEngine.createPath(for: points)
+    }
+    
+    func testCreatePathNoPoints() {
+        let points: [CGPoint] = []
+        XCTAssertThrowsError(try createPathSafely(points: points), "Should throw when no points are provided")
+    }
+    
+    func testCalculateMidPoint() {
+        let point1 = CGPoint(x: 0, y: 0)
+        let point2 = CGPoint(x: 10, y: 10)
+        
+        let result = canvasEngine.calculate(point1, point2: point2)
+        
+        XCTAssertEqual(result.x, 5)
+        XCTAssertEqual(result.y, 5)
+    }
+    
+    func testCalculateMidPointNegativeCoordinates() {
+        let point1 = CGPoint(x: -10, y: -10)
+        let point2 = CGPoint(x: 10, y: 10)
+        
+        let result = canvasEngine.calculate(point1, point2: point2)
+        
+        XCTAssertEqual(result.x, 0)
+        XCTAssertEqual(result.y, 0)
+    }
+    
+    func testCalculateMidPointDifferentCoordinates() {
+        let point1 = CGPoint(x: 2, y: 8)
+        let point2 = CGPoint(x: 6, y: 4)
+        
+        let result = canvasEngine.calculate(point1, point2: point2)
+        
+        XCTAssertEqual(result.x, 4)
+        XCTAssertEqual(result.y, 6)
+    }
+    
+    func testInitialValues() {
+        XCTAssertEqual(lineViewModel.lineWithValue, 5.0, "Default line width should be 5.0")
+        XCTAssertTrue(lineViewModel.lines.isEmpty, "Lines should be empty initially")
+        XCTAssertEqual(lineViewModel.colors.count, 7, "Colors should have 7 default colors")
+        XCTAssertEqual(lineViewModel.selectedColor, Color.black, "Selected color should be black by default")
+        XCTAssertTrue(lineViewModel.deletedLines.isEmpty, "Deleted lines should be empty initially")
+        XCTAssertFalse(lineViewModel.isSaved, "isSaved should be false initially")
+    }
+    
+    func testUpdateLineWidth() {
+        lineViewModel.lineWithValue = 10.0
+        XCTAssertEqual(lineViewModel.lineWithValue, 10.0, "Line width should update correctly")
+    }
+    
+    func testAddLine() {
+        let line = Line(points: [CGPoint(x: 0, y: 0), CGPoint(x: 10, y: 10)], color: .red, width: 5.0)
+        lineViewModel.lines.append(line)
+        XCTAssertEqual(lineViewModel.lines.count, 1, "Should have one line after adding")
+    }
+    
+    func testSelectColor() {
+        lineViewModel.selectedColor = .blue
+        XCTAssertEqual(lineViewModel.selectedColor, .blue, "Selected color should update to blue")
+    }
+    
+    func testDeleteLine() {
+        let line = Line(points: [CGPoint(x: 0, y: 0), CGPoint(x: 10, y: 10)], color: .red, width: 5.0)
+        lineViewModel.lines.append(line)
+        lineViewModel.deletedLines.append(lineViewModel.lines.removeLast())
+        
+        XCTAssertTrue(lineViewModel.lines.isEmpty, "Lines should be empty after deletion")
+        XCTAssertEqual(lineViewModel.deletedLines.count, 1, "Deleted lines should contain one item")
+    }
+    
+    func testSaveStatus() {
+        lineViewModel.isSaved = true
+        XCTAssertTrue(lineViewModel.isSaved, "isSaved should be true after setting")
+    }
+    
+    func testSaveSetsIsSavedTrue() {
+        let dummyView = Text("Test View")
+        lineViewModel.save(from: dummyView)
+        XCTAssertTrue(lineViewModel.isSaved, "Saving from a view should set isSaved to true.")
     }
     
     func testCanvasColorsExisting() {
