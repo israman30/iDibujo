@@ -7,22 +7,33 @@
 //
 
 import XCTest
+import SwiftUI
 @testable import iDibujo
 
 final class iDibujoTests: XCTestCase {
     
     var canvasViewModel: CanvasViewModel!
     var canvasProtocol: CanvasViewModelProtocol!
+    var lineViewModel: LineViewModel!
 
     override func setUpWithError() throws {
         canvasViewModel = CanvasViewModel()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        lineViewModel = LineViewModel()
     }
 
     override func tearDownWithError() throws {
         canvasViewModel = nil
         canvasProtocol = nil
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        lineViewModel = nil
+    }
+    
+    func testInitialValues() {
+        XCTAssertEqual(lineViewModel.lineWithValue, 5.0, "Default line width should be 5.0")
+        XCTAssertTrue(lineViewModel.lines.isEmpty, "Lines should be empty initially")
+        XCTAssertEqual(lineViewModel.colors.count, 7, "Colors should have 7 default colors")
+        XCTAssertEqual(lineViewModel.selectedColor, Color.black, "Selected color should be black by default")
+        XCTAssertTrue(lineViewModel.deletedLines.isEmpty, "Deleted lines should be empty initially")
+        XCTAssertFalse(lineViewModel.isSaved, "isSaved should be false initially")
     }
     
     func testCanvasColorsExisting() {
