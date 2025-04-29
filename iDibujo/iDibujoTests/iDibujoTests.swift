@@ -84,6 +84,16 @@ final class iDibujoTests: XCTestCase {
         XCTAssertEqual(result.y, 0)
     }
     
+    func testCalculateMidPointDifferentCoordinates() {
+        let point1 = CGPoint(x: 2, y: 8)
+        let point2 = CGPoint(x: 6, y: 4)
+        
+        let result = canvasEngine.calculate(point1, point2: point2)
+        
+        XCTAssertEqual(result.x, 4)
+        XCTAssertEqual(result.y, 6)
+    }
+    
     func testInitialValues() {
         XCTAssertEqual(lineViewModel.lineWithValue, 5.0, "Default line width should be 5.0")
         XCTAssertTrue(lineViewModel.lines.isEmpty, "Lines should be empty initially")
