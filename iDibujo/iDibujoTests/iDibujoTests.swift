@@ -36,6 +36,11 @@ final class iDibujoTests: XCTestCase {
         XCTAssertFalse(lineViewModel.isSaved, "isSaved should be false initially")
     }
     
+    func testUpdateLineWidth() {
+        lineViewModel.lineWithValue = 10.0
+        XCTAssertEqual(lineViewModel.lineWithValue, 10.0, "Line width should update correctly")
+    }
+    
     func testCanvasColorsExisting() {
         let blue = canvasViewModel.draw.blue
         let red = canvasViewModel.draw.red
