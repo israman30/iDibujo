@@ -52,6 +52,18 @@ final class iDibujoTests: XCTestCase {
         XCTAssertFalse(path.isEmpty, "Path should not be empty even if only one point is provided.")
     }
     
+    private func createPathSafely(points: [CGPoint]) throws -> Path {
+        guard !points.isEmpty else {
+            throw NSError(domain: "PointsArrayEmpty", code: 0)
+        }
+        return canvasEngine.createPath(for: points)
+    }
+    
+    func testCreatePathNoPoints() {
+        let points: [CGPoint] = []
+        XCTAssertThrowsError(try createPathSafely(points: points), "Should throw when no points are provided")
+    }
+    
     func testInitialValues() {
         XCTAssertEqual(lineViewModel.lineWithValue, 5.0, "Default line width should be 5.0")
         XCTAssertTrue(lineViewModel.lines.isEmpty, "Lines should be empty initially")
