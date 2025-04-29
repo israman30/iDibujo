@@ -15,16 +15,31 @@ final class iDibujoTests: XCTestCase {
     var canvasViewModel: CanvasViewModel!
     var canvasProtocol: CanvasViewModelProtocol!
     var lineViewModel: LineViewModel!
+    var canvasEngine: CanvasEnginer!
 
     override func setUpWithError() throws {
         canvasViewModel = CanvasViewModel()
         lineViewModel = LineViewModel()
+        canvasEngine = CanvasEnginer()
     }
 
     override func tearDownWithError() throws {
         canvasViewModel = nil
         canvasProtocol = nil
         lineViewModel = nil
+        canvasEngine = nil
+    }
+    
+    func testCreatePathFromPoints() {
+        let points: [CGPoint] = [
+            CGPoint(x: 0, y: 0),
+            CGPoint(x: 10, y: 10),
+            CGPoint(x: 20, y: 0)
+        ]
+        
+        let path = canvasEngine.createPath(for: points)
+        
+        XCTAssertFalse(path.isEmpty, "The path should not be empty after creating from points.")
     }
     
     func testInitialValues() {
