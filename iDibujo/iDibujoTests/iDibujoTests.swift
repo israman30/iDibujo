@@ -41,6 +41,12 @@ final class iDibujoTests: XCTestCase {
         XCTAssertEqual(lineViewModel.lineWithValue, 10.0, "Line width should update correctly")
     }
     
+    func testAddLine() {
+        let line = Line(points: [CGPoint(x: 0, y: 0), CGPoint(x: 10, y: 10)], color: .red, width: 5.0)
+        lineViewModel.lines.append(line)
+        XCTAssertEqual(lineViewModel.lines.count, 1, "Should have one line after adding")
+    }
+    
     func testCanvasColorsExisting() {
         let blue = canvasViewModel.draw.blue
         let red = canvasViewModel.draw.red
