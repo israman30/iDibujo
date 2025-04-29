@@ -47,6 +47,11 @@ final class iDibujoTests: XCTestCase {
         XCTAssertEqual(lineViewModel.lines.count, 1, "Should have one line after adding")
     }
     
+    func testSelectColor() {
+        lineViewModel.selectedColor = .blue
+        XCTAssertEqual(lineViewModel.selectedColor, .blue, "Selected color should update to blue")
+    }
+    
     func testCanvasColorsExisting() {
         let blue = canvasViewModel.draw.blue
         let red = canvasViewModel.draw.red
