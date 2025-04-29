@@ -52,6 +52,20 @@ final class iDibujoTests: XCTestCase {
         XCTAssertEqual(lineViewModel.selectedColor, .blue, "Selected color should update to blue")
     }
     
+    func testDeleteLine() {
+        let line = Line(points: [CGPoint(x: 0, y: 0), CGPoint(x: 10, y: 10)], color: .red, width: 5.0)
+        lineViewModel.lines.append(line)
+        lineViewModel.deletedLines.append(lineViewModel.lines.removeLast())
+        
+        XCTAssertTrue(lineViewModel.lines.isEmpty, "Lines should be empty after deletion")
+        XCTAssertEqual(lineViewModel.deletedLines.count, 1, "Deleted lines should contain one item")
+    }
+    
+    func testSaveStatus() {
+        lineViewModel.isSaved = true
+        XCTAssertTrue(lineViewModel.isSaved, "isSaved should be true after setting")
+    }
+    
     func testCanvasColorsExisting() {
         let blue = canvasViewModel.draw.blue
         let red = canvasViewModel.draw.red
