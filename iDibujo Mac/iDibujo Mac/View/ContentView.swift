@@ -8,14 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var showAlert: Bool = false
+    @State private var colorPicked: Color = .blue
+    @State private var alertTitle: String = ""
+    @StateObject private var lineViewModel = LineViewModel()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        ZStack {
+            Color.white
+                .ignoresSafeArea(edges: .all)
         }
-        .padding()
     }
 }
 
