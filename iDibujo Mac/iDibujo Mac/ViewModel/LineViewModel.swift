@@ -26,7 +26,13 @@ final class LineViewModel: CanvasProtocol, SaveCanvasProtocol {
     @Published var isSaved: Bool = false
     
     func saveCanvas(from view: any View) {
-//        let image = vi
+        let image = view.snapshot()
+        isSaved = true
+        if let tiffData = image.tiffRepresentation,
+           let bitmap = NSBitmapImageRep(data: tiffData),
+           let pngData = bitmap.representation(using: .png, properties: [:]) {
+            let url = FileManager.default.temporaryDirectory.appendingPathComponent("savedCanvas.png")
+            try? pngData.write(to: url)
+        }
     }
-    
 }
