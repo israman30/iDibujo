@@ -17,6 +17,14 @@ struct ContentView: View {
         ZStack {
             Color.white
                 .ignoresSafeArea(edges: .all)
+            
+            CanvasView(
+                lines: $lineViewModel.lines,
+                selectedColor: $lineViewModel.selectedColor,
+                deletedLines: $lineViewModel.deletedLines,
+                vm: lineViewModel
+            )
+            .ignoresSafeArea(edges: .all)
         }
     }
 }
