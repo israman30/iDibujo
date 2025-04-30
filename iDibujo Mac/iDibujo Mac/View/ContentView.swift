@@ -47,7 +47,7 @@ struct ContentView: View {
         Button {
             lineViewModel.selectedColor = color
         } label: {
-            Image(systemName: "circle.fill")
+            Image(systemName: CustomIcon.circleFill)
                 .font(.largeTitle)
                 .foregroundStyle(color)
                 .background(
@@ -60,9 +60,23 @@ struct ContentView: View {
     @ViewBuilder
     func menuList() -> some View {
         VStack {
+            MenuButtonView(lineViewModel: lineViewModel) {
+                saveToPhotoLibrary()
+            } presentAlertAction: {
+                presentAlert()
+            }
+
             ColorPicker("", selection: $lineViewModel.selectedColor)
                 .labelsHidden()
         }
+    }
+    
+    private func presentAlert() {
+        
+    }
+    
+    private func saveToPhotoLibrary() {
+        lineViewModel.saveCanvas(from: self)
     }
 }
 
@@ -79,11 +93,23 @@ struct MenuButtonView: View {
     var body: some View {
         VStack {
             Button {
-                
+                presentAlertAction()
             } label: {
                 HStack {
-                    Image(systemName: "")
+                    Image(systemName: CustomIcon.eraser)
+                    Text(Labels.clearCanvas)
                 }
+                .foregroundStyle(.black)
+            }
+            
+            Button {
+                savePhotoLibraryAction()
+            } label: {
+                HStack {
+                    Image(systemName: CustomIcon.saveCanvas)
+                    Text(Labels.save)
+                }
+                .foregroundStyle(.black)
             }
         }
     }
