@@ -39,6 +39,12 @@ struct ContentView: View {
                 }
             }
             .padding(.vertical, 5)
+            
+            ToastView(
+                text: Labels.canvasSaved,
+                isVisible: $lineViewModel.isSaved
+            )
+            .padding(.top, 25)
         }
     }
     
