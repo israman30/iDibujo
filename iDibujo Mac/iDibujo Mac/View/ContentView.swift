@@ -28,7 +28,6 @@ struct ContentView: View {
             
             VStack {
                 HStack {
-                    Spacer()
                     menuList()
                 }
                 .padding(.horizontal)
@@ -39,6 +38,7 @@ struct ContentView: View {
                     }
                 }
             }
+            .padding(.vertical, 5)
         }
     }
     
@@ -55,18 +55,20 @@ struct ContentView: View {
                         .stroke(.black, lineWidth: 4)
                 )
         }
+        .buttonStyle(.borderless)
     }
     
     @ViewBuilder
     func menuList() -> some View {
-        VStack {
+        HStack {
             MenuButtonView(lineViewModel: lineViewModel) {
                 saveToPhotoLibrary()
             } presentAlertAction: {
                 presentAlert()
             }
 
-            ColorPicker("", selection: $lineViewModel.selectedColor)
+            ColorPicker("Color Picker", selection: $lineViewModel.selectedColor)
+                .foregroundStyle(.black)
                 .labelsHidden()
         }
     }
@@ -91,7 +93,7 @@ struct MenuButtonView: View {
     var presentAlertAction: () -> Void
     
     var body: some View {
-        VStack {
+        HStack {
             Button {
                 presentAlertAction()
             } label: {
@@ -101,6 +103,7 @@ struct MenuButtonView: View {
                 }
                 .foregroundStyle(.black)
             }
+            
             
             Button {
                 savePhotoLibraryAction()
@@ -112,5 +115,6 @@ struct MenuButtonView: View {
                 .foregroundStyle(.black)
             }
         }
+        .buttonStyle(.borderless)
     }
 }
