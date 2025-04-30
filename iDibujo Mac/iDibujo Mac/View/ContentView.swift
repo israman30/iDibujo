@@ -66,6 +66,7 @@ struct ContentView: View {
             } presentAlertAction: {
                 presentAlert()
             }
+            .presentAlert($alert, isPresented: $showAlert)
 
             ColorPicker("Color Picker", selection: $lineViewModel.selectedColor)
                 .foregroundStyle(.black)
