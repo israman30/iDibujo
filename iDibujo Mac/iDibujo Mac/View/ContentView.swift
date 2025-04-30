@@ -25,10 +25,66 @@ struct ContentView: View {
                 vm: lineViewModel
             )
             .ignoresSafeArea(edges: .all)
+            
+            VStack {
+                HStack {
+                    Spacer()
+                    menuList()
+                }
+                .padding(.horizontal)
+                Spacer()
+                HStack {
+                    ForEach(lineViewModel.colors, id: \.self) { color in
+                        colorButton(color: color)
+                    }
+                }
+            }
+        }
+    }
+    
+    @ViewBuilder
+    func colorButton(color: Color) -> some View {
+        Button {
+            lineViewModel.selectedColor = color
+        } label: {
+            Image(systemName: "circle.fill")
+                .font(.largeTitle)
+                .foregroundStyle(color)
+                .background(
+                    Circle()
+                        .stroke(.black, lineWidth: 4)
+                )
+        }
+    }
+    
+    @ViewBuilder
+    func menuList() -> some View {
+        VStack {
+            ColorPicker("", selection: $lineViewModel.selectedColor)
+                .labelsHidden()
         }
     }
 }
 
 #Preview {
     ContentView()
+}
+
+
+struct MenuButtonView: View {
+    var lineViewModel: LineViewModel
+    var savePhotoLibraryAction: () -> Void
+    var presentAlertAction: () -> Void
+    
+    var body: some View {
+        VStack {
+            Button {
+                
+            } label: {
+                HStack {
+                    Image(systemName: "")
+                }
+            }
+        }
+    }
 }
