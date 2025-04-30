@@ -32,3 +32,14 @@ extension View {
         return NSImage()
     }
 }
+
+extension View {
+    @ViewBuilder
+    func `if`(_ condition: Bool) -> some View {
+        if condition {
+            self.foregroundStyle(Color(.lightGray))
+        } else {
+            self.foregroundStyle(.black)
+        }
+    }
+}
