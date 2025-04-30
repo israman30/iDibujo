@@ -7,12 +7,26 @@
 
 import SwiftUI
 
-protocol CanvasProtocol {
-    var lineWidth: CGFloat { get set }
+protocol CanvasProtocol: ObservableObject  {
+    var lineWithValue: CGFloat { get set }
     var lines: [Line] { get set }
     var selectedColor: Color { get set }
 }
 
 protocol SaveCanvasProtocol {
     func saveCanvas(from view: any View)
+}
+
+final class LineViewModel: CanvasProtocol, SaveCanvasProtocol {
+    @Published var lineWithValue: CGFloat = 5.0
+    @Published var lines = [Line]()
+    @Published var colors: [Color] = [.red, .yellow, .blue, .green, .orange, .pink, .black]
+    @Published var selectedColor = Color.black
+    @Published var deletedLines: [Line] = []
+    @Published var isSaved: Bool = false
+    
+    func saveCanvas(from view: any View) {
+//        let image = vi
+    }
+    
 }
