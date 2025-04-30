@@ -99,7 +99,6 @@ struct MenuButtonView: View {
             } label: {
                 HStack {
                     Image(systemName: CustomIcon.eraser)
-                    Text(Labels.clearCanvas)
                 }
                 .foregroundStyle(.black)
             }
@@ -110,11 +109,9 @@ struct MenuButtonView: View {
             } label: {
                 HStack {
                     Image(systemName: CustomIcon.saveCanvas)
-                    Text(Labels.save)
                 }
                 .foregroundStyle(.black)
             }
         }
-        .buttonStyle(.borderless)
     }
 }
