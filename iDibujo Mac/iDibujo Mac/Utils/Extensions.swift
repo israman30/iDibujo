@@ -11,19 +11,24 @@ import SwiftUI
 extension View {
     func snapshot() -> NSImage {
         let controller = NSHostingController(rootView: self)
-        let view = controller.view
-
         let targetSize = controller.view.intrinsicContentSize
-        view.bounds = CGRect(origin: .zero, size: targetSize)
-        view.wantsLayer = true
-        view.layer?.backgroundColor = .clear
+        let view = controller.view
+        let contentRect = NSRect(origin: .zero, size: targetSize)
+        
+        let window = NSWindow(
+            contentRect: contentRect,
+            styleMask: [.titled, .closable, .miniaturizable, .resizable],
+            backing: .buffered, defer: false
+        )
+        window.center()
+        window.contentView?.addSubview(view)
 
-        guard let renderer = view.bitmapImageRepForCachingDisplay(in: view.bounds) else {
-            fatalError("Error creating bitmap image representation")
+        if let bitmapRep = view.bitmapImageRepForCachingDisplay(in: contentRect) {
+            view.cacheDisplay(in: contentRect, to: bitmapRep)
+            let image = NSImage(size: bitmapRep.size)
+            image.addRepresentation(bitmapRep)
+            return image
         }
-
-        let image = NSImage(size: targetSize)
-        image.addRepresentation(renderer)
-        return image
+        return NSImage()
     }
 }
