@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @State private var showAlert: Bool = false
     @State private var colorPicked: Color = .blue
-    @State private var alertTitle: String = ""
+    @State private var alert: AlertMessage? = nil
     @StateObject private var lineViewModel = LineViewModel()
     
     var body: some View {
@@ -74,7 +74,12 @@ struct ContentView: View {
     }
     
     private func presentAlert() {
-        
+        showAlert = true
+        alert = .delete({
+            lineViewModel.lines.removeAll()
+        }, cancel: {
+            showAlert = false
+        })
     }
     
     private func saveToPhotoLibrary() {
