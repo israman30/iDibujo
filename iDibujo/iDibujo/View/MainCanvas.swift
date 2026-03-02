@@ -149,7 +149,7 @@ struct MainCanvas: View {
     private func presentAlert() {
         showingAlert = true
         alert = .delete({
-            lineViewModel.lines.removeAll()
+            lineViewModel.clearCanvas()
         }, cancel: {
             self.showingAlert = false
         })
@@ -241,18 +241,12 @@ struct UndoRedoButtonView: View {
         VStack(spacing: 12) {
             undoRedoButton(
                 icon: CustomIcon.undo,
-                action: {
-                    guard let last = lineViewModel.lines.popLast() else { return }
-                    lineViewModel.deletedLines.append(last)
-                },
+                action: { lineViewModel.undo() },
                 isDisabled: !canUndo
             )
             undoRedoButton(
                 icon: CustomIcon.redo,
-                action: {
-                    guard let last = lineViewModel.deletedLines.popLast() else { return }
-                    lineViewModel.lines.append(last)
-                },
+                action: { lineViewModel.redo() },
                 isDisabled: !canRedo
             )
         }
@@ -263,18 +257,12 @@ struct UndoRedoButtonView: View {
         HStack(spacing: 12) {
             undoRedoButton(
                 icon: CustomIcon.undo,
-                action: {
-                    guard let last = lineViewModel.lines.popLast() else { return }
-                    lineViewModel.deletedLines.append(last)
-                },
+                action: { lineViewModel.undo() },
                 isDisabled: !canUndo
             )
             undoRedoButton(
                 icon: CustomIcon.redo,
-                action: {
-                    guard let last = lineViewModel.deletedLines.popLast() else { return }
-                    lineViewModel.lines.append(last)
-                },
+                action: { lineViewModel.redo() },
                 isDisabled: !canRedo
             )
         }

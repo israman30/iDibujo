@@ -60,6 +60,9 @@ struct CanvasView: View {
             .onEnded({ value in
                 if let lastLine = lines.last?.points, lastLine.isEmpty {
                     lines.removeLast()
+                } else {
+                    // New stroke completed — invalidate redo history
+                    vm.clearRedoStack()
                 }
             })
         )
