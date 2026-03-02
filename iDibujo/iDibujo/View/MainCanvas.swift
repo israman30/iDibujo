@@ -12,31 +12,32 @@ struct MainCanvas: View {
     @State private var colorPicked: Color = .blue
     @State private var alert: AlertComponent? = nil
     @StateObject private var lineViewModel = LineViewModel()
+    @Environment(\.verticalSizeClass) private var orientation
     
     var body: some View {
         ZStack {
-            Color.white
+            // Soft off-white background for reduced eye strain
+            Color(uiColor: .systemGray6)
                 .ignoresSafeArea()
+            
             CanvasView(
                 lines: $lineViewModel.lines,
                 selectedColor: $lineViewModel.selectedColor,
                 deletedLines: $lineViewModel.deletedLines,
                 vm: lineViewModel
             )
-            .ignoresSafeArea(.all)
+            .padding(12)
+            .ignoresSafeArea(.container)
             
             VStack {
                 HStack {
                     Spacer()
                     menuList()
                 }
-                .padding(.horizontal)
+                .padding(.horizontal, 16)
+                .padding(.top, 8)
                 Spacer()
-                HStack {
-                    ForEach(lineViewModel.colors, id: \.self) { color in
-                        colorButton(color: color)
-                    }
-                }
+                colorPaletteView
             }
             ToastView(
                 text: Labels.canvasSaved,
@@ -45,37 +46,99 @@ struct MainCanvas: View {
         }
     }
     
+    private var colorPaletteView: some View {
+        HStack(spacing: 12) {
+            ForEach(lineViewModel.colors, id: \.self) { color in
+                colorButton(color: color)
+            }
+        }
+        .padding(.horizontal, 20)
+        .padding(.vertical, 15)
+        .background(
+            RoundedRectangle(cornerRadius: 28)
+                .fill(.ultraThinMaterial)
+                .shadow(color: .black.opacity(0.08), radius: 12, y: 4)
+        )
+        .padding(.bottom, 10)
+    }
+    
     @ViewBuilder
     func colorButton(color: Color) -> some View {
+        let isSelected = lineViewModel.selectedColor == color
         Button {
             lineViewModel.selectedColor = color
         } label: {
-            Image(systemName: CustomIcon.circleFill)
-                .font(.largeTitle)
-                .foregroundStyle(color)
-                .background(
+            Circle()
+                .fill(color)
+                .frame(width: 36, height: 36)
+                .overlay(
                     Circle()
-                        .stroke(.black, lineWidth: 4)
+                        .stroke(isSelected ? Color.primary : Color.clear, lineWidth: 3)
                 )
+                .overlay(
+                    Circle()
+                        .stroke(.white.opacity(0.3), lineWidth: 1)
+                )
+                .shadow(color: color.opacity(0.4), radius: isSelected ? 6 : 2)
         }
+        .buttonStyle(.plain)
     }
     
     @ViewBuilder
     func menuList() -> some View {
-        VStack {
-            MenuButtonView(lineViewModel: lineViewModel, savePhotoLibrary: {
-                savePhotoLibrary()
-            }, presentAlert: {
-                presentAlert()
-            })
-            .presentAlert($alert, isPresented: $showingAlert)
-            
-            ColorPicker(Labels.colorPicker, selection: $lineViewModel.selectedColor)
-                .labelsHidden()
-            
-            SliderView(value: $lineViewModel.lineWithValue)
-            
-            UndoRedoButtonView(lineViewModel: lineViewModel)
+        if orientation == .regular {
+            VStack(spacing: 16) {
+                // Toolbar container with material background
+                VStack(spacing: 20) {
+                    MenuButtonView(lineViewModel: lineViewModel, savePhotoLibrary: {
+                        savePhotoLibrary()
+                    }, presentAlert: {
+                        presentAlert()
+                    })
+                    .presentAlert($alert, isPresented: $showingAlert)
+                    
+                    ColorPicker(Labels.colorPicker, selection: $lineViewModel.selectedColor)
+                        .labelsHidden()
+                    
+                    SliderView(value: $lineViewModel.lineWithValue)
+                    
+                    UndoRedoButtonView(lineViewModel: lineViewModel)
+                }
+                .padding(5)
+                .background(
+                    RoundedRectangle(cornerRadius: 24)
+                        .fill(.ultraThinMaterial)
+                        .shadow(color: .black.opacity(0.08), radius: 12, y: 4)
+                )
+            }
+        } else {
+            VStack(spacing: 12) {
+                HStack(spacing: 16) {
+                    ColorPicker(Labels.colorPicker, selection: $lineViewModel.selectedColor)
+                        .labelsHidden()
+                    
+                    UndoRedoButtonView(lineViewModel: lineViewModel)
+                    
+                    MenuButtonView(lineViewModel: lineViewModel, savePhotoLibrary: {
+                        savePhotoLibrary()
+                    }, presentAlert: {
+                        presentAlert()
+                    })
+                    .presentAlert($alert, isPresented: $showingAlert)
+                }
+                .padding(.horizontal, 20)
+                .padding(.vertical, 12)
+                .background(
+                    RoundedRectangle(cornerRadius: 24)
+                        .fill(.ultraThinMaterial)
+                        .shadow(color: .black.opacity(0.08), radius: 12, y: 4)
+                )
+                   
+                HStack {
+                    Spacer()
+                    SliderView(value: $lineViewModel.lineWithValue)
+                }
+            }
         }
     }
     
@@ -104,69 +167,112 @@ struct MenuButtonView: View {
     
     var body: some View {
         Menu {
-            /// Clear `Canvas` button
             Button {
                 presentAlert()
             } label: {
-                HStack {
-                    Image(systemName: CustomIcon.eraser)
-                    Text(Labels.clearCanvas)
-                }
+                Label(Labels.clearCanvas, systemImage: CustomIcon.eraser)
             }
-            .disabled(lineViewModel.lines.isEmpty ? true : false)
-            /// Back to `Canvas` button
+            .disabled(lineViewModel.lines.isEmpty)
+            
             Button { } label: {
-                HStack {
-                    Text(Labels.back)
-                    Image(systemName: CustomIcon.backToCanvas)
-                }
+                Label(Labels.back, systemImage: CustomIcon.backToCanvas)
             }
-            /// Save to `Photo` Library  button
+            
             Button {
                 savePhotoLibrary()
             } label: {
-                HStack {
-                    Text(Labels.save)
-                    Image(systemName: CustomIcon.saveCanvas)
-                }
+                Label(Labels.save, systemImage: CustomIcon.saveCanvas)
             }
-            .disabled(lineViewModel.lines.isEmpty ? true : false)
-            
+            .disabled(lineViewModel.lines.isEmpty)
         } label: {
             Image(systemName: CustomIcon.pencil)
-                .font(.largeTitle)
-                .foregroundStyle(.gray)
+                .font(.title2)
+                .fontWeight(.medium)
+                .foregroundStyle(.primary)
+                .frame(width: 44, height: 44)
+                .background(Color(uiColor: .secondarySystemFill))
+                .clipShape(Circle())
         }
+        .buttonStyle(.plain)
     }
 }
 
 struct UndoRedoButtonView: View {
     @ObservedObject var lineViewModel: LineViewModel
+    @Environment(\.verticalSizeClass) private var orientation
+    
+    private var canUndo: Bool { !lineViewModel.lines.isEmpty }
+    private var canRedo: Bool { !lineViewModel.deletedLines.isEmpty }
     
     var body: some View {
-        VStack(spacing: 20) {
-            /// `undo` Button
-            Button {
-                let lastLine = lineViewModel.lines.removeLast()
-                lineViewModel.deletedLines.append(lastLine)
-            } label: {
-                Image(systemName: CustomIcon.undo)
-                    .font(.title3)
-                    .fontWeight(.heavy)
-            }
-            .disabled(lineViewModel.lines.count == 0)
-            .if(lineViewModel.lines.count == 0)
-            /// `redo` Buton
-            Button {
-                let lastLine = lineViewModel.deletedLines.removeLast()
-                lineViewModel.lines.append(lastLine)
-            } label: {
-                Image(systemName: CustomIcon.redo)
-                    .font(.title3)
-                    .fontWeight(.heavy)
-            }
-            .disabled(lineViewModel.deletedLines.count == 0)
-            .if(lineViewModel.deletedLines.count == 0)
+        if orientation == .regular {
+            redoButtonPortraitOrientation
+        } else {
+            redoButtonLandscapeOrientation
+        }
+    }
+    
+    private func undoRedoButton(
+        icon: String,
+        action: @escaping () -> Void,
+        isDisabled: Bool
+    ) -> some View {
+        Button(action: action) {
+            Image(systemName: icon)
+                .font(.title3)
+                .fontWeight(.semibold)
+                .foregroundStyle(isDisabled ? AnyShapeStyle(.secondary.opacity(0.5)) : AnyShapeStyle(.primary))
+                .frame(width: 40, height: 40)
+                .background(
+                    Circle()
+                        .fill(isDisabled ? Color.clear : Color(uiColor: .secondarySystemFill))
+                )
+        }
+        .disabled(isDisabled)
+        .buttonStyle(.plain)
+    }
+    
+    @ViewBuilder
+    private var redoButtonPortraitOrientation: some View {
+        VStack(spacing: 12) {
+            undoRedoButton(
+                icon: CustomIcon.undo,
+                action: {
+                    guard let last = lineViewModel.lines.popLast() else { return }
+                    lineViewModel.deletedLines.append(last)
+                },
+                isDisabled: !canUndo
+            )
+            undoRedoButton(
+                icon: CustomIcon.redo,
+                action: {
+                    guard let last = lineViewModel.deletedLines.popLast() else { return }
+                    lineViewModel.lines.append(last)
+                },
+                isDisabled: !canRedo
+            )
+        }
+    }
+    
+    @ViewBuilder
+    private var redoButtonLandscapeOrientation: some View {
+        HStack(spacing: 12) {
+            undoRedoButton(
+                icon: CustomIcon.undo,
+                action: {
+                    guard let last = lineViewModel.lines.popLast() else { return }
+                    lineViewModel.deletedLines.append(last)
+                },
+                isDisabled: !canUndo
+            )
+            undoRedoButton(
+                icon: CustomIcon.redo,
+                action: {
+                    guard let last = lineViewModel.deletedLines.popLast() else { return }
+                    lineViewModel.lines.append(last)
+                },
+                isDisabled: !canRedo
+            )
         }
     }
 }

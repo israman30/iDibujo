@@ -12,35 +12,49 @@ struct ToastView: View {
     var text: String
     @Binding var isVisible: Bool
     var delayedAnimation: CGFloat = 2
-    var animationDuration: CGFloat = 0.3
+    var animationDuration: CGFloat = 0.35
     
     public var body: some View {
         VStack {
             if isVisible {
-                toastText
+                toastContent
             }
             Spacer()
         }
+        .animation(.spring(response: 0.35, dampingFraction: 0.8), value: isVisible)
     }
     
     @ViewBuilder
-    private var toastText: some View {
-        VStack {
-            Text(text)
+    private var toastContent: some View {
+        HStack(spacing: 10) {
+            Image(systemName: "checkmark.circle.fill")
                 .font(.title3)
+                .foregroundStyle(.green)
+            Text(text)
+                .font(.subheadline)
+                .fontWeight(.medium)
         }
-        .padding(.vertical, 10)
-        .padding(.horizontal, 25)
-        .background(Color(.systemGray5))
-        .cornerRadius(15.0)
-        .shadow(radius: 10, y: 7)
+        .padding(.vertical, 14)
+        .padding(.horizontal, 24)
+        .background(
+            RoundedRectangle(cornerRadius: 14)
+                .fill(.ultraThinMaterial)
+                .shadow(color: .black.opacity(0.12), radius: 16, y: 6)
+        )
+        .overlay(
+            RoundedRectangle(cornerRadius: 14)
+                .stroke(.white.opacity(0.2), lineWidth: 1)
+        )
+        .transition(.asymmetric(
+            insertion: .scale(scale: 0.9).combined(with: .opacity),
+            removal: .opacity.combined(with: .move(edge: .top))
+        ))
         .onAppear(perform: delayText)
-        .transition(AnyTransition.opacity.animation(.easeInOut(duration: animationDuration)))
     }
     
     private func delayText() {
         DispatchQueue.main.asyncAfter(deadline: .now() + delayedAnimation) {
-            withAnimation(.easeInOut(duration: animationDuration)) {
+            withAnimation(.easeOut(duration: animationDuration)) {
                 self.isVisible = false
             }
         }
