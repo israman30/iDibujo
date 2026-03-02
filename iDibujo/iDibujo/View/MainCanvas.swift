@@ -53,13 +53,13 @@ struct MainCanvas: View {
             }
         }
         .padding(.horizontal, 20)
-        .padding(.vertical, 16)
+        .padding(.vertical, 15)
         .background(
             RoundedRectangle(cornerRadius: 28)
                 .fill(.ultraThinMaterial)
                 .shadow(color: .black.opacity(0.08), radius: 12, y: 4)
         )
-        .padding(.bottom, 28)
+        .padding(.bottom, 10)
     }
     
     @ViewBuilder
@@ -104,7 +104,7 @@ struct MainCanvas: View {
                     
                     UndoRedoButtonView(lineViewModel: lineViewModel)
                 }
-                .padding(20)
+                .padding(5)
                 .background(
                     RoundedRectangle(cornerRadius: 24)
                         .fill(.ultraThinMaterial)
