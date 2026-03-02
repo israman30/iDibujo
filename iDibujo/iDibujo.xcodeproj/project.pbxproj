@@ -27,6 +27,8 @@
 		4DBD6ECC2D7102A100F92F49 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 4DBD6ECB2D7102A100F92F49 /* Localizable.xcstrings */; };
 		4DBRUSH12DC02D8E0034761E /* BrushType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBRUSH02DC02D8E0034761E /* BrushType.swift */; };
 		4DBRUSH32DC02D8F0034761E /* BrushPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBRUSH22DC02D8F0034761E /* BrushPickerView.swift */; };
+		4DBGND012DC02D8E0034761E /* CanvasBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBGND002DC02D8E0034761E /* CanvasBackgroundView.swift */; };
+		4DBGND022DC02D8F0034761E /* BackgroundPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBGND012DC02D8F0034761E /* BackgroundPickerView.swift */; };
 		4DD83C9C22E74C58002933DE /* Anchors+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD83C9B22E74C58002933DE /* Anchors+Ext.swift */; };
 		4DD83C9E22E77953002933DE /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD83C9D22E77953002933DE /* SettingsController.swift */; };
 		4DD83CA322E77D19002933DE /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD83CA222E77D19002933DE /* MainView.swift */; };
@@ -78,6 +80,8 @@
 		4DBD6ECD2D7102A100F92F49 /* mul */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = mul; path = mul.lproj/LaunchScreen.xcstrings; sourceTree = "<group>"; };
 		4DBRUSH02DC02D8E0034761E /* BrushType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrushType.swift; sourceTree = "<group>"; };
 		4DBRUSH22DC02D8F0034761E /* BrushPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrushPickerView.swift; sourceTree = "<group>"; };
+		4DBGND002DC02D8E0034761E /* CanvasBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasBackgroundView.swift; sourceTree = "<group>"; };
+		4DBGND012DC02D8F0034761E /* BackgroundPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundPickerView.swift; sourceTree = "<group>"; };
 		4DD83C9B22E74C58002933DE /* Anchors+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Anchors+Ext.swift"; sourceTree = "<group>"; };
 		4DD83C9D22E77953002933DE /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		4DD83CA222E77D19002933DE /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -198,6 +202,8 @@
 				4DA07C1922E748260029882D /* LaunchScreen.storyboard */,
 				4D6CAEE12C1E780500DEE983 /* MainCanvas.swift */,
 				4D6C430C2DC02D8D0034761E /* ToastView.swift */,
+				4DBGND002DC02D8E0034761E /* CanvasBackgroundView.swift */,
+				4DBGND012DC02D8F0034761E /* BackgroundPickerView.swift */,
 				4D6CAEE32C1F3E6900DEE983 /* CanvasView.swift */,
 				4D86F03F2DBC9F5100F32335 /* SliderView.swift */,
 			);
@@ -381,6 +387,8 @@
 				4D6CAEE62C1F3EE000DEE983 /* Line.swift in Sources */,
 				4DBRUSH12DC02D8E0034761E /* BrushType.swift in Sources */,
 				4DBRUSH32DC02D8F0034761E /* BrushPickerView.swift in Sources */,
+				4DBGND012DC02D8E0034761E /* CanvasBackgroundView.swift in Sources */,
+				4DBGND022DC02D8F0034761E /* BackgroundPickerView.swift in Sources */,
 				4DD83C9C22E74C58002933DE /* Anchors+Ext.swift in Sources */,
 				4D2C642A29F22C7C000AF59E /* Constants.swift in Sources */,
 			);

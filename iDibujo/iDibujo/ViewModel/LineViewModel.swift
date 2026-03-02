@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 /// `CanvasProtocol` defines the blueprint for storing canvas properties.
 protocol CanvasProtocol: ObservableObject {
@@ -29,6 +30,10 @@ final class LineViewModel: CanvasProtocol, SaveCanvasProtocol {
     /// Redo stack: strokes removed by undo, can be restored by redo
     @Published var deletedLines: [Line] = []
     @Published var isSaved: Bool = false
+    /// Canvas background style
+    @Published var selectedBackground: CanvasBackgroundType = .white
+    /// Custom image for canvas background (used when selectedBackground == .customImage)
+    @Published var customBackgroundImage: UIImage?
     
     // MARK: - Undo / Redo (stack of strokes, two arrays)
     

@@ -97,6 +97,11 @@ struct MainCanvas: View {
                     })
                     .presentAlert($alert, isPresented: $showingAlert)
                     
+                    BackgroundPickerView(
+                        selectedBackground: $lineViewModel.selectedBackground,
+                        customBackgroundImage: $lineViewModel.customBackgroundImage
+                    )
+                    
                     BrushPickerView(selectedBrush: $lineViewModel.selectedBrushType)
                     
                     ColorPicker(Labels.colorPicker, selection: $lineViewModel.selectedColor)
@@ -117,6 +122,11 @@ struct MainCanvas: View {
             VStack(spacing: 12) {
                 HStack(spacing: 16) {
                     BrushPickerView(selectedBrush: $lineViewModel.selectedBrushType)
+                    
+                    BackgroundPickerView(
+                        selectedBackground: $lineViewModel.selectedBackground,
+                        customBackgroundImage: $lineViewModel.customBackgroundImage
+                    )
                     
                     ColorPicker(Labels.colorPicker, selection: $lineViewModel.selectedColor)
                         .labelsHidden()

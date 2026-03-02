@@ -47,4 +47,41 @@ struct Labels {
     static let back = "Back"
     static let clearCanvas = "Clear Canvas"
     static let canvasSaved = "Canvas Saved!"
+    static let background = "Background"
+    static let backgroundWhite = "White"
+    static let backgroundBlack = "Black"
+    static let backgroundGrid = "Grid"
+    static let backgroundLined = "Lined Paper"
+    static let backgroundCustom = "Custom Image"
+}
+
+/// Canvas background style options
+enum CanvasBackgroundType: String, CaseIterable, Identifiable {
+    case white
+    case black
+    case grid
+    case linedPaper
+    case customImage
+    
+    var id: String { rawValue }
+    
+    var label: String {
+        switch self {
+        case .white: return Labels.backgroundWhite
+        case .black: return Labels.backgroundBlack
+        case .grid: return Labels.backgroundGrid
+        case .linedPaper: return Labels.backgroundLined
+        case .customImage: return Labels.backgroundCustom
+        }
+    }
+    
+    var icon: String {
+        switch self {
+        case .white: return "square.fill"
+        case .black: return "square"
+        case .grid: return "square.grid.3x3"
+        case .linedPaper: return "line.3.horizontal"
+        case .customImage: return "photo"
+        }
+    }
 }

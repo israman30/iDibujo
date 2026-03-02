@@ -30,9 +30,10 @@ struct CanvasView: View {
             }
         }
         .background(
-            // Paper-like drawing surface (warm white for a natural feel)
-            Color(red: 0.98, green: 0.98, blue: 1.0)
-                .shadow(color: .black.opacity(0.04), radius: 1, x: 0, y: 1)
+            CanvasBackgroundView(
+                backgroundType: vm.selectedBackground,
+                customImage: vm.customBackgroundImage
+            )
         )
         // minimunDistance is the initial point when the line starts
         .gesture(
