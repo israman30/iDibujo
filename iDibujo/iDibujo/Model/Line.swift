@@ -12,5 +12,6 @@ struct Line {
     var points: [CGPoint]
     var color: Color
     var width: CGFloat
+    var brushType: BrushType = .marker
 }
 

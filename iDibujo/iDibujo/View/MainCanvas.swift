@@ -97,6 +97,8 @@ struct MainCanvas: View {
                     })
                     .presentAlert($alert, isPresented: $showingAlert)
                     
+                    BrushPickerView(selectedBrush: $lineViewModel.selectedBrushType)
+                    
                     ColorPicker(Labels.colorPicker, selection: $lineViewModel.selectedColor)
                         .labelsHidden()
                     
@@ -114,6 +116,8 @@ struct MainCanvas: View {
         } else {
             VStack(spacing: 12) {
                 HStack(spacing: 16) {
+                    BrushPickerView(selectedBrush: $lineViewModel.selectedBrushType)
+                    
                     ColorPicker(Labels.colorPicker, selection: $lineViewModel.selectedColor)
                         .labelsHidden()
                     

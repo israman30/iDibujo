@@ -23,13 +23,10 @@ struct CanvasView: View {
     
     var body: some View {
         Canvas { context, size in
+            var ctx = context
             lines.forEach { line in
                 let path = canvas.createPath(for: line.points)
-                context.stroke(
-                    path,
-                    with: .color(line.color),
-                    style: StrokeStyle(lineWidth: line.width, lineCap: .round, lineJoin: .round)
-                )
+                canvas.stroke(path, line: line, in: &ctx)
             }
         }
         .background(
@@ -51,7 +48,8 @@ struct CanvasView: View {
                         Line(
                             points: [position],
                             color: selectedColor,
-                            width: vm.lineWithValue
+                            width: vm.lineWithValue,
+                            brushType: vm.selectedBrushType
                         )
                     )
                 } else { // otherwise append to last point to create a line

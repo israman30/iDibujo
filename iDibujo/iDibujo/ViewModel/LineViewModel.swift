@@ -25,6 +25,7 @@ final class LineViewModel: CanvasProtocol, SaveCanvasProtocol {
     @Published var lines = [Line]()
     @Published var colors: [Color] = [.red, .yellow, .blue, .green, .orange, .pink, .black]
     @Published var selectedColor = Color.black
+    @Published var selectedBrushType: BrushType = .marker
     @Published var deletedLines: [Line] = []
     @Published var isSaved: Bool = false
     
