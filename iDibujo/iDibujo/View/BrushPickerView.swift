@@ -16,6 +16,7 @@ struct BrushPickerView: View {
             ForEach(BrushType.allCases) { brush in
                 Button {
                     selectedBrush = brush
+                    UIImpactFeedbackGenerator(style: .light).impactOccurred()
                 } label: {
                     Label(brush.label, systemImage: brush.icon)
                 }

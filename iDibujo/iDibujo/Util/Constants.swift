@@ -39,6 +39,7 @@ struct CustomIcon {
     
     static let undo = "arrow.clockwise"
     static let redo = "arrow.counterclockwise"
+    static let resetZoom = "arrow.up.left.and.arrow.down.right"
 }
 
 struct Labels {
@@ -53,6 +54,7 @@ struct Labels {
     static let backgroundGrid = "Grid"
     static let backgroundLined = "Lined Paper"
     static let backgroundCustom = "Custom Image"
+    static let resetZoom = "Reset Zoom"
 }
 
 /// Canvas background style options

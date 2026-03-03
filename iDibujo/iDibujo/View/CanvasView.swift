@@ -67,5 +67,17 @@ struct CanvasView: View {
                 }
             })
         )
+        .overlay(
+            MultiFingerTapOverlay(
+                onTwoFingerTap: {
+                    guard !vm.lines.isEmpty else { return }
+                    vm.undo()
+                },
+                onThreeFingerTap: {
+                    guard !vm.deletedLines.isEmpty else { return }
+                    vm.redo()
+                }
+            )
+        )
     }
 }
