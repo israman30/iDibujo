@@ -13,11 +13,12 @@ struct MainCanvas: View {
     @State private var alert: AlertComponent? = nil
     @StateObject private var lineViewModel = LineViewModel()
     @Environment(\.verticalSizeClass) private var orientation
+    @Environment(\.colorScheme) private var colorScheme
     
     var body: some View {
         ZStack {
-            // Soft off-white background for reduced eye strain
-            Color(uiColor: .systemGray6)
+            // Adaptive background for light/dark mode
+            Color(uiColor: .systemGroupedBackground)
                 .ignoresSafeArea()
             
             CanvasView(
@@ -26,8 +27,7 @@ struct MainCanvas: View {
                 deletedLines: $lineViewModel.deletedLines,
                 vm: lineViewModel
             )
-            .padding(12)
-            .ignoresSafeArea(.container)
+            .ignoresSafeArea()
             
             VStack {
                 HStack {
@@ -56,8 +56,8 @@ struct MainCanvas: View {
         .padding(.vertical, 15)
         .background(
             RoundedRectangle(cornerRadius: 28)
-                .fill(.ultraThinMaterial)
-                .shadow(color: .black.opacity(0.08), radius: 12, y: 4)
+                .fill(Color(red: 0.92, green: 0.92, blue: 0.94))
+                .shadow(color: colorScheme == .dark ? .black.opacity(0.4) : .black.opacity(0.08), radius: 12, y: 4)
         )
         .padding(.bottom, 10)
     }
@@ -114,8 +114,8 @@ struct MainCanvas: View {
                 .padding(5)
                 .background(
                     RoundedRectangle(cornerRadius: 24)
-                        .fill(.ultraThinMaterial)
-                        .shadow(color: .black.opacity(0.08), radius: 12, y: 4)
+                        .fill(Color(red: 0.92, green: 0.92, blue: 0.94))
+                        .shadow(color: colorScheme == .dark ? .black.opacity(0.4) : .black.opacity(0.08), radius: 12, y: 4)
                 )
             }
         } else {
@@ -144,8 +144,8 @@ struct MainCanvas: View {
                 .padding(.vertical, 12)
                 .background(
                     RoundedRectangle(cornerRadius: 24)
-                        .fill(.ultraThinMaterial)
-                        .shadow(color: .black.opacity(0.08), radius: 12, y: 4)
+                        .fill(Color(red: 0.92, green: 0.92, blue: 0.94))
+                        .shadow(color: colorScheme == .dark ? .black.opacity(0.4) : .black.opacity(0.08), radius: 12, y: 4)
                 )
                    
                 HStack {
@@ -170,8 +170,14 @@ struct MainCanvas: View {
     }
 }
 
-#Preview {
+#Preview("Light") {
     MainCanvas()
+        .preferredColorScheme(.light)
+}
+
+#Preview("Dark") {
+    MainCanvas()
+        .preferredColorScheme(.dark)
 }
 
 struct MenuButtonView: View {
