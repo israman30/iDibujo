@@ -13,6 +13,7 @@ struct ToastView: View {
     @Binding var isVisible: Bool
     var delayedAnimation: CGFloat = 2
     var animationDuration: CGFloat = 0.35
+    @Environment(\.colorScheme) private var colorScheme
     
     public var body: some View {
         VStack {
@@ -39,11 +40,11 @@ struct ToastView: View {
         .background(
             RoundedRectangle(cornerRadius: 14)
                 .fill(.ultraThinMaterial)
-                .shadow(color: .black.opacity(0.12), radius: 16, y: 6)
+                .shadow(color: colorScheme == .dark ? .black.opacity(0.5) : .black.opacity(0.12), radius: 16, y: 6)
         )
         .overlay(
             RoundedRectangle(cornerRadius: 14)
-                .stroke(.white.opacity(0.2), lineWidth: 1)
+                .stroke(Color.primary.opacity(colorScheme == .dark ? 0.15 : 0.2), lineWidth: 1)
         )
         .transition(.asymmetric(
             insertion: .scale(scale: 0.9).combined(with: .opacity),

@@ -23,19 +23,17 @@ struct CanvasView: View {
     
     var body: some View {
         Canvas { context, size in
+            var ctx = context
             lines.forEach { line in
                 let path = canvas.createPath(for: line.points)
-                context.stroke(
-                    path,
-                    with: .color(line.color),
-                    style: StrokeStyle(lineWidth: line.width, lineCap: .round, lineJoin: .round)
-                )
+                canvas.stroke(path, line: line, in: &ctx)
             }
         }
         .background(
-            // Paper-like drawing surface (warm white for a natural feel)
-            Color(red: 0.98, green: 0.98, blue: 1.0)
-                .shadow(color: .black.opacity(0.04), radius: 1, x: 0, y: 1)
+            CanvasBackgroundView(
+                backgroundType: vm.selectedBackground,
+                customImage: vm.customBackgroundImage
+            )
         )
         // minimunDistance is the initial point when the line starts
         .gesture(
@@ -51,7 +49,8 @@ struct CanvasView: View {
                         Line(
                             points: [position],
                             color: selectedColor,
-                            width: vm.lineWithValue
+                            width: vm.lineWithValue,
+                            brushType: vm.selectedBrushType
                         )
                     )
                 } else { // otherwise append to last point to create a line
@@ -62,8 +61,23 @@ struct CanvasView: View {
             .onEnded({ value in
                 if let lastLine = lines.last?.points, lastLine.isEmpty {
                     lines.removeLast()
+                } else {
+                    // New stroke completed — invalidate redo history
+                    vm.clearRedoStack()
                 }
             })
+        )
+        .overlay(
+            MultiFingerTapOverlay(
+                onTwoFingerTap: {
+                    guard !vm.lines.isEmpty else { return }
+                    vm.undo()
+                },
+                onThreeFingerTap: {
+                    guard !vm.deletedLines.isEmpty else { return }
+                    vm.redo()
+                }
+            )
         )
     }
 }
