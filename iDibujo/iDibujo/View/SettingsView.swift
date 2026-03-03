@@ -47,6 +47,19 @@ extension SettingsController {
         stackSliderView.distribution = .fillEqually
         stackSliderView.axis = .vertical
         
+        changeBrushSizeSlider.accessibilityLabel = NSLocalizedString("Brush_Size", comment: "Brush Size")
+        changeBrushSizeSlider.accessibilityHint = NSLocalizedString("Adjust_brush_size", comment: "Adjust brush size")
+        opacitySlider.accessibilityLabel = NSLocalizedString("Opacity", comment: "Opacity")
+        opacitySlider.accessibilityHint = NSLocalizedString("Adjust_opacity", comment: "Adjust opacity")
+        redSlider.accessibilityLabel = NSLocalizedString("Red", comment: "Red")
+        redSlider.accessibilityHint = NSLocalizedString("Adjust_red", comment: "Adjust red color")
+        greenSlider.accessibilityLabel = NSLocalizedString("Green", comment: "Green")
+        greenSlider.accessibilityHint = NSLocalizedString("Adjust_green", comment: "Adjust green color")
+        blueSlider.accessibilityLabel = NSLocalizedString("Blue", comment: "Blue")
+        blueSlider.accessibilityHint = NSLocalizedString("Adjust_blue", comment: "Adjust blue color")
+        imageView.accessibilityLabel = NSLocalizedString("Brush_preview", comment: "Brush preview")
+        imageView.isAccessibilityElement = true
+        
         view.addSubview(stackSliderView)
         stackSliderView.anchor(
             top: imageView.bottomAnchor,
@@ -64,6 +77,7 @@ extension SettingsController {
         
         view.addSubViews(dismissButton, closeButton, imageView)
         
+        closeButton.accessibilityLabel = NSLocalizedString("Close", comment: "Close settings")
         closeButton.anchor(top: dismissButton.topAnchor, left: nil, bottom: nil, right: view.rightAnchor)
         
         dismissButton.anchor(
@@ -76,6 +90,7 @@ extension SettingsController {
         )
         dismissButton.backgroundColor = .yellow
         dismissButton.shadow()
+        dismissButton.accessibilityLabel = NSLocalizedString("APPLY", comment: "Apply")
         dismissButton.accessibilityHint = NSLocalizedString("Apply_changes", comment: "Apply changes")
         
 //        imageView.centerInSuperview(size: .init(width: 150, height: 150))

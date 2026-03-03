@@ -28,6 +28,9 @@ struct MainCanvas: View {
                 vm: lineViewModel
             )
             .ignoresSafeArea()
+            .accessibilityElement(children: .ignore)
+            .accessibilityLabel(Labels.a11yDrawingCanvas)
+            .accessibilityHint(Labels.a11yDrawingCanvasHint)
             
             VStack {
                 HStack {
@@ -43,13 +46,16 @@ struct MainCanvas: View {
                 text: Labels.canvasSaved,
                 isVisible: $lineViewModel.isSaved
             )
+            .accessibilityLabel(Labels.canvasSaved)
         }
     }
     
+    private let colorPaletteNames = ["Red", "Yellow", "Blue", "Green", "Orange", "Pink", "Black"]
+    
     private var colorPaletteView: some View {
         HStack(spacing: 12) {
-            ForEach(lineViewModel.colors, id: \.self) { color in
-                colorButton(color: color)
+            ForEach(Array(lineViewModel.colors.enumerated()), id: \.offset) { index, color in
+                colorButton(color: color, name: colorPaletteNames.indices.contains(index) ? colorPaletteNames[index] : "Color")
             }
         }
         .padding(.horizontal, 20)
@@ -63,7 +69,7 @@ struct MainCanvas: View {
     }
     
     @ViewBuilder
-    func colorButton(color: Color) -> some View {
+    func colorButton(color: Color, name: String) -> some View {
         let isSelected = lineViewModel.selectedColor == color
         Button {
             lineViewModel.selectedColor = color
@@ -82,6 +88,9 @@ struct MainCanvas: View {
                 .shadow(color: color.opacity(0.4), radius: isSelected ? 6 : 2)
         }
         .buttonStyle(.plain)
+        .accessibilityLabel("\(name) \(Labels.a11ySelectColor)")
+        .accessibilityHint(isSelected ? "\(Labels.a11yColorSelected)" : Labels.a11ySelectColor)
+        .accessibilityAddTraits(isSelected ? [.isButton, .isSelected] : .isButton)
     }
     
     @ViewBuilder
@@ -106,6 +115,7 @@ struct MainCanvas: View {
                     
                     ColorPicker(Labels.colorPicker, selection: $lineViewModel.selectedColor)
                         .labelsHidden()
+                        .accessibilityLabel(Labels.colorPicker)
                     
                     SliderView(value: $lineViewModel.lineWithValue)
                     
@@ -130,6 +140,7 @@ struct MainCanvas: View {
                     
                     ColorPicker(Labels.colorPicker, selection: $lineViewModel.selectedColor)
                         .labelsHidden()
+                        .accessibilityLabel(Labels.colorPicker)
                     
                     UndoRedoButtonView(lineViewModel: lineViewModel)
                     
@@ -214,6 +225,8 @@ struct MenuButtonView: View {
                 .clipShape(Circle())
         }
         .buttonStyle(.plain)
+        .accessibilityLabel("Drawing menu")
+        .accessibilityHint(Labels.a11yMenuHint)
     }
 }
 
@@ -234,6 +247,8 @@ struct UndoRedoButtonView: View {
     
     private func undoRedoButton(
         icon: String,
+        label: String,
+        hint: String,
         action: @escaping () -> Void,
         isDisabled: Bool
     ) -> some View {
@@ -250,6 +265,8 @@ struct UndoRedoButtonView: View {
         }
         .disabled(isDisabled)
         .buttonStyle(.plain)
+        .accessibilityLabel(label)
+        .accessibilityHint(hint)
     }
     
     @ViewBuilder
@@ -257,11 +274,15 @@ struct UndoRedoButtonView: View {
         VStack(spacing: 12) {
             undoRedoButton(
                 icon: CustomIcon.undo,
+                label: Labels.a11yUndo,
+                hint: Labels.a11yUndoHint,
                 action: { lineViewModel.undo() },
                 isDisabled: !canUndo
             )
             undoRedoButton(
                 icon: CustomIcon.redo,
+                label: Labels.a11yRedo,
+                hint: Labels.a11yRedoHint,
                 action: { lineViewModel.redo() },
                 isDisabled: !canRedo
             )
@@ -273,11 +294,15 @@ struct UndoRedoButtonView: View {
         HStack(spacing: 12) {
             undoRedoButton(
                 icon: CustomIcon.undo,
+                label: Labels.a11yUndo,
+                hint: Labels.a11yUndoHint,
                 action: { lineViewModel.undo() },
                 isDisabled: !canUndo
             )
             undoRedoButton(
                 icon: CustomIcon.redo,
+                label: Labels.a11yRedo,
+                hint: Labels.a11yRedoHint,
                 action: { lineViewModel.redo() },
                 isDisabled: !canRedo
             )

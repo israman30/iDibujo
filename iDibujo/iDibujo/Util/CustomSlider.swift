@@ -24,6 +24,7 @@ final class CustomSlider: UISlider {
         super.init(frame: .zero)
         self.firstColor = firstColor
         self.secondColor = secondColor
+        accessibilityTraits = .adjustable
     }
     
     required init?(coder: NSCoder) {

@@ -53,5 +53,7 @@ struct BackgroundPickerView: View {
                 .clipShape(Circle())
         }
         .buttonStyle(.plain)
+        .accessibilityLabel("Background: \(selectedBackground.label)")
+        .accessibilityHint(Labels.a11yBackgroundPickerHint)
     }
 }

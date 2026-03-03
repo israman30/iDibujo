@@ -55,6 +55,21 @@ struct Labels {
     static let backgroundLined = "Lined Paper"
     static let backgroundCustom = "Custom Image"
     static let resetZoom = "Reset Zoom"
+    
+    // MARK: - Accessibility
+    static let a11yDrawingCanvas = "Drawing canvas"
+    static let a11yDrawingCanvasHint = "Draw with one finger. Two-finger tap to undo, three-finger tap to redo."
+    static let a11yColorSelected = "Selected"
+    static let a11ySelectColor = "Select color"
+    static let a11yMenuHint = "Opens menu with clear, back, and save options"
+    static let a11yUndo = "Undo"
+    static let a11yUndoHint = "Undo last stroke"
+    static let a11yRedo = "Redo"
+    static let a11yRedoHint = "Redo last undone stroke"
+    static let a11yLineWidth = "Line width"
+    static let a11yLineWidthHint = "Adjust stroke thickness. Swipe up or down to change."
+    static let a11yBrushPickerHint = "Choose brush type"
+    static let a11yBackgroundPickerHint = "Choose canvas background"
 }
 
 /// Canvas background style options
