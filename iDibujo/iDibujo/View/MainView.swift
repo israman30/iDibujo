@@ -26,19 +26,23 @@ extension MainController {
         buttonContainerView.spacing = 5
         
         resetButton.layer.cornerRadius = 5
+        resetButton.accessibilityLabel = NSLocalizedString("Reset", comment: "Reset")
         resetButton.accessibilityHint = NSLocalizedString("Reset_for_canvas", comment: "Reset for canvas")
         
         importButton.layer.cornerRadius = 5
+        importButton.accessibilityLabel = NSLocalizedString("Import", comment: "Import")
         importButton.accessibilityHint = NSLocalizedString("Import_from_library_photo", comment: "Import from library photo")
         
         eraserButton.layer.cornerRadius = 5
-        if !canvasViewModel.draw.isDrawing {
-            eraserButton.accessibilityHint = NSLocalizedString("Draw_canvas", comment: "Draw in canvas")
-        } else {
-            eraserButton.accessibilityHint = NSLocalizedString("Erase_canvas", comment: "Erase canvas")
-        }
+        eraserButton.accessibilityLabel = canvasViewModel.draw.isDrawing
+            ? NSLocalizedString("Eraser", comment: "Eraser")
+            : NSLocalizedString("Draw", comment: "Draw")
+        eraserButton.accessibilityHint = canvasViewModel.draw.isDrawing
+            ? NSLocalizedString("Erase_canvas", comment: "Erase canvas")
+            : NSLocalizedString("Draw_canvas", comment: "Draw in canvas")
         
         moreButton.layer.cornerRadius = 5
+        moreButton.accessibilityLabel = NSLocalizedString("More", comment: "More")
         moreButton.accessibilityHint = NSLocalizedString("More_settings", comment: "More settings")
         
         canvasViewModel.draw.container.addSubview(buttonContainerView)

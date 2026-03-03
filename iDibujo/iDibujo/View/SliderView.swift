@@ -66,6 +66,14 @@ struct SliderView: View {
                 .monospacedDigit()
         }
         .padding(.vertical, 12)
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel(Labels.a11yLineWidth)
+        .accessibilityHint(Labels.a11yLineWidthHint)
+        .accessibilityValue("\(Int(value))")
+        .accessibilityAdjustableAction { direction in
+            let step: CGFloat = direction == .increment ? 2 : -2
+            value = min(40, max(1, value + step))
+        }
     }
 }
 

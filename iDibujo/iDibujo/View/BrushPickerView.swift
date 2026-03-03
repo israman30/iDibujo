@@ -32,6 +32,7 @@ struct BrushPickerView: View {
         }
         .buttonStyle(.plain)
         .accessibilityLabel("Brush: \(selectedBrush.label)")
+        .accessibilityHint(Labels.a11yBrushPickerHint)
     }
 }
 

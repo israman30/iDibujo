@@ -26,6 +26,8 @@ struct ZoomableCanvasView<Content: View>: UIViewRepresentable {
         scrollView.showsVerticalScrollIndicator = false
         scrollView.bouncesZoom = true
         scrollView.backgroundColor = .clear
+        scrollView.accessibilityLabel = Labels.a11yDrawingCanvas
+        scrollView.accessibilityHint = "Pinch to zoom, two-finger pan to move"
         
         let hostingController = UIHostingController(rootView: content())
         hostingController.view.backgroundColor = .clear

@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct ToastView: View {
     var text: String
@@ -14,6 +15,7 @@ struct ToastView: View {
     var delayedAnimation: CGFloat = 2
     var animationDuration: CGFloat = 0.35
     @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
     
     public var body: some View {
         VStack {
@@ -22,7 +24,12 @@ struct ToastView: View {
             }
             Spacer()
         }
-        .animation(.spring(response: 0.35, dampingFraction: 0.8), value: isVisible)
+        .animation(reduceMotion ? nil : .spring(response: 0.35, dampingFraction: 0.8), value: isVisible)
+        .onChange(of: isVisible) { _, visible in
+            if visible {
+                UIAccessibility.post(notification: .announcement, argument: text)
+            }
+        }
     }
     
     @ViewBuilder
@@ -46,7 +53,7 @@ struct ToastView: View {
             RoundedRectangle(cornerRadius: 14)
                 .stroke(Color.primary.opacity(colorScheme == .dark ? 0.15 : 0.2), lineWidth: 1)
         )
-        .transition(.asymmetric(
+        .transition(reduceMotion ? .opacity : .asymmetric(
             insertion: .scale(scale: 0.9).combined(with: .opacity),
             removal: .opacity.combined(with: .move(edge: .top))
         ))
