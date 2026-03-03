@@ -27,10 +27,10 @@
 		4DBD6EC82D6F6F8400F92F49 /* LineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBD6EC72D6F6F8400F92F49 /* LineViewModel.swift */; };
 		4DBD6ECA2D6F7D0400F92F49 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBD6EC92D6F7D0400F92F49 /* AlertView.swift */; };
 		4DBD6ECC2D7102A100F92F49 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 4DBD6ECB2D7102A100F92F49 /* Localizable.xcstrings */; };
-		4DBRUSH12DC02D8E0034761E /* BrushType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBRUSH02DC02D8E0034761E /* BrushType.swift */; };
-		4DBRUSH32DC02D8F0034761E /* BrushPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBRUSH22DC02D8F0034761E /* BrushPickerView.swift */; };
 		4DBGND012DC02D8E0034761E /* CanvasBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBGND002DC02D8E0034761E /* CanvasBackgroundView.swift */; };
 		4DBGND022DC02D8F0034761E /* BackgroundPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBGND012DC02D8F0034761E /* BackgroundPickerView.swift */; };
+		4DBRUSH12DC02D8E0034761E /* BrushType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBRUSH02DC02D8E0034761E /* BrushType.swift */; };
+		4DBRUSH32DC02D8F0034761E /* BrushPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBRUSH22DC02D8F0034761E /* BrushPickerView.swift */; };
 		4DD83C9C22E74C58002933DE /* Anchors+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD83C9B22E74C58002933DE /* Anchors+Ext.swift */; };
 		4DD83C9E22E77953002933DE /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD83C9D22E77953002933DE /* SettingsController.swift */; };
 		4DD83CA322E77D19002933DE /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD83CA222E77D19002933DE /* MainView.swift */; };
@@ -82,10 +82,10 @@
 		4DBD6EC92D6F7D0400F92F49 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		4DBD6ECB2D7102A100F92F49 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		4DBD6ECD2D7102A100F92F49 /* mul */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = mul; path = mul.lproj/LaunchScreen.xcstrings; sourceTree = "<group>"; };
-		4DBRUSH02DC02D8E0034761E /* BrushType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrushType.swift; sourceTree = "<group>"; };
-		4DBRUSH22DC02D8F0034761E /* BrushPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrushPickerView.swift; sourceTree = "<group>"; };
 		4DBGND002DC02D8E0034761E /* CanvasBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasBackgroundView.swift; sourceTree = "<group>"; };
 		4DBGND012DC02D8F0034761E /* BackgroundPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundPickerView.swift; sourceTree = "<group>"; };
+		4DBRUSH02DC02D8E0034761E /* BrushType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrushType.swift; sourceTree = "<group>"; };
+		4DBRUSH22DC02D8F0034761E /* BrushPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrushPickerView.swift; sourceTree = "<group>"; };
 		4DD83C9B22E74C58002933DE /* Anchors+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Anchors+Ext.swift"; sourceTree = "<group>"; };
 		4DD83C9D22E77953002933DE /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		4DD83CA222E77D19002933DE /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -578,7 +578,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.israelmanzo.iDibujo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -599,7 +599,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.israelmanzo.iDibujo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
