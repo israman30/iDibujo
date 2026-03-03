@@ -78,7 +78,7 @@ The application follows clean SwiftUI design principles with a focus on performa
 Testing helps maintain reliability and supports future scalability.## 
 
 <p align="center">
-<img src="img/one.png" width="250"> <img src="img/two.png" width="250">
+<img src="img/one.png" width="250"> <img src="img/two.png" width="250"> <img src="img/three.png" width="250">
 </p>
 
 ## 🎯 Design Philosophy
