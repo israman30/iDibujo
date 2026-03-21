@@ -43,33 +43,33 @@ struct CustomIcon {
 }
 
 struct Labels {
-    static let colorPicker = "Color Picker"
-    static let save = "Save Canvas"
-    static let back = "Back"
-    static let clearCanvas = "Clear Canvas"
-    static let canvasSaved = "Canvas Saved!"
-    static let background = "Background"
-    static let backgroundWhite = "White"
-    static let backgroundBlack = "Black"
-    static let backgroundGrid = "Grid"
-    static let backgroundLined = "Lined Paper"
-    static let backgroundCustom = "Custom Image"
-    static let resetZoom = "Reset Zoom"
+    static let colorPicker = NSLocalizedString("Color Picker", comment: "Color picker accessibility label")
+    static let save = NSLocalizedString("Save Canvas", comment: "Save canvas menu item")
+    static let back = NSLocalizedString("Back", comment: "Back to canvas")
+    static let clearCanvas = NSLocalizedString("Clear Canvas", comment: "Clear canvas menu item")
+    static let canvasSaved = NSLocalizedString("Canvas Saved!", comment: "Toast when canvas is saved")
+    static let background = NSLocalizedString("Background", comment: "Canvas background")
+    static let backgroundWhite = NSLocalizedString("White", comment: "White background option")
+    static let backgroundBlack = NSLocalizedString("Black", comment: "Black background option")
+    static let backgroundGrid = NSLocalizedString("Grid", comment: "Grid background option")
+    static let backgroundLined = NSLocalizedString("Lined Paper", comment: "Lined paper background option")
+    static let backgroundCustom = NSLocalizedString("Custom Image", comment: "Custom image background option")
+    static let resetZoom = NSLocalizedString("Reset Zoom", comment: "Reset zoom")
     
     // MARK: - Accessibility
-    static let a11yDrawingCanvas = "Drawing canvas"
-    static let a11yDrawingCanvasHint = "Draw with one finger. Two-finger tap to undo, three-finger tap to redo."
-    static let a11yColorSelected = "Selected"
-    static let a11ySelectColor = "Select color"
-    static let a11yMenuHint = "Opens menu with clear, back, and save options"
-    static let a11yUndo = "Undo"
-    static let a11yUndoHint = "Undo last stroke"
-    static let a11yRedo = "Redo"
-    static let a11yRedoHint = "Redo last undone stroke"
-    static let a11yLineWidth = "Line width"
-    static let a11yLineWidthHint = "Adjust stroke thickness. Swipe up or down to change."
-    static let a11yBrushPickerHint = "Choose brush type"
-    static let a11yBackgroundPickerHint = "Choose canvas background"
+    static let a11yDrawingCanvas = NSLocalizedString("Drawing canvas", comment: "Accessibility label for drawing canvas")
+    static let a11yDrawingCanvasHint = NSLocalizedString("Draw with one finger. Two-finger tap to undo, three-finger tap to redo.", comment: "Accessibility hint for drawing canvas")
+    static let a11yColorSelected = NSLocalizedString("Selected", comment: "Selected color accessibility")
+    static let a11ySelectColor = NSLocalizedString("Select color", comment: "Select color accessibility")
+    static let a11yMenuHint = NSLocalizedString("Opens menu with clear, back, and save options", comment: "Menu accessibility hint")
+    static let a11yUndo = NSLocalizedString("Undo", comment: "Undo button")
+    static let a11yUndoHint = NSLocalizedString("Undo last stroke", comment: "Undo accessibility hint")
+    static let a11yRedo = NSLocalizedString("Redo", comment: "Redo button")
+    static let a11yRedoHint = NSLocalizedString("Redo last undone stroke", comment: "Redo accessibility hint")
+    static let a11yLineWidth = NSLocalizedString("Line width", comment: "Line width slider")
+    static let a11yLineWidthHint = NSLocalizedString("Adjust stroke thickness. Swipe up or down to change.", comment: "Line width accessibility hint")
+    static let a11yBrushPickerHint = NSLocalizedString("Choose brush type", comment: "Brush picker accessibility hint")
+    static let a11yBackgroundPickerHint = NSLocalizedString("Choose canvas background", comment: "Background picker accessibility hint")
 }
 
 /// Canvas background style options

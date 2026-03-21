@@ -225,7 +225,7 @@ struct MenuButtonView: View {
                 .clipShape(Circle())
         }
         .buttonStyle(.plain)
-        .accessibilityLabel("Drawing menu")
+        .accessibilityLabel(NSLocalizedString("Drawing menu", comment: "Drawing menu accessibility"))
         .accessibilityHint(Labels.a11yMenuHint)
     }
 }
