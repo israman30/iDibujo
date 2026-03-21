@@ -327,6 +327,7 @@
 				ru,
 				fr,
 				"zh-Hans",
+				ja,
 			);
 			mainGroup = 4DA07C0422E748250029882D;
 			productRefGroup = 4DA07C0E22E748250029882D /* Products */;

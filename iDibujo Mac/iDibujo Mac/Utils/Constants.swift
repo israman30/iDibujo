@@ -24,9 +24,9 @@ struct CustomIcon {
 }
 
 struct Labels {
-    static let colorPicker = "Color Picker"
-    static let save = "Save Canvas"
-    static let back = "Back"
-    static let clearCanvas = "Clear Canvas"
-    static let canvasSaved = "Canvas Saved!"
+    static let colorPicker = NSLocalizedString("Color Picker", comment: "Color picker accessibility label")
+    static let save = NSLocalizedString("Save Canvas", comment: "Save canvas menu item")
+    static let back = NSLocalizedString("Back", comment: "Back to canvas")
+    static let clearCanvas = NSLocalizedString("Clear Canvas", comment: "Clear canvas menu item")
+    static let canvasSaved = NSLocalizedString("Canvas Saved!", comment: "Toast when canvas is saved")
 }
