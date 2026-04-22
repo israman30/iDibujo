@@ -41,6 +41,10 @@ struct CustomIcon {
     static let undo = "arrow.clockwise"
     static let redo = "arrow.counterclockwise"
     static let resetZoom = "arrow.up.left.and.arrow.down.right"
+    static let checkmark_circle_fill = "checkmark.circle.fill"
+    
+    static let square_3_layers_3d_down_right = "square.3.layers.3d.down.right"
+    static let xmark_circle_fill = "xmark.circle.fill"
 }
 
 struct Labels {

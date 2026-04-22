@@ -67,7 +67,7 @@ struct TutorialPopupView: View {
                 HStack {
                     Spacer()
                     Button(action: dismiss) {
-                        Image(systemName: "xmark.circle.fill")
+                        Image(systemName: CustomIcon.xmark_circle_fill)
                             .font(.title2)
                             .foregroundStyle(.secondary)
                             .accessibilityLabel(NSLocalizedString("Close tutorial", comment: "Close tutorial accessibility label"))
