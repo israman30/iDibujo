@@ -14,6 +14,8 @@ struct MainCanvas: View {
     @StateObject private var lineViewModel = LineViewModel()
     @Environment(\.verticalSizeClass) private var orientation
     @Environment(\.colorScheme) private var colorScheme
+    @AppStorage("hasShownTutorial") private var hasShownTutorial: Bool = false
+    @State private var isTutorialPresented: Bool = false
     
     var body: some View {
         ZStack {
@@ -47,6 +49,20 @@ struct MainCanvas: View {
                 isVisible: $lineViewModel.isSaved
             )
             .accessibilityLabel(Labels.canvasSaved)
+            
+            if isTutorialPresented {
+                TutorialPopupView(onDismiss: {
+                    isTutorialPresented = false
+                })
+                .transition(.opacity)
+                .zIndex(10)
+            }
+        }
+        .onAppear {
+            if !hasShownTutorial {
+                hasShownTutorial = true
+                isTutorialPresented = true
+            }
         }
     }
     
@@ -103,6 +119,8 @@ struct MainCanvas: View {
                         savePhotoLibrary()
                     }, presentAlert: {
                         presentAlert()
+                    }, showTutorial: {
+                        isTutorialPresented = true
                     })
                     .presentAlert($alert, isPresented: $showingAlert)
                     
@@ -148,6 +166,8 @@ struct MainCanvas: View {
                         savePhotoLibrary()
                     }, presentAlert: {
                         presentAlert()
+                    }, showTutorial: {
+                        isTutorialPresented = true
                     })
                     .presentAlert($alert, isPresented: $showingAlert)
                 }
@@ -195,9 +215,17 @@ struct MenuButtonView: View {
     var lineViewModel: LineViewModel
     var savePhotoLibrary: () -> Void
     var presentAlert: () -> Void
+    var showTutorial: () -> Void
     
     var body: some View {
         Menu {
+            Button {
+                showTutorial()
+            } label: {
+                Label(Labels.tutorial, systemImage: CustomIcon.tutorial)
+            }
+            .accessibilityHint(NSLocalizedString("Shows a quick tutorial on how to use the app.", comment: "Tutorial menu item accessibility hint"))
+            
             Button {
                 presentAlert()
             } label: {
