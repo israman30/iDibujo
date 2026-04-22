@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct MainCanvas: View {
-    @State private var showingAlert = false
-    @State private var colorPicked: Color = .blue
-    @State private var alert: AlertComponent? = nil
-    @StateObject private var lineViewModel = LineViewModel()
+    @AppStorage("hasShownTutorial") private var hasShownTutorial: Bool = false
     @Environment(\.verticalSizeClass) private var orientation
     @Environment(\.colorScheme) private var colorScheme
+    @State private var showingAlert = false
+    @State private var alert: AlertComponent? = nil
+    @State private var isTutorialPresented: Bool = false
+    private let colorPaletteNames = ["Red", "Yellow", "Blue", "Green", "Orange", "Pink", "Black"]
+    
+    @StateObject private var lineViewModel = LineViewModel()
     
     var body: some View {
         ZStack {
@@ -47,10 +50,22 @@ struct MainCanvas: View {
                 isVisible: $lineViewModel.isSaved
             )
             .accessibilityLabel(Labels.canvasSaved)
+            
+            if isTutorialPresented {
+                TutorialPopupView(onDismiss: {
+                    isTutorialPresented = false
+                })
+                .transition(.opacity)
+                .zIndex(10)
+            }
+        }
+        .onAppear {
+            if !hasShownTutorial {
+                hasShownTutorial = true
+                isTutorialPresented = true
+            }
         }
     }
-    
-    private let colorPaletteNames = ["Red", "Yellow", "Blue", "Green", "Orange", "Pink", "Black"]
     
     private var colorPaletteView: some View {
         HStack(spacing: 12) {
@@ -63,7 +78,7 @@ struct MainCanvas: View {
         .background(
             RoundedRectangle(cornerRadius: 28)
                 .fill(Color(red: 0.92, green: 0.92, blue: 0.94))
-                .shadow(color: colorScheme == .dark ? .black.opacity(0.4) : .black.opacity(0.08), radius: 12, y: 4)
+                .shadow(color: colorScheme == .dark ? .black.opacity(0.2) : .black.opacity(0.08), radius: 12, y: 4)
         )
         .padding(.bottom, 10)
     }
@@ -103,6 +118,8 @@ struct MainCanvas: View {
                         savePhotoLibrary()
                     }, presentAlert: {
                         presentAlert()
+                    }, showTutorial: {
+                        isTutorialPresented = true
                     })
                     .presentAlert($alert, isPresented: $showingAlert)
                     
@@ -125,7 +142,7 @@ struct MainCanvas: View {
                 .background(
                     RoundedRectangle(cornerRadius: 24)
                         .fill(Color(red: 0.92, green: 0.92, blue: 0.94))
-                        .shadow(color: colorScheme == .dark ? .black.opacity(0.4) : .black.opacity(0.08), radius: 12, y: 4)
+                        .shadow(color: colorScheme == .dark ? .black.opacity(0.2) : .black.opacity(0.08), radius: 12, y: 4)
                 )
             }
         } else {
@@ -148,6 +165,8 @@ struct MainCanvas: View {
                         savePhotoLibrary()
                     }, presentAlert: {
                         presentAlert()
+                    }, showTutorial: {
+                        isTutorialPresented = true
                     })
                     .presentAlert($alert, isPresented: $showingAlert)
                 }
@@ -156,7 +175,7 @@ struct MainCanvas: View {
                 .background(
                     RoundedRectangle(cornerRadius: 24)
                         .fill(Color(red: 0.92, green: 0.92, blue: 0.94))
-                        .shadow(color: colorScheme == .dark ? .black.opacity(0.4) : .black.opacity(0.08), radius: 12, y: 4)
+                        .shadow(color: colorScheme == .dark ? .black.opacity(0.2) : .black.opacity(0.08), radius: 12, y: 4)
                 )
                    
                 HStack {
@@ -195,9 +214,17 @@ struct MenuButtonView: View {
     var lineViewModel: LineViewModel
     var savePhotoLibrary: () -> Void
     var presentAlert: () -> Void
+    var showTutorial: () -> Void
     
     var body: some View {
         Menu {
+            Button {
+                showTutorial()
+            } label: {
+                Label(Labels.tutorial, systemImage: CustomIcon.tutorial)
+            }
+            .accessibilityHint(NSLocalizedString("Shows a quick tutorial on how to use the app.", comment: "Tutorial menu item accessibility hint"))
+            
             Button {
                 presentAlert()
             } label: {

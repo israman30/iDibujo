@@ -31,6 +31,7 @@ struct CustomIcon {
     static let eraser = "eraser.line.dashed"
     static let scribble_variable = "scribble.variable"
     static let xmark_square = "xmark.square"
+    static let tutorial = "questionmark.circle"
     
     static let circleFill = "circle.fill"
     static let backToCanvas = "arrowshape.backward"
@@ -40,6 +41,10 @@ struct CustomIcon {
     static let undo = "arrow.clockwise"
     static let redo = "arrow.counterclockwise"
     static let resetZoom = "arrow.up.left.and.arrow.down.right"
+    static let checkmark_circle_fill = "checkmark.circle.fill"
+    
+    static let square_3_layers_3d_down_right = "square.3.layers.3d.down.right"
+    static let xmark_circle_fill = "xmark.circle.fill"
 }
 
 struct Labels {
@@ -48,6 +53,7 @@ struct Labels {
     static let back = NSLocalizedString("Back", comment: "Back to canvas")
     static let clearCanvas = NSLocalizedString("Clear Canvas", comment: "Clear canvas menu item")
     static let canvasSaved = NSLocalizedString("Canvas Saved!", comment: "Toast when canvas is saved")
+    static let tutorial = NSLocalizedString("Tutorial", comment: "Open tutorial")
     static let background = NSLocalizedString("Background", comment: "Canvas background")
     static let backgroundWhite = NSLocalizedString("White", comment: "White background option")
     static let backgroundBlack = NSLocalizedString("Black", comment: "Black background option")

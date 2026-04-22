@@ -44,7 +44,7 @@ struct BackgroundPickerView: View {
                 }
             }
         } label: {
-            Image(systemName: "square.3.layers.3d.down.right")
+            Image(systemName: CustomIcon.square_3_layers_3d_down_right)
                 .font(.title3)
                 .fontWeight(.medium)
                 .foregroundStyle(.primary)

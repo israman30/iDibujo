@@ -24,7 +24,10 @@ struct ToastView: View {
             }
             Spacer()
         }
-        .animation(reduceMotion ? nil : .spring(response: 0.35, dampingFraction: 0.8), value: isVisible)
+        .animation(
+            reduceMotion ? nil : .spring(response: 0.35, dampingFraction: 0.8),
+            value: isVisible
+        )
         .onChange(of: isVisible) { _, visible in
             if visible {
                 UIAccessibility.post(notification: .announcement, argument: text)
@@ -35,7 +38,7 @@ struct ToastView: View {
     @ViewBuilder
     private var toastContent: some View {
         HStack(spacing: 10) {
-            Image(systemName: "checkmark.circle.fill")
+            Image(systemName: CustomIcon.checkmark_circle_fill)
                 .font(.title3)
                 .foregroundStyle(.green)
             Text(text)
@@ -47,11 +50,18 @@ struct ToastView: View {
         .background(
             RoundedRectangle(cornerRadius: 14)
                 .fill(.ultraThinMaterial)
-                .shadow(color: colorScheme == .dark ? .black.opacity(0.5) : .black.opacity(0.12), radius: 16, y: 6)
+                .shadow(
+                    color: colorScheme == .dark ? .black.opacity(0.5) : .black.opacity(0.12),
+                    radius: 16,
+                    y: 6
+                )
         )
         .overlay(
             RoundedRectangle(cornerRadius: 14)
-                .stroke(Color.primary.opacity(colorScheme == .dark ? 0.15 : 0.2), lineWidth: 1)
+                .stroke(
+                    Color.primary.opacity(colorScheme == .dark ? 0.15 : 0.2),
+                    lineWidth: 1
+                )
         )
         .transition(reduceMotion ? .opacity : .asymmetric(
             insertion: .scale(scale: 0.9).combined(with: .opacity),
