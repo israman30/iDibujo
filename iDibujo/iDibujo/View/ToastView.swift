@@ -24,7 +24,10 @@ struct ToastView: View {
             }
             Spacer()
         }
-        .animation(reduceMotion ? nil : .spring(response: 0.35, dampingFraction: 0.8), value: isVisible)
+        .animation(
+            reduceMotion ? nil : .spring(response: 0.35, dampingFraction: 0.8),
+            value: isVisible
+        )
         .onChange(of: isVisible) { _, visible in
             if visible {
                 UIAccessibility.post(notification: .announcement, argument: text)
