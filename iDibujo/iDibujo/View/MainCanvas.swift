@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct MainCanvas: View {
-    @State private var showingAlert = false
-    @State private var colorPicked: Color = .blue
-    @State private var alert: AlertComponent? = nil
-    @StateObject private var lineViewModel = LineViewModel()
+    @AppStorage("hasShownTutorial") private var hasShownTutorial: Bool = false
     @Environment(\.verticalSizeClass) private var orientation
     @Environment(\.colorScheme) private var colorScheme
-    @AppStorage("hasShownTutorial") private var hasShownTutorial: Bool = false
+    @State private var showingAlert = false
+    @State private var alert: AlertComponent? = nil
     @State private var isTutorialPresented: Bool = false
+    private let colorPaletteNames = ["Red", "Yellow", "Blue", "Green", "Orange", "Pink", "Black"]
+    
+    @StateObject private var lineViewModel = LineViewModel()
     
     var body: some View {
         ZStack {
@@ -65,8 +66,6 @@ struct MainCanvas: View {
             }
         }
     }
-    
-    private let colorPaletteNames = ["Red", "Yellow", "Blue", "Green", "Orange", "Pink", "Black"]
     
     private var colorPaletteView: some View {
         HStack(spacing: 12) {
