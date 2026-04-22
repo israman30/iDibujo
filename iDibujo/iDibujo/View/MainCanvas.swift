@@ -63,7 +63,7 @@ struct MainCanvas: View {
         .background(
             RoundedRectangle(cornerRadius: 28)
                 .fill(Color(red: 0.92, green: 0.92, blue: 0.94))
-                .shadow(color: colorScheme == .dark ? .black.opacity(0.4) : .black.opacity(0.08), radius: 12, y: 4)
+                .shadow(color: colorScheme == .dark ? .black.opacity(0.2) : .black.opacity(0.08), radius: 12, y: 4)
         )
         .padding(.bottom, 10)
     }
@@ -125,7 +125,7 @@ struct MainCanvas: View {
                 .background(
                     RoundedRectangle(cornerRadius: 24)
                         .fill(Color(red: 0.92, green: 0.92, blue: 0.94))
-                        .shadow(color: colorScheme == .dark ? .black.opacity(0.4) : .black.opacity(0.08), radius: 12, y: 4)
+                        .shadow(color: colorScheme == .dark ? .black.opacity(0.2) : .black.opacity(0.08), radius: 12, y: 4)
                 )
             }
         } else {
@@ -156,7 +156,7 @@ struct MainCanvas: View {
                 .background(
                     RoundedRectangle(cornerRadius: 24)
                         .fill(Color(red: 0.92, green: 0.92, blue: 0.94))
-                        .shadow(color: colorScheme == .dark ? .black.opacity(0.4) : .black.opacity(0.08), radius: 12, y: 4)
+                        .shadow(color: colorScheme == .dark ? .black.opacity(0.2) : .black.opacity(0.08), radius: 12, y: 4)
                 )
                    
                 HStack {
